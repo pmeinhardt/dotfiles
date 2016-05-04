@@ -1,42 +1,26 @@
 "*":
   core:
+    audioBeep: false
     disabledPackages: [
-      "background-tips"
       "exception-reporting"
       "metrics"
     ]
-    followSymlinks: false
     hideGitIgnoredFiles: true
     ignoredNames: [
+      ".DS_Store"
       ".bundle"
       ".git"
+      ".hg"
+      ".svn"
       "log"
-      "repositories"
       "tmp"
       "vendor"
     ]
-    themes: [
-      "unity-ui"
-      "glacier-syntax"
-    ]
   editor:
     fontFamily: "Menlo"
-    fontSize: 15
+    fontSize: 12
     invisibles: {}
-    showIndentGuide: true
-    softWrapAtPreferredLineLength: true
-  "go-plus":
-    goPath: "/Users/holman/Code/go"
-  "linter-eslint":
-    useGlobalEslint: true
-  "release-notes":
-    viewedVersion: "0.89.0"
-  "spell-check":
-    grammars: [
-      "text.plain"
-      "source.gfm"
-      "text.git-commit"
-      "text.html.basic"
-    ]
   welcome:
     showOnStartup: false
+  "tree-view":
+    hideIgnoredNames: true
