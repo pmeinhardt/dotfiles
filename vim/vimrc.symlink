@@ -86,5 +86,17 @@ map <leader>s :%s/\s\+$//gc<CR>
 map <leader>l :set list!<CR>
 
 
-" Use pathogen to load vim bundles:
-execute pathogen#infect()
+" Use vim-plug to manage vim bundles:
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+
+Plug '~/.vim/unplugged/json'
+
+call plug#end()
