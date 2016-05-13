@@ -9,4 +9,5 @@ atom.symlink/themes
 
 git/gitconfig.local.symlink
 
+vim/vim.symlink/autoload/plug.vim.old
 vim/vim.symlink/plugged
