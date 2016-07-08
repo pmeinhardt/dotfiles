@@ -5,6 +5,7 @@ set nocompatible
 
 """ General Configuration
 
+set encoding=utf-8              " set utf-8 encoding
 set backspace=indent,eol,start  " allow backspacing over everything
 set history=1000                " store lots of :cmdline history
 set showcmd                     " show incomplete cmds down the bottom
