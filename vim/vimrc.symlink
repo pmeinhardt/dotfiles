@@ -98,6 +98,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
+Plug 'elixir-lang/vim-elixir'
+
 Plug '~/.vim/unplugged/json'
 
 call plug#end()
