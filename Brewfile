@@ -28,6 +28,7 @@ brew 'spark'
 brew 'unrar'
 brew 'vim'
 brew 'wget'
+brew 'yarn'
 brew 'youtube-dl'
 
 cask 'atom'
