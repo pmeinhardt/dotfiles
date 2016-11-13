@@ -5,6 +5,7 @@ tap 'puma/puma'
 tap 'caskroom/fonts'
 
 brew 'ack'
+brew 'ag'
 brew 'coreutils'
 brew 'git'
 brew 'go'
