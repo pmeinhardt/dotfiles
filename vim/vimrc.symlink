@@ -30,7 +30,7 @@ set showmatch  " show matching brackets
 
 " Change leader to a comma. All \x commands turn into ,x.
 " The mapleader has to be set before vundle starts loading all the plugins.
-let mapleader = ","
+let mapleader = ','
 
 
 """ Configure Backup and Swap Files
@@ -111,7 +111,7 @@ call plug#end()
 " Hide ignored files from CtrlP.
 let g:ctrlp_user_command = {
   \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files'],
+    \ 1: ['.git', 'cd %s && git ls-files --cached --other --exclude-standard'],
     \ 2: ['.hg', 'hg --cwd %s locate -I .'],
     \ },
   \ 'fallback': 'find %s -type f'
@@ -119,3 +119,8 @@ let g:ctrlp_user_command = {
 
 " Disable caching in CtrlP.
 let g:ctrlp_use_caching = 0
+
+" Use `ag` for searching if available (partially supports 'ignore' files).
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
