@@ -3,79 +3,83 @@
 set nocompatible
 
 
+""" Filetype Detection
+
+filetype on                         " enable filetype detection
+filetype indent on                  " enable filetype-specific indenting
+filetype plugin on                  " enable filetype-specific plugins
+
+
+""" Syntax Highlighting
+
+syntax enable
+
+
 """ General Configuration
 
-set encoding=utf-8              " set utf-8 encoding
-set backspace=indent,eol,start  " allow backspacing over everything
-set history=1000                " store lots of :cmdline history
-set showcmd                     " show incomplete cmds down the bottom
-set showmode                    " show current mode down the bottom
-set wildmenu                    " enable wildmenu for completion
-set gcr=a:blinkon0              " disable cursor blink
-set visualbell                  " silence
-set report=0                    " tell us about changes
+set encoding=utf-8                  " set utf-8 encoding
+set backspace=indent,eol,start      " allow backspacing over everything
+set history=1000                    " store lots of :cmdline history
+set showcmd                         " show incomplete cmds down the bottom
+set showmode                        " show current mode down the bottom
+set wildmenu                        " enable wildmenu for completion
+set gcr=a:blinkon0                  " disable cursor blink
+set visualbell                      " silence
+set report=0                        " tell us about changes
 
 " To reload files changed outside vim, enable 'autoread'.
 " set autoread
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
 " set hidden
 
-" Turn on syntax highlighting
-syntax on
-
-set showmatch  " show matching brackets
-
 " Change leader to a comma. All \x commands turn into ,x.
-" The mapleader has to be set before vundle starts loading all the plugins.
+" The mapleader has to be set before loading plugins.
 let mapleader = ','
 
 
 """ Configure Backup and Swap Files
 
-set noswapfile                  " not using swap files
-set nobackup                    " no persistent backup
-set wb                          " write a temporary backup file
+set noswapfile                      " not using swap files
+set nobackup                        " no persistent backup
+set writebackup                     " write a temporary backup file
 
 
 """ Indentation
 
-set autoindent                  " indent according to previous line
-set smartindent                 " guess new line indentation level
-set shiftwidth=2                " auto-indent depth
-set softtabstop=2               " yep, two
-set tabstop=4                   " real tabs are 4 spaces
-set expandtab                   " no real tabs please!
-set nosmarttab                  " fuck tabs
+set autoindent                      " indent according to previous line
+set smartindent                     " guess new line indentation level
+set shiftwidth=2                    " auto-indent depth
+set softtabstop=2                   " yep, two
+set tabstop=4                       " real tabs are 4 spaces
+set expandtab                       " no real tabs please!
+set nosmarttab                      " fuck tabs
+
+
+""" Formatting
+
+set formatoptions+=j                " remove comment chars when joining lines
 
 
 """ Visual Cues
 
-set showmatch                   " brackets/braces that is
-set mat=5                       " duration to show matching brace (1/10 sec)
-set listchars=tab:▸\ ,eol:¬     " chars for invisibles
-set nolist                      " print non-printable characters
+set showmatch                       " brackets/braces that is
+set mat=5                           " duration to show matching brace (1/10 sec)
+set listchars=tab:▸\ ,trail:·,eol:¬ " chars for invisibles
+set nolist                          " print non-printable characters
 
 
 """ Search
 
-set incsearch                   " perform incremental search
-set ignorecase                  " ignore case when searching
+set incsearch                       " perform incremental search
+set ignorecase                      " ignore case when searching
 
 
 """ Navigation
 
 set ruler
-set scrolloff=3                 " keep at least 3 lines above/below
-
-
-""" Plugins
-
-filetype on                     " enable filetype detection
-filetype indent on              " enable filetype-specific indenting
-filetype plugin on              " enable filetype-specific plugins
+set scrolloff=3                     " keep at least 3 lines above/below
 
 
 """ Functions
@@ -87,7 +91,8 @@ map <leader>s :%s/\s\+$//gc<CR>
 map <leader>l :set list!<CR>
 
 
-" Use vim-plug to manage vim bundles:
+""" Use vim-plug to manage vim bundles:
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-repeat'
