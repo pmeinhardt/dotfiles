@@ -67,6 +67,7 @@ set formatoptions+=j                " remove comment chars when joining lines
 set showmatch                       " brackets/braces that is
 set mat=5                           " duration to show matching brace (1/10 sec)
 set listchars=tab:▸\ ,trail:·,eol:¬ " chars for invisibles
+set listchars+=precedes:<,extends:> " indicators for lines longer than window
 set nolist                          " print non-printable characters
 
 
@@ -80,6 +81,7 @@ set ignorecase                      " ignore case when searching
 
 set ruler
 set scrolloff=3                     " keep at least 3 lines above/below
+set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
 
 
 """ Functions
@@ -89,6 +91,9 @@ map <leader>s :%s/\s\+$//gc<CR>
 
 " Toggle list option:
 map <leader>l :set list!<CR>
+
+" Toggle line wrap:
+map <leader>w :set wrap!<CR>
 
 
 """ Use vim-plug to manage vim bundles:
