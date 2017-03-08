@@ -84,16 +84,22 @@ set scrolloff=3                     " keep at least 3 lines above/below
 set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
 
 
+""" Mappings
+
+nnoremap <tab> gt
+nnoremap <s-tab> gT
+
+
 """ Functions
 
 " Strip trailing whitespace:
-map <leader>s :%s/\s\+$//gc<CR>
+map <leader>s :%s/\s\+$//gc<cr>
 
 " Toggle list option:
-map <leader>l :set list!<CR>
+map <leader>l :set list!<cr>
 
 " Toggle line wrap:
-map <leader>w :set wrap!<CR>
+map <leader>w :set wrap!<cr>
 
 
 """ Use vim-plug to manage vim bundles:
