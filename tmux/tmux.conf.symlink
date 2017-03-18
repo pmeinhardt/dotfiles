@@ -53,9 +53,14 @@ setw -g pane-base-index 1
 # Renumber windows sequentially after closing any of them
 set -g renumber-windows on
 
+# Customize status bar format
+set -g window-status-format '#I:#W'
+set -g window-status-current-format '#I\#W'
+
 # Customize status bar colors
 set -g status-bg '#222222'
-set -g status-fg '#aaaaaa'
+set -g status-fg '#666666'
+set -g window-status-current-fg '#aaaaaa'
 
 # Minimal status bar
 set -g status-left ''
