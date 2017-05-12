@@ -119,6 +119,7 @@ Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'elixir-lang/vim-elixir'
+Plug 'lambdatoast/elm.vim'
 
 Plug '~/.vim/unplugged/json'
 
