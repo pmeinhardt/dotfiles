@@ -1,77 +1,77 @@
 # Improve color handling
-set -g default-terminal 'screen-256color'
+set-option -g default-terminal 'screen-256color'
 
 # Increase scrollback lines
-set -g history-limit 10000
+set-option -g history-limit 10000
 
 # No delay when hitting escape
-set -s escape-time 0
+set-option -s escape-time 0
 
 # Change prefix
-unbind C-b
-set -g prefix C-a
-bind C-a send-prefix
+unbind-key C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
 
 # Emacs key bindings in command prompt
-set -g status-keys emacs
+set-option -g status-keys emacs
 
 # Use vim key bindings in copy mode
-setw -g mode-keys vi
+set-window-option -g mode-keys vi
 
 # Setup `v` to begin selection as in vim, `y` to copy
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-pipe 'reattach-to-user-namespace pbcopy'
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-pipe 'reattach-to-user-namespace pbcopy'
 
 # Update default binding of Enter to also use copy-pipe
-unbind -t vi-copy Enter
-bind -t vi-copy Enter copy-pipe 'reattach-to-user-namespace pbcopy'
+unbind-key -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe 'reattach-to-user-namespace pbcopy'
 
 # Additional vim-like keybindings
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
 
 # Alternate bindings for pane-splitting
-bind | split-window -h
-bind - split-window -v
+bind-key | split-window -h
+bind-key - split-window -v
 
 # Resize panes
-bind -r H resize-pane -L 3
-bind -r J resize-pane -D 3
-bind -r K resize-pane -U 3
-bind -r L resize-pane -R 3
+bind-key -r H resize-pane -L 3
+bind-key -r J resize-pane -D 3
+bind-key -r K resize-pane -U 3
+bind-key -r L resize-pane -R 3
 
 # Use C-h and C-l to cycle through panes
-bind -r C-h select-window -t :-
-bind -r C-l select-window -t :+
+bind-key -r C-h select-window -t :-
+bind-key -r C-l select-window -t :+
 
 # Start window numbers at 1 to match keyboard order with tmux window order
-set -g base-index 1
-setw -g pane-base-index 1
+set-option -g base-index 1
+set-window-option -g pane-base-index 1
 
 # Renumber windows sequentially after closing any of them
-set -g renumber-windows on
+set-option -g renumber-windows on
 
 # Customize status bar format
-set -g window-status-format '#I:#W'
-set -g window-status-current-format '#I\#W'
+set-option -g window-status-format '#I:#W'
+set-option -g window-status-current-format '#I\#W'
 
 # Customize status bar colors
-set -g status-bg '#222222'
-set -g status-fg '#666666'
-set -g window-status-current-fg '#aaaaaa'
+set-option -g status-bg '#222222'
+set-option -g status-fg '#666666'
+set-option -g window-status-current-fg '#aaaaaa'
 
 # Minimal status bar
-set -g status-left ''
-set -g status-right ''
+set-option -g status-left ''
+set-option -g status-right ''
 
 # Customize border colors
-set -g pane-border-fg '#222222'
-set -g pane-active-border-fg '#aaaaaa'
+set-option -g pane-border-fg '#222222'
+set-option -g pane-active-border-fg '#aaaaaa'
 
 # Conditionally load local config
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
 
 # Reload tmux config
-bind R run-shell 'tmux source-file ~/.tmux.conf > /dev/null; tmux display-message "Sourced config"'
+bind-key R run-shell 'tmux source-file ~/.tmux.conf > /dev/null; tmux display-message "Sourced config"'
