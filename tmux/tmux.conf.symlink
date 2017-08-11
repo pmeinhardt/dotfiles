@@ -1,3 +1,5 @@
+set-option -g default-command 'reattach-to-user-namespace -l $SHELL'
+
 # Improve color handling
 set-option -g default-terminal 'screen-256color'
 
