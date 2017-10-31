@@ -36,7 +36,6 @@ brew 'youtube-dl'
 
 cask 'atom'
 cask 'caffeine'
-cask 'chromium'
 cask 'epoch-flip-clock'
 cask 'firefox'
 cask 'font-source-code-pro'
