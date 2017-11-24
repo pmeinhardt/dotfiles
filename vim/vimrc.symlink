@@ -95,12 +95,6 @@ nnoremap <s-tab> gT
 " Strip trailing whitespace:
 map <leader>s :%s/\s\+$//gc<cr>
 
-" Toggle list option:
-map <leader>l :set list!<cr>
-
-" Toggle line wrap:
-map <leader>w :set wrap!<cr>
-
 
 """ Use vim-plug to manage vim bundles:
 

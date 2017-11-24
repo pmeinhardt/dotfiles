@@ -16,11 +16,12 @@
       "tmp"
       "vendor"
     ]
+    telemetryConsent: "no"
   editor:
     fontFamily: "Menlo"
     fontSize: 12
     invisibles: {}
-  welcome:
-    showOnStartup: false
   "tree-view":
     hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
