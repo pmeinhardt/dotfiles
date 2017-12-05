@@ -1,0 +1,24 @@
+snippet #! "#!/usr/bin/env ruby" b
+#!/usr/bin/env ruby
+$0
+endsnippet
+
+snippet main "if __FILE__ == $0" b
+if __FILE__ == \$0
+	$0
+end
+endsnippet
+
+snippet module "module" b
+module ${1:A}
+	$0
+end
+endsnippet
+
+snippet class "class + initialize" b
+class ${1:A}
+	def initialize(${2:*args})
+		$0
+	end
+end
+endsnippet

@@ -113,6 +113,7 @@ Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'sirver/ultisnips'
 
 call plug#end()
 
@@ -139,5 +140,9 @@ endif
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" Configure vim-polyglot language packs
+" Configure vim-polyglot language packs.
 let g:polyglot_disabled = ['css', 'yaml']
+
+" Configure custom snippet directory names and suppress 'no python' warnings.
+let g:UltiSnipsSnippetDirectories=["snips"]
+let g:UltiSnipsNoPythonWarning = 1

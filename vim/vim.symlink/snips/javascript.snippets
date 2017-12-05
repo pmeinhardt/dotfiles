@@ -1,0 +1,77 @@
+# Basic JavaScript
+
+snippet if "if (_)" b
+if (${1:true}) $0
+endsnippet
+
+# ES6+
+
+snippet let "let _ = _" b
+let ${1:x} = ${0:null};
+endsnippet
+
+snippet const "const _ = _" b
+const ${1:x} = $0;
+endsnippet
+
+snippet import "import _ from '_'" b
+import $1 from '${2:$1}';
+endsnippet
+
+snippet class "class _ { _ }" b
+class ${1:A} {
+	$0
+}
+endsnippet
+
+snippet constructor "constructor(_) { super(_) }" b
+constructor(${1:...args}) {
+	super(${2:$1});
+	$0
+}
+endsnippet
+
+# Node.js
+
+snippet #! "#!/usr/bin/env node" b
+#!/usr/bin/env node
+$0
+endsnippet
+
+# Jasmine/Jest
+
+snippet describe "describe(_)" b
+describe('$1', () => {
+	$0
+});
+endsnippet
+
+snippet it "it(_)" b
+it('$1', () => {
+	$0
+});
+endsnippet
+
+snippet beforeEach "beforeEach(_)" b
+beforeEach(() => {
+	$0
+});
+endsnippet
+
+snippet beforeAll "beforeAll(_)" b
+beforeAll(() => {
+	$0
+});
+endsnippet
+
+snippet afterEach "afterEach(_)" b
+afterEach(() => {
+	$0
+});
+endsnippet
+
+snippet afterAll "afterAll(_)" b
+afterAll(() => {
+	$0
+});
+endsnippet
