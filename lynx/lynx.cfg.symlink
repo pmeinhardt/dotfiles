@@ -1,0 +1,63 @@
+# Default start and index page
+STARTFILE:https://duckduckgo.com/lite
+DEFAULT_INDEX_FILE:https://duckduckgo.com/lite
+
+# Be less verbose, but offer a little help
+DEFAULT_USER_MODE:INTERMEDIATE
+
+# Vim keybindings for basic movement
+EMACS_KEYS_ALWAYS_ON:FALSE
+VI_KEYS_ALWAYS_ON:TRUE
+
+# Require text fields to be activated
+TEXTFIELDS_NEED_ACTIVATION:TRUE
+
+# Make search case-insensitive
+CASE_SENSITIVE_ALWAYS_ON:FALSE
+
+# Timeouts (in seconds)
+CONNECT_TIMEOUT:30
+READ_TIMEOUT:30
+
+# Appearance
+COLOR:6:brightred:black
+SHOW_CURSOR:TRUE
+
+# Language settings
+PREFERRED_LANGUAGE:en
+
+# Character sets
+CHARACTER_SET:utf-8
+ASSUME_CHARSET:utf-8
+ASSUME_UNREC_CHARSET:utf-8
+PREFERRED_CHARSET:utf-8
+
+# Certificates
+#SSL_CERT_FILE:/etc/ssl/certs/ca-certificates.crt
+#SSL_CERT_FILE:NULL
+
+# Ask whether to accept questionable certificates etc.
+FORCE_SSL_PROMPT:PROMPT
+
+# Reject all cookies
+SET_COOKIES:FALSE
+
+# FORCE_SSL_COOKIES_SECURE:TRUE
+# ACCEPT_ALL_COOKIES:FALSE
+# MAX_COOKIES_DOMAIN:50
+# MAX_COOKIES_GLOBAL:500
+# MAX_COOKIES_BUFFER:4096
+# PERSISTENT_COOKIES:FALSE
+# COOKIE_FILE:~/.lynx-cookies
+# COOKIE_SAVE_FILE:~/.lynx-cookies
+
+# Sessions
+
+# Viewers
+
+# External programs
+
+# Key bindings
+
+# Disable logging requested URLs using the syslog interface
+SYSLOG_REQUESTED_URLS:FALSE

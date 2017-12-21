@@ -1,0 +1,105 @@
+# If you are looking for the general configuration file - it is normally
+# called "lynx.cfg".  It has different content and a different format.
+# It is not this file.
+
+# bookmark_file specifies the name and location of the default bookmark
+# file into which the user can paste links for easy access at a later
+# date.
+bookmark_file=lynx_bookmarks.html
+
+# dir_list_order specifies the directory list order under DIRED_SUPPORT
+# (if implemented).  The default is "ORDER_BY_NAME"
+dir_list_order=ORDER_BY_NAME
+
+# dir_list_styles specifies the directory list style under DIRED_SUPPORT
+# (if implemented).  The default is "MIXED_STYLE", which sorts both
+# files and directories together.  "FILES_FIRST" lists files first and
+# "DIRECTORIES_FIRST" lists directories first.
+dir_list_style=MIXED_STYLE
+
+# file_editor specifies the editor to be invoked when editing local files
+# or sending mail.  If no editor is specified, then file editing is disabled
+# unless it is activated from the command line, and the built-in line editor
+# will be used for sending mail.
+file_editor=vim
+
+# The file_sorting_method specifies which value to sort on when viewing
+# file lists such as FTP directories.  The options are:
+#    BY_FILENAME -- sorts on the name of the file
+#    BY_TYPE     -- sorts on the type of the file
+#    BY_SIZE     -- sorts on the size of the file
+#    BY_DATE     -- sorts on the date of the file
+file_sorting_method=BY_FILENAME
+
+# If keypad_mode is set to "NUMBERS_AS_ARROWS", then the numbers on
+# your keypad when the numlock is on will act as arrow keys:
+#             8 = Up Arrow
+#   4 = Left Arrow    6 = Right Arrow
+#             2 = Down Arrow
+# and the corresponding keyboard numbers will act as arrow keys,
+# regardless of whether numlock is on.
+# If keypad_mode is set to "LINKS_ARE_NUMBERED", then numbers will
+# appear next to each link and numbers are used to select links.
+# If keypad_mode is set to "LINKS_AND_FORM_FIELDS_ARE_NUMBERED", then
+# numbers will appear next to each link and visible form input field.
+# Numbers are used to select links, or to move the "current link" to a
+# form input field or button.  In addition, options in popup menus are
+# indexed so that the user may type an option number to select an option in
+# a popup menu, even if the option isn't visible on the screen.  Reference
+# lists and output from the list command also enumerate form inputs.
+# NOTE: Some fixed format documents may look disfigured when
+# "LINKS_ARE_NUMBERED" or "LINKS_AND_FORM_FIELDS_ARE_NUMBERED" are
+# enabled.
+keypad_mode=LINKS_ARE_NOT_NUMBERED
+
+# lineedit_mode specifies the key binding used for inputting strings in
+# prompts and forms.  If lineedit_mode is set to "Default Binding" then
+# the following control characters are used for moving and deleting:
+#
+#              Prev  Next       Enter = Accept input
+#    Move char: <-    ->        ^G    = Cancel input
+#    Move word: ^P    ^N        ^U    = Erase line
+#  Delete char: ^H    ^R        ^A    = Beginning of line
+#  Delete word: ^B    ^F        ^E    = End of line
+#
+# Current lineedit modes are:
+#    Default Binding
+#    Alternate Bindings
+#    Bash-like Bindings
+lineedit_mode=Default Binding
+
+# select_popups specifies whether the OPTIONs in a SELECT block which
+# lacks a MULTIPLE attribute are presented as a vertical list of radio
+# buttons or via a popup menu.  Note that if the MULTIPLE attribute is
+# present in the SELECT start tag, Lynx always will create a vertical list
+# of checkboxes for the OPTIONs.  A value of "on" will set popup menus
+# as the default while a value of "off" will set use of radio boxes.
+# The default can be overridden via the -popup command line toggle.
+select_popups=on
+
+# show_dotfiles specifies that the directory listing should include
+# "hidden" (dot) files/directories.  If set "on", this will be
+# honored only if enabled via userdefs.h and/or lynx.cfg, and not
+# restricted via a command line switch.  If display of hidden files
+# is disabled, creation of such files via Lynx also is disabled.
+show_dotfiles=on
+
+# If sub_bookmarks is not turned "off", and multiple bookmarks have
+# been defined (see below), then all bookmark operations will first
+# prompt the user to select an active sub-bookmark file.  If the default
+# Lynx bookmark_file is defined (see above), it will be used as the
+# default selection.  When this option is set to "advanced", and the
+# user mode is advanced, the 'v'iew bookmark command will invoke a
+# statusline prompt instead of the menu seen in novice and intermediate
+# user modes.  When this option is set to "standard", the menu will be
+# presented regardless of user mode.
+sub_bookmarks=OFF
+
+# If verbose_images is "on", lynx will print the name of the image
+# source file in place of [INLINE], [LINK] or [IMAGE]
+# See also VERBOSE_IMAGES in lynx.cfg
+verbose_images=on
+
+# The visited_links setting controls how Lynx organizes the information
+# in the Visited Links Page.
+visited_links=LAST_REVERSED
