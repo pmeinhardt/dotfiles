@@ -60,6 +60,8 @@ set nosmarttab                      " fuck tabs
 """ Formatting
 
 set formatoptions+=j                " remove comment chars when joining lines
+set nojoinspaces                    " only insert single space after '.', '?'
+                                    " and '!' with join command
 
 
 """ Visual Cues
@@ -82,6 +84,12 @@ set ignorecase                      " ignore case when searching
 set ruler
 set scrolloff=3                     " keep at least 3 lines above/below
 set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
+
+
+""" Splits
+
+set splitbelow                      " put new window below the current one
+set splitright                      " put new window right of the current one
 
 
 """ Mappings
