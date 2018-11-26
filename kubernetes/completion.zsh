@@ -1,4 +1,3 @@
-if test $(which kubectl)
-then
+if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
