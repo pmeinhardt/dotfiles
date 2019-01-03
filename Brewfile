@@ -36,7 +36,6 @@ brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
 
-cask 'atom'
 cask 'caffeine'
 cask 'docker'
 cask 'epoch-flip-clock'
