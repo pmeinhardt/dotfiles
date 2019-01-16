@@ -26,8 +26,9 @@ set-window-option -g mode-keys vi
 # Enable focus events
 set-option -g focus-events on
 
-# Setup `v` to begin selection as in vim, `y` to copy
+# Setup vim-like selection and yanking
 bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi V send-keys -X select-line
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
 
 # Update default binding of Enter to also use copy-pipe
@@ -41,9 +42,9 @@ bind-key k select-pane -U
 bind-key l select-pane -R
 
 # Alternate bindings for pane-splitting
-bind-key | split-window -h -c '#{pane_current_path}'
+bind-key \ split-window -h -c '#{pane_current_path}'
 bind-key - split-window -v -c '#{pane_current_path}'
-bind-key \ split-window -fh -c '#{pane_current_path}'
+bind-key | split-window -fh -c '#{pane_current_path}'
 bind-key _ split-window -fv -c '#{pane_current_path}'
 
 # Resize panes
