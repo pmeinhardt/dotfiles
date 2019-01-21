@@ -104,6 +104,12 @@ nnoremap <s-tab> gT
 map <leader>s :%s/\s\+$//gc<cr>
 
 
+""" Spell checking
+
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
+
+
 """ Use vim-plug to manage vim bundles:
 
 call plug#begin('~/.vim/plugged')
