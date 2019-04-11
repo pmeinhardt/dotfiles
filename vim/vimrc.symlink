@@ -104,12 +104,6 @@ nnoremap <s-tab> gT
 map <leader>s :%s/\s\+$//gc<cr>
 
 
-""" Spell checking
-
-autocmd FileType gitcommit setlocal spell
-autocmd FileType markdown setlocal spell
-
-
 """ Use vim-plug to manage vim bundles:
 
 call plug#begin('~/.vim/plugged')
@@ -136,28 +130,8 @@ call plug#end()
 
 """ Plugin Configuration
 
-" Hide ignored files from CtrlP.
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-  \ 'fallback': 'find %s -type f'
-  \ }
-
-" Disable caching in CtrlP.
-let g:ctrlp_use_caching = 0
-
-" Use `ag` for searching if available (partially supports 'ignore' files).
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" Configure vim-polyglot language packs.
-let g:polyglot_disabled = ['css', 'yaml']
 
 " Configure custom snippet directory names and suppress 'no python' warnings.
 let g:UltiSnipsSnippetDirectories=["snips"]
