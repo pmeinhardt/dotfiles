@@ -94,14 +94,18 @@ set splitright                      " put new window right of the current one
 
 """ Mappings
 
+" Quick tab switching
 nnoremap <tab> gt
 nnoremap <s-tab> gT
 
-
-""" Functions
-
 " Strip trailing whitespace:
 map <leader>s :%s/\s\+$//gc<cr>
+
+" Fix auto-fixable code issues
+map <leader>f :ALEFix<cr>
+
+" Toggle linting
+map <leader>l :ALEToggle<cr>
 
 
 """ Use vim-plug to manage vim bundles:
@@ -124,11 +128,15 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'sirver/ultisnips'
+Plug 'w0rp/ale'
 
 call plug#end()
 
 
 """ Plugin Configuration
+
+" Disable ale by default (can be toggled once loaded).
+let g:ale_enabled = 0
 
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
