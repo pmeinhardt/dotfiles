@@ -108,6 +108,11 @@ map <leader>f :ALEFix<cr>
 map <leader>l :ALEToggle<cr>
 
 
+""" Theming
+
+highlight! link SignColumn LineNr
+
+
 """ Use vim-plug to manage vim bundles:
 
 call plug#begin('~/.vim/plugged')
@@ -138,8 +143,19 @@ call plug#end()
 
 """ Plugin Configuration
 
-" Disable ale by default (can be toggled once loaded).
+" Disable ALE by default (can be toggled once loaded).
 let g:ale_enabled = 0
+
+" Disable in-code highlights.
+let g:ale_set_highlights = 0
+
+" Configure code issue signs.
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '~'
+
+" Configure highlighting for code issue signs.
+highlight! link ALEErrorSign WarningMsg
+highlight! link ALEWarningSign MoreMsg
 
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
