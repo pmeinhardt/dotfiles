@@ -71,15 +71,15 @@ set-window-option -g pane-base-index 1
 # Renumber windows sequentially after closing any of them
 set-option -g renumber-windows on
 
-# Customize status bar format
+# Customize status bar format for window information
 set-option -g window-status-format '#I:#W'
 set-option -g window-status-current-format '#I\#W'
 
-# Empty left status bar
-set-option -g status-left ''
+# Show session name in left status bar
+set-option -g status-left '#S '
 
 # Show prefix activation and copy mode in right status bar
-set-option -g status-right '#{?client_prefix,#[bg=#cccccc] ^A #[default],#{?pane_in_mode,#[bg=yellow] Copy #[default],}}'
+set-option -g status-right '#{?client_prefix,#[bg=#cccccc] ^a #[default],#{?pane_in_mode,#[bg=yellow] copy #[default],}}'
 
 # Customize status bar colors
 set-option -g status-bg '#222222'
