@@ -122,9 +122,12 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dadbod'
+
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'sirver/ultisnips'
