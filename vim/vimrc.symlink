@@ -101,6 +101,9 @@ nnoremap <s-tab> gT
 " Strip trailing whitespace:
 map <leader>s :%s/\s\+$//gc<cr>
 
+" Open fugitive status window
+map <leader>g :Gstatus<cr>
+
 " Fix auto-fixable code issues
 map <leader>f :ALEFix<cr>
 
