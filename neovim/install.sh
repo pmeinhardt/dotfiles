@@ -14,3 +14,18 @@ let &packpath = &runtimepath
 source ~/.vimrc
 EOF
 fi
+
+if test $(which npm)
+then
+  npm install --global neovim
+fi
+
+if test $(which python2)
+then
+  python2 -m pip install --upgrade pynvim
+fi
+
+if test $(which python3)
+then
+  python3 -m pip install --upgrade pynvim
+fi
