@@ -135,11 +135,19 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
 
+Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'sirver/ultisnips'
 Plug 'w0rp/ale'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -159,6 +167,9 @@ let g:ale_sign_warning = '~'
 " Configure highlighting for code issue signs.
 highlight! link ALEErrorSign WarningMsg
 highlight! link ALEWarningSign MoreMsg
+
+" Enable Deoplete on start.
+let g:deoplete#enable_at_startup = 1
 
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
