@@ -1,0 +1,35 @@
+snippet -module "-module" b
+-module(${1:name}).$0
+endsnippet
+
+snippet -include "-include" b
+-include("${1}.hrl").$0
+endsnippet
+
+snippet -export "-export" b
+-export([${1}]).$0
+endsnippet
+
+snippet -define "-define" b
+-define(${1:macro}, ${2:replacement}).$0
+endsnippet
+
+snippet -record "-record" b
+-record(${1:name}, {${2}}).$0
+endsnippet
+
+snippet case "case" b
+case ${1:Expr} of
+	${2:_} ->
+		${3:ok};
+	Error ->
+		${4:Error}
+end$0
+endsnippet
+
+snippet receive "receive" b
+receive
+	${1:_} ->
+		${2:ok}
+end$0
+endsnippet
