@@ -9,7 +9,7 @@ let g:ctrlp_user_command = {
 
 " Use `fd` as a fallback if available (faster and supports 'ignore' files).
 if executable('fd')
-  let g:ctrlp_user_command['fallback'] = 'fd --type f --color never . %s'
+  let g:ctrlp_user_command['fallback'] = 'fd --type f --hidden --color never . %s'
 endif
 
 " Disable caching in CtrlP.
