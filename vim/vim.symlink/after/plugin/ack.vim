@@ -1,4 +1,7 @@
-" Use `ag` for searching if available (partially supports 'ignore' files).
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  " Use `rg` for searching if available (supports 'ignore' files).
+  let g:ackprg = 'rg --vimgrep --smart-case'
+elseif executable('ag')
+  " Use `ag` for searching if available (partially supports 'ignore' files).
+  let g:ackprg = 'ag --vimgrep --smart-case'
 endif
