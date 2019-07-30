@@ -21,7 +21,7 @@ dir_list_style=MIXED_STYLE
 # or sending mail.  If no editor is specified, then file editing is disabled
 # unless it is activated from the command line, and the built-in line editor
 # will be used for sending mail.
-file_editor=vim
+file_editor=nvim
 
 # The file_sorting_method specifies which value to sort on when viewing
 # file lists such as FTP directories.  The options are:
