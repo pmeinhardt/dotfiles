@@ -58,6 +58,10 @@ it('$1', () => {
 });
 endsnippet
 
+snippet expect "expect(_).to_(_)" b
+expect(${1:expression}).to${2:Be}($0);
+endsnippet
+
 snippet beforeEach "beforeEach(_)" b
 beforeEach(() => {
 	$0
