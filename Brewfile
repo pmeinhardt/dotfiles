@@ -1,8 +1,12 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+tap 'homebrew/core'
+tap 'homebrew/services'
 tap 'puma/puma'
-tap 'caskroom/fonts'
 
 brew 'ack'
 brew 'ag'
@@ -15,7 +19,7 @@ brew 'go'
 brew 'grc'
 brew 'imagemagick'
 brew 'jp2a'
-brew 'libcaca', args: ['with-imlib2']
+brew 'libcaca'
 brew 'libgit2'
 brew 'lynx'
 brew 'openssl'
