@@ -29,9 +29,6 @@ set-window-option -g mode-keys vi
 # Enable focus events
 set-option -g focus-events on
 
-# Copy on text selection with mouse (use with mouse-mode enabled)
-bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
-
 # Setup vim-like selection and yanking
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
