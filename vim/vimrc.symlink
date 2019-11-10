@@ -76,7 +76,10 @@ set nolist                          " print non-printable characters
 
 set incsearch                       " perform incremental search
 set ignorecase                      " ignore case when searching
-set inccommand=nosplit              " show substitution 'live' in all places
+
+if has('nvim')
+  set inccommand=nosplit            " show substitution 'live' in all places
+endif
 
 
 """ Navigation
