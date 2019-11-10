@@ -63,7 +63,6 @@ set formatoptions+=j                " remove comment chars when joining lines
 set nojoinspaces                    " only insert single space after '.', '?'
                                     " and '!' with join command
 
-
 """ Visual Cues
 
 set showmatch                       " brackets/braces that is
@@ -73,10 +72,11 @@ set listchars+=precedes:<,extends:> " indicators for lines longer than window
 set nolist                          " print non-printable characters
 
 
-""" Search
+""" Searching and Replacing
 
 set incsearch                       " perform incremental search
 set ignorecase                      " ignore case when searching
+set inccommand=nosplit              " show substitution 'live' in all places
 
 
 """ Navigation
