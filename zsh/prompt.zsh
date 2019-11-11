@@ -209,7 +209,7 @@ prompt_pure_setup() {
 	[[ -n $prompt_pure_state[username] ]] && PROMPT+='$prompt_pure_state[username]%F{${prompt_pure_colors[path]}}:%f'
 
     # Path.
-    PROMPT+='%F{${prompt_pure_colors[path]}}%~%f '
+    PROMPT+='%F{${prompt_pure_colors[path]}}%1~%f '
 
     # Prompt symbol with success/error color.
 	PROMPT+='%(?.%F{$prompt_pure_colors[prompt:success]}.%F{$prompt_pure_colors[prompt:error]})${prompt_pure_state[prompt]}%f '
