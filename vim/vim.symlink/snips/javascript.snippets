@@ -10,7 +10,7 @@ snippet "(\s|\()\(\)" "() => _" r
 `!p snip.rv = match.group(1)`() => ${0:\{\}}
 endsnippet
 
-snippet if "if (_)" b
+snippet if "if (_) _" b
 if (${1:true}) $0
 endsnippet
 
@@ -50,13 +50,13 @@ endsnippet
 
 # Jasmine/Jest
 
-snippet describe "describe(_)" b
+snippet describe "describe('_', () => { _ })" b
 describe('$1', () => {
 	$0
 });
 endsnippet
 
-snippet it "it(_)" b
+snippet it "it('_', () => { _ })" b
 it('$1', () => {
 	$0
 });
@@ -66,25 +66,25 @@ snippet expect "expect(_).to_(_)" b
 expect(${1:expression}).to${2:Be}($0);
 endsnippet
 
-snippet beforeEach "beforeEach(_)" b
+snippet beforeEach "beforeEach(() => { _ })" b
 beforeEach(() => {
 	$0
 });
 endsnippet
 
-snippet beforeAll "beforeAll(_)" b
+snippet beforeAll "beforeAll(() => { _ })" b
 beforeAll(() => {
 	$0
 });
 endsnippet
 
-snippet afterEach "afterEach(_)" b
+snippet afterEach "afterEach(() => { _ })" b
 afterEach(() => {
 	$0
 });
 endsnippet
 
-snippet afterAll "afterAll(_)" b
+snippet afterAll "afterAll(() => { _ })" b
 afterAll(() => {
 	$0
 });
