@@ -6,10 +6,6 @@ function $1($2) {
 }
 endsnippet
 
-snippet "(\s|\()\(\)" "() => _" r
-`!p snip.rv = match.group(1)`() => ${0:\{\}}
-endsnippet
-
 snippet if "if (_) _" b
 if (${1:true}) $0
 endsnippet
@@ -48,7 +44,7 @@ snippet #! "#!/usr/bin/env node" b
 $0
 endsnippet
 
-# Jasmine/Jest
+# Jest
 
 snippet describe "describe('_', () => { _ })" b
 describe('$1', () => {
