@@ -102,25 +102,25 @@ nnoremap <tab> gt
 nnoremap <s-tab> gT
 
 " Close window
-map <leader>q :q<cr>
+nnoremap <leader>q :q<cr>
 
 " Clear search highlighting until next search
-map <leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>
 
 " Strip trailing whitespace
-map <leader>s :%s/\s\+$//gc<cr>
+nnoremap <leader>s :%s/\s\+$//gc<cr>
 
 " Quick search
-map <leader>a :Ack<space>
+nnoremap <leader>a :Ack<space>
 
 " Open fugitive status window
-map <leader>g :Gstatus<cr>
+nnoremap <leader>g :Gstatus<cr>
 
 " Fix auto-fixable code issues
-map <leader>f :ALEFix<cr>
+nnoremap <leader>f :ALEFix<cr>
 
 " Toggle linting
-map <leader>l :ALEToggle<cr>
+nnoremap <leader>l :ALEToggle<cr>
 
 
 """ Theming
