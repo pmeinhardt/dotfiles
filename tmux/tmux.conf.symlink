@@ -42,7 +42,7 @@ bind-key k select-pane -U
 bind-key l select-pane -R
 
 # Alternate bindings for pane-splitting
-bind-key \ split-window -h -c '#{pane_current_path}'
+bind-key \\ split-window -h -c '#{pane_current_path}'
 bind-key - split-window -v -c '#{pane_current_path}'
 bind-key | split-window -fh -c '#{pane_current_path}'
 bind-key _ split-window -fv -c '#{pane_current_path}'
