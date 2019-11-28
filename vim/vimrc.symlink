@@ -114,6 +114,10 @@ nnoremap <leader>s :%s/\s\+$//gc<cr>
 nnoremap <leader>a :Ack<space>
 xnoremap <leader>a y:Ack <c-r>"
 
+" Quick help
+nnoremap <leader>h :help<space>
+xnoremap <leader>h y:help <c-r>"
+
 " Open fugitive status window
 nnoremap <leader>g :Gstatus<cr>
 
