@@ -26,6 +26,7 @@ set wildmenu                        " enable wildmenu for completion
 set gcr=a:blinkon0                  " disable cursor blink
 set visualbell                      " silence
 set report=0                        " tell us about changes
+set nomodeline                      " disable modelines (security)
 
 " To reload files changed outside vim, enable 'autoread'.
 set autoread
