@@ -101,8 +101,17 @@ set splitright                      " put new window right of the current one
 nnoremap <tab> gt
 nnoremap <s-tab> gT
 
-" Strip trailing whitespace:
+" Close window
+map <leader>q :q<cr>
+
+" Clear search highlighting until next search
+map <leader><space> :noh<cr>
+
+" Strip trailing whitespace
 map <leader>s :%s/\s\+$//gc<cr>
+
+" Quick search
+map <leader>a :Ack<space>
 
 " Open fugitive status window
 map <leader>g :Gstatus<cr>
