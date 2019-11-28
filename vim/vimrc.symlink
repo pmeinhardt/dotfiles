@@ -105,13 +105,14 @@ nnoremap <s-tab> gT
 nnoremap <leader>q :q<cr>
 
 " Clear search highlighting until next search
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Strip trailing whitespace
 nnoremap <leader>s :%s/\s\+$//gc<cr>
 
 " Quick search
 nnoremap <leader>a :Ack<space>
+xnoremap <leader>a y:Ack <c-r>"
 
 " Open fugitive status window
 nnoremap <leader>g :Gstatus<cr>
