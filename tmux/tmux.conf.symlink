@@ -21,7 +21,7 @@ bind-key C-a send-prefix
 set-option -g status-keys emacs
 
 # Use vim key bindings in copy mode
-set-window-option -g mode-keys vi
+set-option -w -g mode-keys vi
 
 # Enable focus events
 set-option -g focus-events on
@@ -66,7 +66,7 @@ bind-key -r > swap-window -t +1
 
 # Start window numbers at 1 to match keyboard order with tmux window order
 set-option -g base-index 1
-set-window-option -g pane-base-index 1
+set-option -w -g pane-base-index 1
 
 # Renumber windows sequentially after closing any of them
 set-option -g renumber-windows on
