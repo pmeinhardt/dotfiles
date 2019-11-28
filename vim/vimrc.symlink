@@ -101,31 +101,31 @@ set splitright                      " put new window right of the current one
 nnoremap <tab> gt
 nnoremap <s-tab> gT
 
-" Close window
-nnoremap <leader>q :q<cr>
-
 " Clear search highlighting until next search
 nnoremap <leader><space> :nohlsearch<cr>
-
-" Strip trailing whitespace
-nnoremap <leader>s :%s/\s\+$//gc<cr>
 
 " Quick search
 nnoremap <leader>a :Ack<space>
 xnoremap <leader>a y:Ack <c-r>"
 
-" Quick help
-nnoremap <leader>h :help<space>
-xnoremap <leader>h y:help <c-r>"
+" Fix auto-fixable code issues
+nnoremap <leader>f :ALEFix<cr>
 
 " Open fugitive status window
 nnoremap <leader>g :Gstatus<cr>
 
-" Fix auto-fixable code issues
-nnoremap <leader>f :ALEFix<cr>
+" Quick help
+nnoremap <leader>h :help<space>
+xnoremap <leader>h y:help <c-r>"
 
 " Toggle linting
 nnoremap <leader>l :ALEToggle<cr>
+
+" Close window
+nnoremap <leader>q :q<cr>
+
+" Strip trailing whitespace
+nnoremap <leader>s :%s/\s\+$//gc<cr>
 
 
 """ Theming
