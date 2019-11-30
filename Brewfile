@@ -10,6 +10,7 @@ tap 'puma/puma'
 
 brew 'ack'
 brew 'ag'
+brew 'bat'
 brew 'coreutils'
 brew 'fd'
 brew 'fpp'
