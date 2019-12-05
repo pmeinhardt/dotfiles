@@ -175,9 +175,6 @@ call plug#end()
 
 """ Plugin Configuration
 
-" Disable ALE by default (can be toggled once loaded).
-let g:ale_enabled = 0
-
 " Disable in-code highlights.
 let g:ale_set_highlights = 0
 
