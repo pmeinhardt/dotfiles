@@ -128,6 +128,9 @@ nnoremap <leader>q :q<cr>
 " Strip trailing whitespace
 nnoremap <leader>s :%s/\s\+$//gc<cr>
 
+" Sort lines
+xnoremap <leader>s :sort<cr>
+
 " Write the current file
 nnoremap <leader>w :w<cr>
 
