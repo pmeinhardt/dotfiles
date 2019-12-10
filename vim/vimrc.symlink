@@ -144,26 +144,27 @@ highlight! link SignColumn LineNr
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-repeat'             " support '.' to repeat plugin maps
+Plug 'tpope/vim-surround'           " mappings for quoting and parenthesizing
+Plug 'tpope/vim-commentary'         " mappings for commenting and uncommenting
+Plug 'tpope/vim-eunuch'             " sugar for UNIX shell commands, scripts
+Plug 'tpope/vim-fugitive'           " wrapper for working with Git
+Plug 'tpope/vim-unimpaired'         " complementary pairs of mappings
+Plug 'tpope/vim-vinegar'            " navigate directories and manage files
+Plug 'tpope/vim-dispatch'           " asynchronously run commands, build, test
+Plug 'tpope/vim-abolish'            " substitute multiple variants of a word
+Plug 'tpope/vim-dadbod'             " talk to databases
+Plug 'tpope/vim-projectionist'      " project configuration
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'           " fuzzy-find and open files
+Plug 'mileszs/ack.vim'              " search in project files
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'mattn/emmet-vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'sirver/ultisnips'
-Plug 'w0rp/ale'
+Plug 'mattn/emmet-vim'              " mappings for web development
+Plug 'sheerun/vim-polyglot'         " language pack
+Plug 'sirver/ultisnips'             " expand snippets
+Plug 'w0rp/ale'                     " linting, completion, LSP support
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
