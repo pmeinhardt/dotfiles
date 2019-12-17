@@ -164,7 +164,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'              " mappings for web development
 Plug 'sheerun/vim-polyglot'         " language pack
 Plug 'sirver/ultisnips'             " expand snippets
-Plug 'w0rp/ale'                     " linting, completion, LSP support
+Plug 'dense-analysis/ale'           " linting, completion, LSP support
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
