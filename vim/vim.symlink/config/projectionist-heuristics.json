@@ -1,0 +1,79 @@
+{
+  "package.json": {
+    "*": {
+      "console": "node",
+      "make": "yarn"
+    },
+    "*.js": {
+      "alternate": "{}.test.js",
+      "type": "source"
+    },
+    "*.jsx": {
+      "alternate": "{}.test.jsx",
+      "type": "source",
+      "template": [
+        "import React from 'react';"
+      ]
+    },
+    "*.test.js": {
+      "alternate": "{}.js",
+      "type": "test",
+      "dispatch": "TERM=dumb yarn test {file}",
+      "template": [
+        "import {basename} from './{basename}';",
+        "",
+        "describe('{basename}', () => {",
+        "  // function subject(...args) {",
+        "  //   return {basename}(...args);",
+        "  // }",
+        "});"
+      ]
+    },
+    "*.test.jsx": {
+      "alternate": "{}.jsx",
+      "type": "test",
+      "dispatch": "TERM=dumb yarn test {file}",
+      "template": [
+        "import React from 'react';",
+        "// import {open} shallow {close} from 'enzyme';",
+        "",
+        "import {basename} from './{basename}';",
+        "",
+        "describe('<{basename} />', () => {",
+        "  // function subject(overrides) {",
+        "  //   const defaults = {open} /* provide defaults */ {close};",
+        "  //   const props = {open} ...defaults, ...overrides {close};",
+        "  //   return shallow(<{basename} {open}...props{close} />);",
+        "  // }",
+        "});"
+      ]
+    }
+  },
+
+  "mix.exs": {
+    "*": {
+      "console": "iex -S mix",
+      "make": "mix"
+    },
+    "lib/*.ex": {
+      "alternate": "test/{}_test.exs",
+      "type": "source",
+      "template": [
+        "defmodule {camelcase|capitalize|dot} do",
+        "end"
+      ]
+    },
+    "test/*_test.exs": {
+      "alternate": "lib/{}.ex",
+      "type": "test",
+      "dispatch": "mix test {file}",
+      "template": [
+        "defmodule {camelcase|capitalize|dot}Test do",
+        "  use ExUnit.Case, async: true",
+        "",
+        "  alias {camelcase|capitalize|dot}",
+        "end"
+      ]
+    }
+  }
+}
