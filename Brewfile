@@ -6,6 +6,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
+tap 'pmeinhardt/tools'
 tap 'puma/puma'
 
 brew 'ack'
@@ -29,6 +30,8 @@ brew 'neovim'
 brew 'ngrep'
 brew 'node'
 brew 'openssl'
+brew 'pmeinhardt/tools/hmm', args: ['HEAD']
+brew 'pmeinhardt/tools/tm', args: ['HEAD']
 brew 'postgresql'
 brew 'puma/puma/puma-dev'
 brew 'rbenv'
