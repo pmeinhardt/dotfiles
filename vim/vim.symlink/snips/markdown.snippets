@@ -1,3 +1,15 @@
+snippet * "emphasis (italic)" w
+*${1:${VISUAL}}*$0
+endsnippet
+
+snippet ** "emphasis (bold)" w
+**${1:${VISUAL}}**$0
+endsnippet
+
+snippet ` "code" w
+\`${1:${VISUAL}}\`$0
+endsnippet
+
 snippet [ "link" w
 [${1:text}](${2:${VISUAL}})$0
 endsnippet
@@ -8,5 +20,6 @@ endsnippet
 
 snippet ``` "code block" b
 \`\`\`${1}
+${2:${VISUAL}}
 \`\`\`$0
 endsnippet
