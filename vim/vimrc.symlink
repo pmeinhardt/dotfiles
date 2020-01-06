@@ -185,6 +185,15 @@ let g:deoplete#enable_at_startup = 1
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+" Use 'ack' alternatives that support ignore files if available.
+if executable('rg')
+  " Use `rg` for searching if available (supports 'ignore' files).
+  let g:ackprg = 'rg --vimgrep --smart-case'
+elseif executable('ag')
+  " Use `ag` for searching if available (partially supports 'ignore' files).
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+
 " Configure custom snippet directory names and suppress 'no python' warnings.
 " For neovim, take a look at `:h provider-python` if snippets are not expanded.
 let g:UltiSnipsSnippetDirectories=["snips"]
