@@ -9,9 +9,7 @@
         co      = checkout
         flame   = blame
         promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
         count   = !git shortlog -sn
-        rank-contributors = !$ZSH/bin/git-rank-contributors
 [color]
         diff = auto
         status = auto
