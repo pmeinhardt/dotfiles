@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Remove branches that are gone on the remote.
+# Usage: git-sweep [<remote>]
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+remote="${1:-origin}"
+
+echo "Cleaning up local branches." >&2
+
+for branch in $(git gone "$remote"); do
+  git branch --quiet --delete --force "$branch"
+  echo " - [deleted]         $branch" >&2
+done

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# List branches that are gone on the remote.
+# Usage: git-gone [<remote>]
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+remote="${1:-origin}"
+
+git remote prune "$remote" > /dev/null
+git branch --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' | sed '/^$/d'
