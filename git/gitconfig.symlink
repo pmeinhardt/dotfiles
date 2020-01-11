@@ -16,6 +16,8 @@
         branch = auto
 [apply]
         whitespace = nowarn
+[pull]
+        ff = only
 [push]
         default = simple
 [hub]
