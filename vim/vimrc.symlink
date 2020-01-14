@@ -109,6 +109,9 @@ nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>a :Ack<space>
 xnoremap <leader>a y:Ack <c-r>"
 
+" Re-edit the current file (in case it changed outside of vim)
+nnoremap <leader>e :edit<cr>
+
 " Fix auto-fixable code issues
 nnoremap <leader>f :ALEFix<cr>
 
