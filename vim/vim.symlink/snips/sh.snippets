@@ -3,6 +3,15 @@ snippet #! "#!/usr/bin/env sh" b
 $0
 endsnippet
 
+snippet set "set shell options" b
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+endsnippet
+
 snippet if "if _ then _" b
 if $1; then
 	$0
