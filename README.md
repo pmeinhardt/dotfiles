@@ -1,43 +1,59 @@
-# ~ is where the ♥ is
+# dotfiles ···
 
-Your dotfiles are how you personalize your system. These are mine.
+Your [dotfiles](https://dotfiles.github.io/) are how you personalize your system. Here’s how I set up mine.
 
-## topical
+![screenshot](./screenshot.png)
 
-Everything’s built around topic areas. If you’re adding a new area to your forked dotfiles — say, “Java” — you can simply add a `java` directory and put files in there. Anything with an extension of `.zsh` will get automatically included into your shell. Anything with an extension of `.symlink` will get symlinked without extension into `$HOME` when you run `script/bootstrap`.
+## About
 
-## components
+Everything’s built around topic areas. Each topic has its own directory.
 
 There’s a few special files in the hierarchy.
 
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made available everywhere.
-- **Brewfile**: This is a list of applications for [Homebrew Cask](https://caskroom.github.io) to install: things like Chrome and 1Password and Adium and stuff. Might want to edit this file before running any initial setup.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your environment.
-- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is expected to setup `$PATH` or similar.
-- **topic/completion.zsh**: Any file named `completion.zsh` is loaded last and is expected to setup autocomplete.
-- **topic/install.sh**: Any file named `install.sh` is executed when you run `script/install`. To avoid being loaded automatically, its extension is `.sh`, not `.zsh`.
-- **topic/\*.symlink**: Any file ending in `*.symlink` gets symlinked into your `$HOME`. This is so you can keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run `script/bootstrap`.
+- **Brewfile**: Contains a list of tools for [Homebrew](https://github.com/Homebrew/brew) to install. You might want to edit this file before running any initial setup.
+- **bin/**: Anything in here will get added to your `$PATH`.
+- **topic/\*.zsh**: Files ending in `.zsh` get loaded into your environment.
+- **topic/path.zsh**: Files named `path.zsh` are loaded first and are expected to set up `$PATH` or similar.
+- **topic/completion.zsh**: Files named `completion.zsh` are loaded last and are expected to set up autocomplete.
+- **topic/install.sh**: Files named `install.sh` are executed when you run `script/install`. To avoid being loaded automatically, their extension is `.sh`, not `.zsh`.
+- **topic/\*.symlink**: Files named `*.symlink` get symlinked into your `$HOME`. This is so you can keep them versioned in your dotfiles repo while also making them available in your home directory.
 
-## install
+## Installation
 
-Run this:
+To get started, run:
 
 ```sh
+# Clone this repository
 git clone https://github.com/pmeinhardt/dotfiles.git ~/.dotfiles
+
+# Change into the new directory
 cd ~/.dotfiles
+
+# Run the bootstrap script
 ./script/bootstrap
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory. Everything is configured and tweaked within `~/.dotfiles`.
+This will symlink the appropriate files to your home directory.
 
-The main file you’ll want to change right off the bat is `zsh/zshrc.symlink`, which sets up a few paths that’ll be different on your particular machine.
+The `bin/dot` tool is a simple helper which installs dependencies, sets sane OS defaults, and so on.
+Tweak and occasionally run `dot` to keep your environment fresh and up-to-date.
 
-`dot` is a simple script that installs some dependencies, sets sane macOS defaults, and so on. Tweak this script, and occasionally run `dot` from time to time to keep your environment fresh and up-to-date. You can find this script in `bin/`.
+If you would like to install [Homebrew](https://github.com/Homebrew/brew) to an alternative location, e.g. `~/Developer/Homebrew`, do so before running the bootstrap script.
 
-If you would like to install [homebrew](https://github.com/Homebrew/homebrew) to an alternative location, e.g. `~/Developer`, do so before running the `bootstrap` script.
+## Thanks
 
-## thanks
+This project is adapted from [Zach Holman](https://github.com/holman)’s neat [dotfiles](https://github.com/holman/dotfiles).
 
-This project is adapted from [Zach Holman](https://github.com/holman)’s neat [dotfiles](https://github.com/holman/dotfiles), trimming down on parts and pulling in pieces from [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), [Gary Bernhardt](https://github.com/garybernhardt/dotfiles), [Gianni Chiappetta](https://github.com/gf3/dotfiles), [Jan Moesen](https://github.com/janmoesen/tilde), and many others.
+Trimming down on parts and pulling in pieces from:
 
-Also thanks to [Tim Pope](https://github.com/tpope/) for his excellent vim plugins and [Chris Kempson](https://github.com/chriskempson) for his [Base16 color scheme builder](https://github.com/chriskempson/base16-builder).
+- [Carlos Alexandro Becker](https://github.com/caarlos0/dotfiles)
+- [Gary Bernhardt](https://github.com/garybernhardt/dotfiles)
+- [Gianni Chiappetta](https://github.com/gf3/dotfiles)
+- [Jan Moesen](https://github.com/janmoesen/tilde)
+- [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
+- [Nick Nisi](https://github.com/nicknisi/dotfiles)
+- [Tim Pope](https://github.com/tpope/tpope)
+- and many more.
+
+Special thanks to [Tim Pope](https://github.com/tpope/) for his excellent Vim plugins.
+Thanks to [Chris Kempson](https://github.com/chriskempson) for his [base16 color scheme builder](https://github.com/chriskempson/base16-builder).

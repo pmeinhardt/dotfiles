@@ -30,7 +30,7 @@ fail () {
 setup_gitconfig () {
   if ! [ -f git/gitconfig.local.symlink ]
   then
-    info 'setup gitconfig'
+    info 'set up gitconfig'
 
     git_credential='cache'
     if [ "$(uname -s)" == "Darwin" ]
@@ -140,7 +140,7 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-# If we're on a Mac, let's install and setup homebrew.
+# If we're on a Mac, let's install and set up homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
