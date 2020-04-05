@@ -1,4 +1,4 @@
-# Scheme for the Base16 Builder (https://github.com/chriskempson/base16-builder)
+# base16 color scheme (https://github.com/chriskempson/base16)
 scheme: "Base"
 author: "Paul Meinhardt (https://github.com/pmeinhardt)"
 base00: "000000"

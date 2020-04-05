@@ -56,4 +56,4 @@ Trimming down on parts and pulling in pieces from:
 - and many more.
 
 Special thanks to [Tim Pope](https://github.com/tpope/) for his excellent Vim plugins.
-Thanks to [Chris Kempson](https://github.com/chriskempson) for his [base16 color scheme builder](https://github.com/chriskempson/base16-builder).
+Thanks to [Chris Kempson](https://github.com/chriskempson) for his [base16 color scheme concept](https://github.com/chriskempson/base16).
