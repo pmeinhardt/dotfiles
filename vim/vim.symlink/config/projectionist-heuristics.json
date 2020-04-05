@@ -50,6 +50,15 @@
     }
   },
 
+  "elm.json": {
+    "src/*.elm": {
+      "type": "source",
+      "template": [
+        "module {dot} exposing (..)"
+      ]
+    }
+  },
+
   "mix.exs": {
     "*": {
       "console": "iex -S mix",
