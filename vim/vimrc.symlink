@@ -138,9 +138,9 @@ xnoremap <leader>s :sort<cr>
 nnoremap <leader>w :w<cr>
 
 
-""" Theming
+""" Colors
 
-highlight! link SignColumn LineNr
+colorscheme base
 
 
 """ Use vim-plug to manage vim bundles:
