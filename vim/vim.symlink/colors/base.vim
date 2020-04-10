@@ -14,23 +14,24 @@ endif
 let g:colors_name = 'base'
 
 " Terminal color definitions (see :help cterm-colors)
-let s:c00 = '00' " Black
-let s:c01 = '01' " DarkBlue
-let s:c02 = '02' " DarkGreen
-let s:c03 = '03' " DarkCyan
-let s:c04 = '04' " DarkRed
-let s:c05 = '05' " DarkMagenta
-let s:c06 = '06' " Brown, DarkYellow
-let s:c07 = '07' " LightGray, LightGrey, Gray, Grey
-let s:c08 = '08' " DarkGray, DarkGrey
-let s:c09 = '09' " Blue, LightBlue
-let s:c10 = '10' " Green, LightGreen
-let s:c11 = '11' " Cyan, LightCyan
-let s:c12 = '12' " Red, LightRed
-let s:c13 = '13' " Magenta, LightMagenta
-let s:c14 = '14' " Yellow, LightYellow
-let s:c15 = '15' " White
-let s:cxx = ''
+let s:c00 = '00'    " Black
+let s:c01 = '01'    " DarkBlue
+let s:c02 = '02'    " DarkGreen
+let s:c03 = '03'    " DarkCyan
+let s:c04 = '04'    " DarkRed
+let s:c05 = '05'    " DarkMagenta
+let s:c06 = '06'    " Brown, DarkYellow
+let s:c07 = '07'    " LightGray, LightGrey, Gray, Grey
+let s:c08 = '08'    " DarkGray, DarkGrey
+let s:c09 = '09'    " Blue, LightBlue
+let s:c10 = '10'    " Green, LightGreen
+let s:c11 = '11'    " Cyan, LightCyan
+let s:c12 = '12'    " Red, LightRed
+let s:c13 = '13'    " Magenta, LightMagenta
+let s:c14 = '14'    " Yellow, LightYellow
+let s:c15 = '15'    " White
+let s:cno = 'none'  " Remove color
+let s:cxx = ''      " Ignore
 
 
 " Highlighting function
@@ -80,19 +81,19 @@ call <sid>hi('Visual',        s:c00, s:c11, '')
 call <sid>hi('VisualNOS',     s:c01, s:cxx, '')
 call <sid>hi('WarningMsg',    s:c01, s:cxx, '')
 call <sid>hi('WildMenu',      s:c01, s:cxx, '')
-call <sid>hi('Title',         s:c04, s:cxx, 'none')
+call <sid>hi('Title',         s:c04, s:cno, 'none')
 call <sid>hi('Conceal',       s:c04, s:c00, '')
 call <sid>hi('Cursor',        s:c00, s:c07, '')
-call <sid>hi('NonText',       s:c08, s:cxx, '')
-call <sid>hi('LineNr',        s:c08, s:c00, '')
-call <sid>hi('SignColumn',    s:c08, s:c00, '')
+call <sid>hi('NonText',       s:c08, s:cno, '')
+call <sid>hi('LineNr',        s:c08, s:cno, '')
+call <sid>hi('SignColumn',    s:c08, s:cno, '')
 call <sid>hi('StatusLine',    s:c00, s:c08, 'bold')
 call <sid>hi('StatusLineNC',  s:c00, s:c08, 'none')
-call <sid>hi('VertSplit',     s:c08, s:cxx, 'none')
+call <sid>hi('VertSplit',     s:c08, s:cno, 'none')
 call <sid>hi('ColorColumn',   s:cxx, s:c08, 'none')
 call <sid>hi('CursorColumn',  s:cxx, s:c08, 'none')
 call <sid>hi('CursorLine',    s:cxx, s:c08, 'none')
-call <sid>hi('CursorLineNr',  s:c15, s:cxx, '')
+call <sid>hi('CursorLineNr',  s:c15, s:cno, '')
 call <sid>hi('QuickFixLine',  s:cxx, s:cxx, 'standout')
 call <sid>hi('Pmenu',         s:c08, s:c15, 'none')
 call <sid>hi('PmenuSel',      s:c00, s:c07, '')
@@ -127,7 +128,7 @@ call <sid>hi('StorageClass', s:c03, s:cxx, '')
 call <sid>hi('String',       s:c02, s:cxx, '')
 call <sid>hi('Structure',    s:c05, s:cxx, '')
 call <sid>hi('Tag',          s:c03, s:cxx, '')
-call <sid>hi('Todo',         s:c03, s:c00, 'bold')
+call <sid>hi('Todo',         s:c03, s:cno, 'bold')
 call <sid>hi('Type',         s:c03, s:cxx, 'none')
 call <sid>hi('Typedef',      s:c03, s:cxx, '')
 
@@ -136,20 +137,20 @@ call <sid>hi('cOperator',   s:c06, s:cxx, '')
 call <sid>hi('cPreCondit',  s:c05, s:cxx, '')
 
 " CSS highlighting
-call <sid>hi('cssBraces',      s:c07, s:cxx, '')
-call <sid>hi('cssClassName',   s:c05, s:cxx, '')
-call <sid>hi('cssColor',       s:c06, s:cxx, '')
+call <sid>hi('cssBraces',     s:c07, s:cxx, '')
+call <sid>hi('cssClassName',  s:c05, s:cxx, '')
+call <sid>hi('cssColor',      s:c06, s:cxx, '')
 
 " Diff highlighting
 call <sid>hi('DiffAdd',       s:c02, s:c10, '')
 call <sid>hi('DiffChange',    s:c08, s:c10, '')
 call <sid>hi('DiffDelete',    s:c01, s:c10, '')
 call <sid>hi('DiffText',      s:c04, s:c10, '')
-call <sid>hi('DiffAdded',     s:c02, s:c00, '')
-call <sid>hi('DiffFile',      s:c01, s:c00, '')
-call <sid>hi('DiffNewFile',   s:c02, s:c00, '')
-call <sid>hi('DiffLine',      s:c04, s:c00, '')
-call <sid>hi('DiffRemoved',   s:c01, s:c00, '')
+call <sid>hi('DiffAdded',     s:c02, s:cno, '')
+call <sid>hi('DiffFile',      s:c01, s:cno, '')
+call <sid>hi('DiffNewFile',   s:c02, s:cno, '')
+call <sid>hi('DiffLine',      s:c04, s:cno, '')
+call <sid>hi('DiffRemoved',   s:c01, s:cno, '')
 
 " Git highlighting
 call <sid>hi('gitcommitOverflow',       s:c01, s:cxx, '')
@@ -174,10 +175,13 @@ call <sid>hi('htmlItalic',  s:c05, s:cxx, '')
 call <sid>hi('htmlEndTag',  s:c07, s:cxx, '')
 call <sid>hi('htmlTag',     s:c07, s:cxx, '')
 
+" Java highlighting
+call <sid>hi('javaOperator',  s:c04, s:cxx, '')
+
 " JavaScript highlighting
-call <sid>hi('javaScript',        s:c07, s:cxx, '')
-call <sid>hi('javaScriptBraces',  s:c07, s:cxx, '')
-call <sid>hi('javaScriptNumber',  s:c09, s:cxx, '')
+call <sid>hi('javaScript',          s:c07, s:cxx, '')
+call <sid>hi('javaScriptBraces',    s:c07, s:cxx, '')
+call <sid>hi('javaScriptNumber',    s:c09, s:cxx, '')
 " pangloss/vim-javascript highlighting
 call <sid>hi('jsOperator',          s:c04, s:cxx, '')
 call <sid>hi('jsStatement',         s:c05, s:cxx, '')
@@ -243,9 +247,6 @@ call <sid>hi('SpellBad',     s:cxx, s:cxx, 'undercurl')
 call <sid>hi('SpellLocal',   s:cxx, s:cxx, 'undercurl')
 call <sid>hi('SpellCap',     s:cxx, s:cxx, 'undercurl')
 call <sid>hi('SpellRare',    s:cxx, s:cxx, 'undercurl')
-
-" Java highlighting
-call <sid>hi('javaOperator',     s:c04, s:cxx, '')
 
 " Remove functions
 delfunction <sid>hi
