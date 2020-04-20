@@ -106,7 +106,7 @@ nnoremap <s-tab> gT
 nnoremap <leader><space> :nohlsearch<cr>
 
 " Quick search
-nnoremap <leader>a :Ack! <c-r><c-w>
+nnoremap <expr> <leader>a ':Ack! ' . expand('<cword>')
 xnoremap <leader>a y:Ack! <c-r>"
 
 " Re-edit the current file (in case it changed outside of vim)
@@ -119,7 +119,7 @@ nnoremap <leader>f :ALEFix<cr>
 nnoremap <leader>g :Gstatus<cr>
 
 " Quick help
-nnoremap <leader>h :help<space>
+nnoremap <expr> <leader>h ':help ' . expand('<cword>')
 xnoremap <leader>h y:help <c-r>"
 
 " Toggle linting
