@@ -106,7 +106,7 @@ nnoremap <s-tab> gT
 nnoremap <leader><space> :nohlsearch<cr>
 
 " Quick search
-nnoremap <leader>a :Ack!<space>
+nnoremap <leader>a :Ack! <c-r><c-w>
 xnoremap <leader>a y:Ack! <c-r>"
 
 " Re-edit the current file (in case it changed outside of vim)
