@@ -7,7 +7,6 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'pmeinhardt/tools'
-tap 'puma/puma'
 
 brew 'bat'
 brew 'coreutils'
@@ -28,7 +27,6 @@ brew 'openssl'
 brew 'pmeinhardt/tools/hmm', args: ['HEAD']
 brew 'pmeinhardt/tools/tm', args: ['HEAD']
 brew 'postgresql'
-brew 'puma/puma/puma-dev'
 brew 'rbenv'
 brew 'readline'
 brew 'reattach-to-user-namespace'
