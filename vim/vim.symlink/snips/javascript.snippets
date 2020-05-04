@@ -53,6 +53,10 @@ snippet require "require(_)" w
 require('$0');
 endsnippet
 
+snippet main "if (require.main === module)" b
+if (require.main === module) $0
+endsnippet
+
 # Jest
 
 snippet describe "describe('_', () => { _ })" b
