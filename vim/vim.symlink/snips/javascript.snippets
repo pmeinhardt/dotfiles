@@ -38,8 +38,7 @@ endsnippet
 
 snippet constructor "constructor(_) { super(_) }" b
 constructor(${1:...args}) {
-	super(${2:$1});
-	$0
+	super(${2:$1});$0
 }
 endsnippet
 
@@ -48,6 +47,10 @@ endsnippet
 snippet #! "#!/usr/bin/env node" b
 #!/usr/bin/env node
 $0
+endsnippet
+
+snippet require "require(_)" w
+require('$0');
 endsnippet
 
 # Jest
