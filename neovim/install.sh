@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Configure Neovim to use the same configuration files as Vim:
 # https://neovim.io/doc/user/nvim.html#nvim-from-vim
@@ -15,17 +15,17 @@ source ~/.vimrc
 EOF
 fi
 
-if test "$(which npm)"
+if hash npm 2>/dev/null
 then
   npm install --global neovim
 fi
 
-if test "$(which python2)"
+if hash python2 2>/dev/null
 then
   python2 -m pip install --upgrade pynvim
 fi
 
-if test "$(which python3)"
+if hash python3 2>/dev/null
 then
   python3 -m pip install --upgrade pynvim
 fi

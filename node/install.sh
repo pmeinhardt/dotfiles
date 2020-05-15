@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if test ! "$(which spoof)"
+if test ! $(which spoof)
 then
   sudo npm install spoof -g
 fi
