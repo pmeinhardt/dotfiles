@@ -137,6 +137,9 @@ xnoremap <leader>s :sort<cr>
 " Write the current file
 nnoremap <leader>w :w<cr>
 
+" Write the current file if it changed and quit
+nnoremap <leader>x :x<cr>
+
 
 """ Colors
 
