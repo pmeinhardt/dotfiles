@@ -1,0 +1,15 @@
+# Drop into an IPython shell.
+alias ipy from IPython import embed; embed()
+
+# Print member variables of an object.
+alias pi pp %1.__dict__
+
+# Print member variables of self.
+alias ps pi self
+
+# Print locals.
+alias pl pp locals()
+
+# Next and list, step and list.
+alias nl n;;l
+alias sl s;;l
