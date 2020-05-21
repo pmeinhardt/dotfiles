@@ -31,6 +31,7 @@ brew 'pmeinhardt/tools/tm', args: ['HEAD']
 brew 'poetry'
 brew 'postgresql'
 brew 'pyenv'
+brew 'qrencode'
 brew 'rbenv'
 brew 'readline'
 brew 'reattach-to-user-namespace'

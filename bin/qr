@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Print a QR code for the input argument to stdout.
+#
+# Helpful when you want to quickly open a long URL on your mobile device
+# without having to retype it.
+#
+# Usage:
+#
+#   qr [string]
+#
+# Examples:
+#
+#   qr https://github.com/pmeinhardt/dotfiles
+#   echo https://fukuchi.org/works/qrencode/ | qr
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+exec qrencode --output - --type UTF8 "$@"
