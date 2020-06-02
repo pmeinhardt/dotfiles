@@ -1,6 +1,9 @@
 # Drop into an IPython shell.
 alias ipy from IPython import embed; embed()
 
+# Reload the given module.
+alias re from importlib import reload; reload(%1)
+
 # Print member variables of an object.
 alias pi pp %1.__dict__
 
