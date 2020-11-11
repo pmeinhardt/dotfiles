@@ -109,6 +109,9 @@ nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>a :Ack!<space>
 xnoremap <leader>a y:Ack! <c-r>"
 
+" Dispatch (vim-projectionist)
+nnoremap <leader>d :Dispatch<cr>
+
 " Re-edit the current file (in case it changed outside of vim)
 nnoremap <leader>e :edit<cr>
 
