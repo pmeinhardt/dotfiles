@@ -1,6 +1,8 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
+[init]
+        defaultBranch = main
 [core]
         excludesfile = ~/.gitignore
 [alias]
