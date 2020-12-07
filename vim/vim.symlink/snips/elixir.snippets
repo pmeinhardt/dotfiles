@@ -1,8 +1,29 @@
+# Elixir
+
+snippet #! "#!/usr/bin/env elixir" b
+#!/usr/bin/env elixir
+$0
+endsnippet
+
 snippet defmodule "defmodule" b
 defmodule ${1:A} do
 	$0
 end
 endsnippet
+
+snippet def "def" b
+def ${1:f} do
+	$0
+end
+endsnippet
+
+snippet defp "defp" b
+defp ${1:f} do
+	$0
+end
+endsnippet
+
+# ExUnit
 
 snippet describe "describe" b
 describe "$1" do
