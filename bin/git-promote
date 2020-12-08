@@ -1,7 +1,15 @@
-#!/bin/sh
-#
+#!/usr/bin/env bash
+
 # Promotes a local topic branch to a remote tracking branch of the same name,
 # by pushing and then setting up tracking.
+#
+# Usage: git-promote [<remote>]
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+remote="${1:-origin}"
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-git push --set-upstream origin "$branch"
+git push --set-upstream "$remote" "$branch"
