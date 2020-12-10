@@ -167,6 +167,7 @@ Plug 'tpope/vim-vinegar'            " navigate directories and manage files
 Plug 'tpope/vim-dispatch'           " asynchronously run commands, build, test
 Plug 'tpope/vim-abolish'            " substitute multiple variants of a word
 Plug 'tpope/vim-dadbod'             " talk to databases
+Plug 'tpope/vim-apathy'             " set up path for a few file types
 Plug 'tpope/vim-projectionist'      " project configuration
 
 Plug 'ctrlpvim/ctrlp.vim'           " fuzzy-find and open files
