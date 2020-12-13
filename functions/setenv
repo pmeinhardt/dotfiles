@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Set up environment variables from a ".env" file.
+# Usage: setenv [path]
+
+setenv () {
+  filepath="${1:-.env}"
+
+  if [ -f "$filepath" ]; then
+    # shellcheck disable=2046
+    export $(sed '/^[[:blank:]]*#/ d' "$filepath")
+  else
+    echo "No $filepath file found" 1>&2
+    return 1
+  fi
+}
