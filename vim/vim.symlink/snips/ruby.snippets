@@ -1,3 +1,5 @@
+# Ruby
+
 snippet #! "#!/usr/bin/env ruby" b
 #!/usr/bin/env ruby
 $0
@@ -39,4 +41,38 @@ snippet dox "do |_| _ end" w
 do |${1:x}|
 	$0
 end
+endsnippet
+
+# RSpec
+
+snippet describe "describe '_' do _ end" b
+describe '$1' do
+	$0
+end
+endsnippet
+
+snippet it "it '_' do _ end" b
+it '$1' do
+	$0
+end
+endsnippet
+
+snippet before "before { _ }" b
+before { $0 }
+endsnippet
+
+snippet after "after { _ }" b
+after { $0 }
+endsnippet
+
+snippet subject "subject { _ }" b
+subject { $0 }
+endsnippet
+
+snippet let "let(:_) { _ }" b
+let(:${1:name}) { $0 }
+endsnippet
+
+snippet expect "expect(_).to _(_)" b
+expect(${1:actual}).${2:to} ${3:be}(${4:expected})$0
 endsnippet
