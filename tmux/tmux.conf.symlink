@@ -27,11 +27,11 @@ set-option -g focus-events on
 # Setup vim-like selection and yanking
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'pbcopy'
 
 # Update default binding of Enter to also use copy-pipe
 unbind-key -T copy-mode-vi Enter
-bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'pbcopy'
 
 # Additional vim-like keybindings for pane-switching
 bind-key h select-pane -L
