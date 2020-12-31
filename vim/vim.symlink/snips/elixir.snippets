@@ -24,7 +24,29 @@ end
 endsnippet
 
 snippet fn "fn" w
-fn ${1:_} -> ${2:true} end$0
+fn $1-> ${2:nil} end$0
+endsnippet
+
+snippet do "do" w
+do
+	$0
+end
+endsnippet
+
+snippet case "case" w
+case ${1:value} do
+	${2:_} ->
+		${3:nil}
+
+	${4:other} ->
+		${0:$4}
+end
+endsnippet
+
+snippet with "with" w
+with ${1::ok} <- ${2:expression} do
+	$0
+end
 endsnippet
 
 # ExUnit
