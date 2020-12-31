@@ -102,6 +102,10 @@ set splitright                      " put new window right of the current one
 nnoremap <tab> gt
 nnoremap <s-tab> gT
 
+" Enter 'focus' mode
+nnoremap <leader><cr> :Goyo<cr>
+xnoremap <leader><cr> :Goyo<cr>
+
 " Clear search highlighting until next search
 nnoremap <leader><space> :nohlsearch<cr>
 
@@ -187,5 +191,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+Plug 'junegunn/goyo.vim'            " distraction-free writing
 
 call plug#end()
