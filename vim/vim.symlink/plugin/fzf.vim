@@ -5,6 +5,19 @@
 "
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+" Fill quickfix list from selection
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{"filename": v:val}'))
+  copen
+endfunction
+
+" Set keybindings for opening selected files in different ways
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
 " Display the window at the bottom of the screen
 let g:fzf_layout = {'down': '40%'}
 
