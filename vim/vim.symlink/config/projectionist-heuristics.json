@@ -20,9 +20,9 @@
       "type": "test",
       "dispatch": "TERM=dumb yarn test {file}",
       "template": [
-        "import {basename} from './{basename}';",
+        "import {basename|camelcase} from './{basename}';",
         "",
-        "describe('{basename}', () => {",
+        "describe('{basename|camelcase}', () => {",
         "  // function subject(...args) {",
         "  //   return {basename}(...args);",
         "  // }",
