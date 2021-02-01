@@ -47,6 +47,7 @@ brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
 
+cask 'deckset'
 cask 'docker'
 cask 'epoch-flip-clock'
 cask 'firefox'
