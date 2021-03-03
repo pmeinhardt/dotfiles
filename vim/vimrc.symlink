@@ -169,6 +169,7 @@ Plug 'tpope/vim-surround'           " mappings for quoting and parenthesizing
 Plug 'tpope/vim-commentary'         " mappings for commenting and uncommenting
 Plug 'tpope/vim-eunuch'             " sugar for UNIX shell commands, scripts
 Plug 'tpope/vim-fugitive'           " wrapper for working with Git
+Plug 'tpope/vim-rhubarb'            " fugitive plugin for GitHub integration
 Plug 'tpope/vim-unimpaired'         " complementary pairs of mappings
 Plug 'tpope/vim-vinegar'            " navigate directories and manage files
 Plug 'tpope/vim-dispatch'           " asynchronously run commands, build, test
