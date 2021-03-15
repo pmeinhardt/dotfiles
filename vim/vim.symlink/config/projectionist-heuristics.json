@@ -12,7 +12,34 @@
       "alternate": "{}.test.jsx",
       "type": "source",
       "template": [
-        "import React from 'react';"
+        "import React from 'react';",
+        "",
+        "function {basename|camelcase|capitalize}() {open}",
+        "  return null;",
+        "{close}",
+        "",
+        "{basename|camelcase|capitalize}.propTypes = {open}{close};",
+        "",
+        "export default {basename|camelcase|capitalize};"
+      ]
+    },
+    "*.ts": {
+      "alternate": "{}.test.ts",
+      "type": "source"
+    },
+    "*.tsx": {
+      "alternate": "{}.test.tsx",
+      "type": "source",
+      "template": [
+        "import React from 'react';",
+        "",
+        "export type Props = {open}{close};",
+        "",
+        "function {basename|camelcase|capitalize}(_: Props): React.ReactElement {open}",
+        "  return null;",
+        "{close}",
+        "",
+        "export default {basename|camelcase|capitalize};"
       ]
     },
     "*.test.js": {
@@ -23,9 +50,9 @@
         "import {basename|camelcase} from './{basename}';",
         "",
         "describe('{basename|camelcase}', () => {",
-        "  // function subject(...args) {",
+        "  // function subject(...args) {open}",
         "  //   return {basename}(...args);",
-        "  // }",
+        "  // {close}",
         "});"
       ]
     },
@@ -35,16 +62,51 @@
       "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import React from 'react';",
-        "// import {open} shallow {close} from 'enzyme';",
+        "// import {open} render {close} from '@testing-library/react';",
+        "// import {open} shallow as render {close} from 'enzyme';",
         "",
         "import {basename|camelcase|capitalize} from './{basename}';",
         "",
-        "describe('<{basename|camelcase|capitalize} />', () => {",
-        "  // function subject(overrides) {",
+        "describe('{basename|camelcase|capitalize}', () => {",
+        "  // function subject(overrides) {open}",
         "  //   const defaults = {open} /* provide defaults */ {close};",
         "  //   const props = {open} ...defaults, ...overrides {close};",
-        "  //   return shallow(<{basename|camelcase|capitalize} {open}...props{close} />);",
-        "  // }",
+        "  //   return render(<{basename|camelcase|capitalize} {open}...props{close} />);",
+        "  // {close}",
+        "});"
+      ]
+    },
+    "*.test.ts": {
+      "alternate": "{}.ts",
+      "type": "test",
+      "dispatch": "TERM=dumb yarn test {file}",
+      "template": [
+        "import {basename|camelcase} from './{basename}';",
+        "",
+        "describe('{basename|camelcase}', () => {",
+        "  // function subject(...args) {open}",
+        "  //   return {basename}(...args);",
+        "  // {close}",
+        "});"
+      ]
+    },
+    "*.test.tsx": {
+      "alternate": "{}.tsx",
+      "type": "test",
+      "dispatch": "TERM=dumb yarn test {file}",
+      "template": [
+        "import React from 'react';",
+        "// import {open} render {close} from '@testing-library/react';",
+        "// import {open} shallow as render {close} from 'enzyme';",
+        "",
+        "import {basename|camelcase|capitalize} from './{basename}';",
+        "",
+        "describe('{basename|camelcase|capitalize}', () => {",
+        "  // function subject(overrides) {open}",
+        "  //   const defaults = {open} /* provide defaults */ {close};",
+        "  //   const props = {open} ...defaults, ...overrides {close};",
+        "  //   return render(<{basename|camelcase|capitalize} {open}...props{close} />);",
+        "  // {close}",
         "});"
       ]
     }
