@@ -62,7 +62,7 @@
       "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import React from 'react';",
-        "// import {open} render, screen {close} from '@testing-library/react';",
+        "// import {open} render {close} from '@testing-library/react';",
         "// import {open} shallow as render {close} from 'enzyme';",
         "",
         "import {basename|camelcase|capitalize} from './{basename}';",
@@ -96,7 +96,7 @@
       "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import React from 'react';",
-        "// import {open} render, screen {close} from '@testing-library/react';",
+        "// import {open} render {close} from '@testing-library/react';",
         "// import {open} shallow as render {close} from 'enzyme';",
         "",
         "import {basename|camelcase|capitalize}, {open} Props {close} from './{basename}';",
