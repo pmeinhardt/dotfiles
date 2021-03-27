@@ -13,7 +13,7 @@ brew outdated --verbose \
     --delimiter=" " \
     --nth=1 \
     --multi \
-    --bind=ctrl-a:select-all,ctrl-z:deselect-all,ctrl-t:toggle-all \
+    --bind='ctrl-a:select-all,ctrl-z:deselect-all,ctrl-t:toggle-all,ctrl-h:execute-silent(brew home {1})' \
     --layout=reverse \
     --height=60% \
     --preview='brew info {1}' \
