@@ -1,8 +1,25 @@
 {
+  "package-lock.json": {
+    "*": {
+      "make": "npm"
+    },
+    "**.test.*": {
+      "dispatch": "TERM=dumb npm test {file}"
+    }
+  },
+
+  "yarn.lock": {
+    "*": {
+      "make": "yarn"
+    },
+    "**.test.*": {
+      "dispatch": "TERM=dumb yarn test {file}"
+    }
+  },
+
   "package.json": {
     "*": {
-      "console": "node",
-      "make": "yarn"
+      "console": "node"
     },
     "*.js": {
       "alternate": "{}.test.js",
@@ -45,7 +62,6 @@
     "*.test.js": {
       "alternate": "{}.js",
       "type": "test",
-      "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import {basename|camelcase} from './{basename}';",
         "",
@@ -59,7 +75,6 @@
     "*.test.jsx": {
       "alternate": "{}.jsx",
       "type": "test",
-      "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import React from 'react';",
         "// import {open} render {close} from '@testing-library/react';",
@@ -79,7 +94,6 @@
     "*.test.ts": {
       "alternate": "{}.ts",
       "type": "test",
-      "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import {basename|camelcase} from './{basename}';",
         "",
@@ -93,7 +107,6 @@
     "*.test.tsx": {
       "alternate": "{}.tsx",
       "type": "test",
-      "dispatch": "TERM=dumb yarn test {file}",
       "template": [
         "import React from 'react';",
         "// import {open} render {close} from '@testing-library/react';",
