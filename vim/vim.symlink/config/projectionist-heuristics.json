@@ -1,7 +1,7 @@
 {
   "package-lock.json": {
     "*": {
-      "make": "npm"
+      "make": "TERM=dumb npm"
     },
     "**.test.*": {
       "dispatch": "TERM=dumb npm test {file}"
@@ -10,7 +10,7 @@
 
   "yarn.lock": {
     "*": {
-      "make": "yarn"
+      "make": "TERM=dumb yarn"
     },
     "**.test.*": {
       "dispatch": "TERM=dumb yarn test {file}"
