@@ -6,7 +6,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-(brew update --quiet && brew outdated --verbose) \
+(brew update &>/dev/null && brew outdated --verbose) \
   | fzf \
     --delimiter=" " \
     --nth=1 \
