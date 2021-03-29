@@ -6,8 +6,10 @@ let g:loaded_hmm = 1
 function! s:format(type) abort
   if a:type == ','
     silent :%s/\v\n/, /
+    silent :%s/\v, $//
   elseif a:type == ';'
     silent :%s/\v\n/; /
+    silent :%s/\v; $//
   elseif a:type == '-'
     silent :%s/\v^/- /
   endif
