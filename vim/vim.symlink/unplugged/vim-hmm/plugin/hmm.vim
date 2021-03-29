@@ -43,5 +43,12 @@ function! s:new(args) abort
   call cursor(1, 1)
 endfunction
 
-" TODO: :command-complete (customlist, dir, …?)
-command! -nargs=* Hmm call s:new(<q-args>)
+let s:flags = ['--max-depth', '--since']
+
+function! s:complete(lead, ...) abort
+  let flags = filter(copy(s:flags), 'strpart(v:val, 0, strlen(a:lead)) ==# a:lead')
+  let paths = a:lead =~# '-' ? [] : glob(a:lead . '*/', 0, 1)
+  return extend(flags, extend(['../'], paths))
+endfunction
+
+command! -nargs=* -complete=customlist,s:complete Hmm call s:new(<q-args>)
