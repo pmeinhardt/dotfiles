@@ -40,6 +40,8 @@ function! s:new(args) abort
   call appendbufline(bname, 0, output)
   call deletebufline(bname, line('$'))
 
+  setlocal nomodified
+
   call cursor(1, 1)
 endfunction
 
