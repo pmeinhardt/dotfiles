@@ -36,6 +36,7 @@ function! s:new(args) abort
   nnoremap <silent><buffer> <localleader>, :call <SID>format(',')<CR>
   nnoremap <silent><buffer> <localleader>; :call <SID>format(';')<CR>
   nnoremap <silent><buffer> <localleader>- :call <SID>format('-')<CR>
+  nnoremap <buffer> <localleader><localleader> :%yank *<CR>
 
   call appendbufline(bname, 0, output)
   call deletebufline(bname, line('$'))
