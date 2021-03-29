@@ -3,6 +3,18 @@ if exists('g:loaded_hmm')
 endif
 let g:loaded_hmm = 1
 
+function! s:format(type) abort
+  if a:type == ','
+    silent :%s/\v\n/, /
+  elseif a:type == ';'
+    silent :%s/\v\n/; /
+  elseif a:type == '-'
+    silent :%s/\v^/- /
+  endif
+
+  silent :nohlsearch
+endfunction
+
 function! s:new(args) abort
   let cmd = 'hmm'
 
@@ -20,6 +32,10 @@ function! s:new(args) abort
 
   setlocal filetype=markdown
   setlocal spell
+
+  nnoremap <silent><buffer> <localleader>, :call <SID>format(',')<CR>
+  nnoremap <silent><buffer> <localleader>; :call <SID>format(';')<CR>
+  nnoremap <silent><buffer> <localleader>- :call <SID>format('-')<CR>
 
   call appendbufline(bname, 0, output)
   call deletebufline(bname, line('$'))
