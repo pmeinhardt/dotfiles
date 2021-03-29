@@ -24,7 +24,7 @@ function! s:new(args) abort
   call appendbufline(bname, 0, output)
   call deletebufline(bname, line('$'))
 
-  call cursor(0, 0)
+  call cursor(1, 1)
 endfunction
 
 " TODO: :command-complete (customlist, dir, …?)
