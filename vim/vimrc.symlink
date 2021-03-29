@@ -199,4 +199,6 @@ endif
 
 Plug 'junegunn/goyo.vim'            " distraction-free writing
 
+Plug '~/.vim/unplugged/vim-hmm'
+
 call plug#end()
