@@ -17,7 +17,7 @@ function! s:format(type) abort
   silent :nohlsearch
 endfunction
 
-function! s:new(args) abort
+function! s:new(bang, args) abort
   let cmd = 'hmm'
 
   if !empty(a:args)
@@ -26,7 +26,9 @@ function! s:new(args) abort
 
   let output = systemlist(cmd)
 
-  if !(empty(bufname('%')) && line('$') == 1 && getline(1) == '')
+  if a:bang == '!'
+    %delete
+  elseif !(empty(bufname('%')) && line('$') == 1 && getline(1) == '')
     new
   endif
 
@@ -56,4 +58,4 @@ function! s:complete(lead, ...) abort
   return extend(flags, extend(['../'], paths))
 endfunction
 
-command! -nargs=* -complete=customlist,s:complete Hmm call s:new(<q-args>)
+command! -bang -nargs=* -complete=customlist,s:complete Hmm call s:new(<q-bang>, <q-args>)
