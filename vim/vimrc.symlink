@@ -23,7 +23,7 @@ set history=1000                    " store lots of :cmdline history
 set showcmd                         " show incomplete cmds down the bottom
 set showmode                        " show current mode down the bottom
 set wildmenu                        " enable wildmenu for completion
-set gcr+=a:blinkon0                 " disable cursor blink
+set guicursor+=a:blinkon0           " disable cursor blink
 set visualbell                      " silence
 set report=0                        " tell us about changes
 set nomodeline                      " disable modelines (security)
@@ -67,7 +67,7 @@ set nojoinspaces                    " only insert single space after '.', '?'
 """ Visual Cues
 
 set showmatch                       " brackets/braces that is
-set mat=5                           " duration to show matching brace (1/10 sec)
+set matchtime=5                     " duration to show matching brace (1/10 sec)
 set listchars=tab:▸\ ,trail:·,eol:¬ " chars for invisibles
 set listchars+=precedes:<,extends:> " indicators for lines longer than window
 set nolist                          " print non-printable characters
