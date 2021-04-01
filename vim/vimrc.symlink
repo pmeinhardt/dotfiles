@@ -198,7 +198,6 @@ else
 endif
 
 Plug 'junegunn/goyo.vim'            " distraction-free writing
-
-Plug '~/.vim/unplugged/vim-hmm'
+Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
 
 call plug#end()
