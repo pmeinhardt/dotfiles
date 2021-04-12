@@ -25,9 +25,9 @@ brew 'neovim'
 brew 'ngrep'
 brew 'node'
 brew 'openssl'
-brew 'pmeinhardt/tools/bup', args: ['HEAD']
-brew 'pmeinhardt/tools/hmm', args: ['HEAD']
-brew 'pmeinhardt/tools/tm', args: ['HEAD']
+brew 'pmeinhardt/tools/bup'
+brew 'pmeinhardt/tools/hmm'
+brew 'pmeinhardt/tools/tm'
 brew 'poetry'
 brew 'postgresql'
 brew 'pyenv'
