@@ -24,5 +24,3 @@
         ff = only
 [push]
         default = simple
-[hub]
-        protocol = https
