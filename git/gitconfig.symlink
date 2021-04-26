@@ -6,7 +6,7 @@
 [init]
         defaultBranch = main
 [core]
-        excludesfile = ~/.gitignore
+        excludesFile = ~/.gitignore
 [alias]
         s       = status
         b       = branch
