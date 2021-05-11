@@ -109,10 +109,6 @@ xnoremap <leader><cr> :Goyo<cr>
 " Clear search highlighting until next search
 nnoremap <leader><space> :nohlsearch<cr>
 
-" Copy to clipboard
-nnoremap <leader>* "*y
-xnoremap <leader>* "*y
-
 " Quick search
 nnoremap <leader>a :Ack!<space>
 xnoremap <leader>a y:Ack! <c-r>"
