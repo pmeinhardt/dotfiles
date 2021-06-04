@@ -39,6 +39,12 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
+# Open selected URLs
+bind-key -T copy-mode-vi x send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux run-shell -b "cd #{pane_current_path}; open {} > /dev/null"'
+
+# Open path in editor
+bind-key -T copy-mode-vi C-o send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux send-keys "$EDITOR {}"'
+
 # Alternate bindings for pane-splitting
 bind-key \\ split-window -h -c '#{pane_current_path}'
 bind-key - split-window -v -c '#{pane_current_path}'
