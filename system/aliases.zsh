@@ -1,3 +1,5 @@
+alias j="jobs"
+
 alias ls="ls -G"
 alias ll="ls -la"
 alias la="ls -A"
