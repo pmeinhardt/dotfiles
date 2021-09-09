@@ -113,6 +113,9 @@ nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>a :Ack!<space>
 xnoremap <leader>a y:Ack! <c-r>"
 
+" Buffer search
+nnoremap <leader>b :Buffers<cr>
+
 " Dispatch (vim-projectionist)
 nnoremap <leader>d :Dispatch<cr>
 
