@@ -1,0 +1,73 @@
+live_config_reload: true
+
+window:
+  padding:
+    x: 2
+    y: 2
+
+  dynamic_padding: false
+
+font:
+  normal:
+    family: Source Code Pro
+    style: Regular
+
+  bold:
+    family: Source Code Pro
+    style: Bold
+
+  italic:
+    family: Source Code Pro
+    style: Italic
+
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
+
+  size: 13.0
+
+  offset:
+    x: 1
+    y: 1
+
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#f2f2f2'
+
+  cursor:
+    cursor: '#ac4142'
+
+  selection:
+    text: CellForeground
+    background: '#404040'
+
+  normal:
+    black:   '#000000'
+    red:     '#e84f4f'
+    green:   '#b7ce42'
+    yellow:  '#fea63c'
+    blue:    '#66aabb'
+    magenta: '#b7416e'
+    cyan:    '#6d878d'
+    white:   '#dddddd'
+
+  bright:
+    black:   '#666666'
+    red:     '#d23d3d'
+    green:   '#bde077'
+    yellow:  '#ffe863'
+    blue:    '#aaccbb'
+    magenta: '#e16a98'
+    cyan:    '#42717b'
+    white:   '#cccccc'
+
+background_opacity: 1.0
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+
+bell:
+  duration: 0
