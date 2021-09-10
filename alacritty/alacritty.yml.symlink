@@ -53,7 +53,7 @@ colors:
     white:   '#dddddd'
 
   bright:
-    black:   '#666666'
+    black:   '#505050'
     red:     '#df645c'
     green:   '#c1db82'
     yellow:  '#f7e577'
