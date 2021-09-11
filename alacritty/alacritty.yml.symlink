@@ -1,4 +1,4 @@
-live_config_reload: true
+# live_config_reload: false
 
 window:
   padding:
@@ -32,87 +32,35 @@ font:
 
 colors:
   primary:
-    background: '#000000'
-    foreground: '#f2f2f2'
+    background: "#000000"
+    foreground: "#f2f2f2"
 
   cursor:
-    cursor: '#ac4142'
+    cursor: "#ac4142"
 
   selection:
     text: CellForeground
-    background: '#404040'
+    background: "#404040"
 
   normal:
-    black:   '#000000'
-    red:     '#bf5345'
-    green:   '#b7bc54'
-    yellow:  '#febc58'
-    blue:    '#6babca'
-    magenta: '#b85776'
-    cyan:    '#6e848c'
-    white:   '#dddddd'
+    black:   "#000000"
+    red:     "#bf5345"
+    green:   "#b7bc54"
+    yellow:  "#febc58"
+    blue:    "#6babca"
+    magenta: "#b85776"
+    cyan:    "#6e848c"
+    white:   "#dddddd"
 
   bright:
-    black:   '#505050'
-    red:     '#df645c'
-    green:   '#c1db82'
-    yellow:  '#f7e577'
-    blue:    '#678c96'
-    magenta: '#cf6f95'
-    cyan:    '#4c6f79'
-    white:   '#c8c9ca'
-
-# Base16
-# colors:
-#   primary:
-#     background: '0x000000'
-#     foreground: '0xd0d0d0'
-
-#   normal:
-#     black:   '0x000000'
-#     red:     '0xac4142'
-#     green:   '0x90a959'
-#     yellow:  '0xf4bf75'
-#     blue:    '0x6a9fb5'
-#     magenta: '0xaa759f'
-#     cyan:    '0x75b5aa'
-#     white:   '0xd0d0d0'
-
-#   bright:
-#     black:   '0x505050'
-#     red:     '0xac4142'
-#     green:   '0x90a959'
-#     yellow:  '0xf4bf75'
-#     blue:    '0x6a9fb5'
-#     magenta: '0xaa759f'
-#     cyan:    '0x75b5aa'
-#     white:   '0xf5f5f5'
-
-# Grayscale
-# colors:
-#   primary:
-#     background: '0x000000'
-#     foreground: '0xb9b9b9'
-
-#   normal:
-#     black:   '0x101010'
-#     red:     '0x7c7c7c'
-#     green:   '0x8e8e8e'
-#     yellow:  '0xa0a0a0'
-#     blue:    '0x686868'
-#     magenta: '0x747474'
-#     cyan:    '0x868686'
-#     white:   '0xb9b9b9'
-
-#   bright:
-#     black:   '0x525252'
-#     red:     '0x7c7c7c'
-#     green:   '0x8e8e8e'
-#     yellow:  '0xa0a0a0'
-#     blue:    '0x686868'
-#     magenta: '0x747474'
-#     cyan:    '0x868686'
-#     white:   '0xf7f7f7'
+    black:   "#505050"
+    red:     "#df645c"
+    green:   "#c1db82"
+    yellow:  "#f7e577"
+    blue:    "#678c96"
+    magenta: "#cf6f95"
+    cyan:    "#4c6f79"
+    white:   "#c8c9ca"
 
 background_opacity: 1.0
 
