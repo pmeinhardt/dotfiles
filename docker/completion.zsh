@@ -1,1 +1,4 @@
-compdef d='docker'
+if (( $+commands[docker] ))
+then
+  compdef d='docker'
+fi
