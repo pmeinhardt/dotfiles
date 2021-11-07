@@ -141,6 +141,10 @@ xnoremap <leader>h y:help <c-r>"
 " Toggle linting
 nnoremap <leader>l :ALEToggle<cr>
 
+" Paste from clipboard
+nnoremap <leader>p "+p
+xnoremap <leader>p "+p
+
 " Close window
 nnoremap <leader>q :q<cr>
 
@@ -155,6 +159,10 @@ nnoremap <leader>w :w<cr>
 
 " Write the current file if it changed and quit
 nnoremap <leader>x :x<cr>
+
+" Copy to clipboard
+nnoremap <leader>yy "+yy
+xnoremap <leader>y "+y
 
 " Quick-jump to files
 nnoremap <c-p> :GFiles --cached --exclude-standard --others<cr>
