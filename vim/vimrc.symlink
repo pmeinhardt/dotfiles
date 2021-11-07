@@ -117,7 +117,7 @@ nnoremap <leader><space> :nohlsearch<cr>
 
 " Quick search
 nnoremap <leader>a :Ack!<space>
-xnoremap <leader>a y:Ack! <c-r>"
+xnoremap <leader>a ""y:Ack! <c-r>"
 
 " Buffer search
 nnoremap <leader>b :Buffers<cr>
@@ -135,8 +135,8 @@ nnoremap <leader>f :ALEFix<cr>
 nnoremap <leader>g :Git<cr>
 
 " Quick help
-nnoremap <leader>h :help<space>
-xnoremap <leader>h y:help <c-r>"
+nnoremap <leader>h :Helptags<cr>
+xnoremap <leader>h ""y:Helptags<cr><c-\><c-n>""pA
 
 " Toggle linting
 nnoremap <leader>l :ALEToggle<cr>
