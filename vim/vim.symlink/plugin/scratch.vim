@@ -17,7 +17,7 @@ function! s:scratch() abort
       execute 'split +buffer' . bufnum
     else
       if winnr() != winnum
-        execute winnum . "wincmd w"
+        execute winnum . 'wincmd w'
       endif
     endif
   endif
@@ -30,6 +30,9 @@ function! s:mark() abort
   setlocal buflisted
 endfunction
 
-silent execute 'autocmd BufNewFile ' . s:bufname . ' call s:mark()'
+augroup scratch
+  autocmd!
+  execute 'autocmd BufNewFile ' . s:bufname . ' call s:mark()'
+augroup end
 
 command! -nargs=0 Scratch call s:scratch()
