@@ -113,7 +113,6 @@ vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 " Enter 'focus' mode
 nnoremap <leader><cr> :Goyo<cr>
-xnoremap <leader><cr> :Goyo<cr>
 
 " Clear search highlighting until next search
 nnoremap <leader><space> :nohlsearch<cr>
