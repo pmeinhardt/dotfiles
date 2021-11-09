@@ -114,6 +114,9 @@ vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 " Enter 'focus' mode
 nnoremap <leader><cr> :Goyo<cr>
 
+" Open scratch buffer
+nnoremap <leader><leader> :Scratch<cr>
+
 " Clear search highlighting until next search
 nnoremap <leader><space> :nohlsearch<cr>
 
