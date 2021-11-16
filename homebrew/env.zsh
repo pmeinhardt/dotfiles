@@ -1,3 +1,5 @@
+# https://docs.brew.sh/Manpage#environment
+
 # Disable sending of analytics data.
 export HOMEBREW_NO_ANALYTICS=1
 
