@@ -1,6 +1,7 @@
 #!/bin/sh
 
-if test ! $(which spoof)
-then
-  sudo npm install spoof -g
+NVM_DIR="$HOME/.nvm"
+
+if test ! -d "$NVM_DIR"; then
+  git clone "https://github.com/nvm-sh/nvm.git" "$NVM_DIR"
 fi
