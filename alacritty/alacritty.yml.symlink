@@ -7,6 +7,8 @@ window:
 
   dynamic_padding: false
 
+  opacity: 1.0
+
 font:
   normal:
     family: Source Code Pro
@@ -61,8 +63,6 @@ colors:
     magenta: "#cf6f95"
     cyan:    "#4c6f79"
     white:   "#c8c9ca"
-
-background_opacity: 1.0
 
 cursor:
   style:
