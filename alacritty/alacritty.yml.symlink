@@ -71,3 +71,8 @@ cursor:
 
 bell:
   duration: 0
+
+key_bindings:
+  - key: N
+    mods: Command
+    action: CreateNewWindow
