@@ -210,6 +210,13 @@ Plug 'sheerun/vim-polyglot'         " language pack
 Plug 'sirver/ultisnips'             " expand snippets
 Plug 'dense-analysis/ale'           " linting, completion, LSP support
 
+" Use tree-sitter for parsing supported languages, enabling improved syntax
+" highlighting and other features (see after/plugin/treesitter.vim).
+" To install language parsers, use `:TSInstall {language} ...`.
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 else
