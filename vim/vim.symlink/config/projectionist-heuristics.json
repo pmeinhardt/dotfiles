@@ -52,7 +52,7 @@
         "",
         "export type Props = {open}{close};",
         "",
-        "function {basename|camelcase|capitalize}(_: Props): React.ReactElement {open}",
+        "function {basename|camelcase|capitalize}(_: Props) {open}",
         "  return null;",
         "{close}",
         "",
