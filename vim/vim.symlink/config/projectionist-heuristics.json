@@ -72,8 +72,7 @@
       "alternate": "{}.jsx",
       "type": "test",
       "template": [
-        "// import {open} render {close} from '@testing-library/react';",
-        "// import {open} shallow as render {close} from 'enzyme';",
+        "import {open} render {close} from '@testing-library/react';",
         "",
         "import {basename|camelcase|capitalize} from './{basename}';",
         "",
@@ -103,8 +102,7 @@
       "alternate": "{}.tsx",
       "type": "test",
       "template": [
-        "// import {open} render {close} from '@testing-library/react';",
-        "// import {open} shallow as render {close} from 'enzyme';",
+        "import {open} render {close} from '@testing-library/react';",
         "",
         "import type {open} Props {close} from './{basename}';",
         "import {basename|camelcase|capitalize} from './{basename}';",
