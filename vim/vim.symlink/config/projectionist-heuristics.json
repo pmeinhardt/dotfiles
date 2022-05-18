@@ -29,8 +29,6 @@
       "alternate": "{}.test.jsx",
       "type": "source",
       "template": [
-        "import React from 'react';",
-        "",
         "function {basename|camelcase|capitalize}() {open}",
         "  return null;",
         "{close}",
@@ -48,8 +46,6 @@
       "alternate": "{}.test.tsx",
       "type": "source",
       "template": [
-        "import React from 'react';",
-        "",
         "export type Props = {open}{close};",
         "",
         "function {basename|camelcase|capitalize}(_: Props) {open}",
@@ -76,7 +72,6 @@
       "alternate": "{}.jsx",
       "type": "test",
       "template": [
-        "import React from 'react';",
         "// import {open} render {close} from '@testing-library/react';",
         "// import {open} shallow as render {close} from 'enzyme';",
         "",
@@ -108,7 +103,6 @@
       "alternate": "{}.tsx",
       "type": "test",
       "template": [
-        "import React from 'react';",
         "// import {open} render {close} from '@testing-library/react';",
         "// import {open} shallow as render {close} from 'enzyme';",
         "",
