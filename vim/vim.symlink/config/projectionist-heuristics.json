@@ -108,9 +108,9 @@
         "import {basename|camelcase|capitalize} from './{basename}';",
         "",
         "describe('{basename|camelcase|capitalize}', () => {",
-        "  function subject(overrideProps: Partial<Props>) {open}",
-        "    const defaultProps: Props = {open} /* provide defaults */ {close};",
-        "    const props = {open} ...defaultProps, ...overrideProps {close};",
+        "  function subject(overrides: Partial<Props>) {open}",
+        "    const defaults: Props = {open} /* provide defaults */ {close};",
+        "    const props = {open} ...defaults, ...overrides {close};",
         "    return render(<{basename|camelcase|capitalize} {open}...props{close} />);",
         "  {close}",
         "});"
