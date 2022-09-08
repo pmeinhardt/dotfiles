@@ -4,6 +4,8 @@
 
 if [ "$(uname -s)" = "Darwin" ]
 then
-  source=$(realpath "$(dirname "$0")/Rectangle.plist")
-  ln -sf "$source" ~/Library/Preferences/com.knollsoft.Rectangle.plist
+  src=$(realpath "$(dirname "$0")/RectangleConfig.json")
+  dst="${HOME}/Library/Application Support/Rectangle/RectangleConfig.json"
+  mkdir -p "$(dirname "$dst")"
+  ln -sf "$src" "$dst"
 fi
