@@ -1,2 +1,6 @@
 export GOPATH=$PROJECTS/go
-export PATH="$GOPATH/bin:$PATH"
+
+if test -d "$GOPATH/bin"
+then
+  export PATH="$PATH:$GOPATH/bin"
+fi
