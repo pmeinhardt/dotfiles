@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# Downloads the embedded video on any web page straight to downloads directory.
-#
-# https://github.com/ytdl-org/youtube-dl
-#
-
-cd ~/Downloads && youtube-dl "$@"
