@@ -1,0 +1,3 @@
+# https://man.openbsd.org/ssh_config
+Host *
+    AddKeysToAgent yes
