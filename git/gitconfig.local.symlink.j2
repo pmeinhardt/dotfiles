@@ -1,0 +1,5 @@
+[user]
+        name = {{ github.username | mandatory }}
+        email = {{ github.email | mandatory }}
+[credential]
+        helper = {{ (ansible_facts["os_family"] == "Darwin") | ternary("osxkeychain", "cache") }}

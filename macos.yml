@@ -1,0 +1,27 @@
+- name: Set up macOS machine
+  hosts: local
+  tasks:
+    - name: Check for existing Git configuration
+      ansible.builtin.stat:
+        path: "git/gitconfig.local.symlink"
+      register: gitconfig
+
+    - name: Set up Git configuration
+      ansible.builtin.template:
+        src: "git/gitconfig.local.symlink.j2"
+        dest: "git/gitconfig.local.symlink"
+      when: not gitconfig.stat.exists
+
+    - name: Find files to symlink
+      ansible.builtin.find:
+        paths: "."
+        patterns: "*.symlink"
+        recurse: yes
+      register: linkable
+
+    - name: Create symlinks
+      ansible.builtin.file:
+        src: "{{ item.path | realpath }}"
+        dest: "~/.{{ item.path | basename | splitext | first }}"
+        state: link
+      loop: "{{ linkable.files }}"

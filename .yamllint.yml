@@ -1,0 +1,12 @@
+extends: default
+
+rules:
+  document-start: disable
+  indentation:
+    indent-sequences: yes
+    spaces: 2
+  quoted-strings:
+    quote-type: double
+    required: no
+  truthy:
+    allowed-values: ["yes", "no"]
