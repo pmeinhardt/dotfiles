@@ -5,7 +5,7 @@
 # `dot` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
 
-set -e
+set -o errexit
 
 parentDirectory="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 dotfilesDirectory="$(cd "$(dirname "$parentDirectory" )" && pwd -P)"
@@ -13,20 +13,20 @@ dotfilesDirectory="$(cd "$(dirname "$parentDirectory" )" && pwd -P)"
 displayUsageAndExit() {
 	echo "dot -- dotfiles management"
 	echo ""
-	echo "Usage: dot [options]"
+	echo "Usage: dot [command]"
 	echo ""
-	echo "Options:"
-	echo "  -e, --edit    Open dotfiles directory for editing"
-	echo "  -h, --help    Show this help message and exit"
+	echo "Commands:"
+	echo "  e, edit    Open dotfiles directory for editing"
+	echo "  h, help    Show this help message and exit"
 	exit
 }
 
 while test $# -gt 0; do
 	case "$1" in
-		"-h"|"--help")
+		"h"|"help")
 			displayUsageAndExit
 			;;
-		"-e"|"--edit")
+		"e"|"edit")
 			exec "$EDITOR" "$dotfilesDirectory"
 			exit
 			;;
