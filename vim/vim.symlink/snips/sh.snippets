@@ -12,6 +12,10 @@ set -o pipefail
 # set -o xtrace
 endsnippet
 
+snippet cd "cd _" b
+cd ${1:"$(dirname "\$0")/.."}$0
+endsnippet
+
 snippet if "if _ then _" b
 if $1; then
 	$0
