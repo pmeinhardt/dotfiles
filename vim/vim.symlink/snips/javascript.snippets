@@ -28,6 +28,24 @@ snippet if "if (_) _" b
 if (${1:true}) $0
 endsnippet
 
+snippet for "for (_; _; _) { _ }" b
+for (${1}; ${2}; ${3}) {
+	$0
+}
+endsnippet
+
+snippet for-of "for (const _ of _) { _ }" b
+for (const ${1:element} of ${2:collection}) {
+	$0
+}
+endsnippet
+
+snippet while "while (_) { _ }" b
+while (${1:condition}) {
+	$0
+}
+endsnippet
+
 # Classes
 
 snippet class "class _ { _ }" b
