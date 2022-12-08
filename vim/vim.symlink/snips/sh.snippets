@@ -8,8 +8,10 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# To debug, uncomment:
-# set -o xtrace
+# To debug, set TRACE:
+if [ -n "${TRACE-}" ]; then
+	set -o xtrace
+fi
 endsnippet
 
 snippet cd "cd _" b
