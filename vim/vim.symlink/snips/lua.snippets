@@ -1,0 +1,61 @@
+snippet local "local _ = _" b
+local ${1:x} = ${0:nil}
+endsnippet
+
+snippet local-decl "local _" b
+local ${1:x}
+endsnippet
+
+snippet function "function _ (_) _ end" b
+function ${1:f} (${2:arg})
+	$0
+end
+endsnippet
+
+snippet if "if _ then _ end" b
+if ${1:true} then
+	$0
+end
+endsnippet
+
+snippet for "for _=_,_,_ do _ end" b
+for ${1:i}=${2:init},${3:limit}${4:,step} do
+	$0
+end
+endsnippet
+
+snippet for-in "for _ in _ do _ end" b
+for ${1:x} in ${2:iterable} do
+	$0
+end
+endsnippet
+
+snippet for-pairs "for _, _ in pairs(_) do _ end" b
+for ${1:k}, ${2:v} in pairs(${3:table}) do
+	$0
+end
+endsnippet
+
+snippet while "while _ do _ end" b
+while ${1:true} do
+	$0
+end
+endsnippet
+
+snippet repeat "repeat _ until _" b
+repeat
+	$0
+until ${1:true}
+endsnippet
+
+snippet print "print(_)" b
+print($0)
+endsnippet
+
+snippet stdin "io.stdin:lines()" w
+io.stdin${0:lines()}
+endsnippet
+
+snippet open "io.open(_, _)" w
+io.open(${1:"path"}, ${2:"r"})$0
+endsnippet

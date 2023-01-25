@@ -35,13 +35,13 @@ for (${1}; ${2}; ${3}) {
 endsnippet
 
 snippet for-of "for (const _ of _) { _ }" b
-for (const ${1:element} of ${2:collection}) {
+for (const ${1:element} of ${2:iterable}) {
 	$0
 }
 endsnippet
 
 snippet for-await "for await (const _ of _) { _ }" b
-for await (const ${1:element} of ${2:collection}) {
+for await (const ${1:element} of ${2:iterable}) {
 	$0
 }
 endsnippet
@@ -50,6 +50,10 @@ snippet while "while (_) { _ }" b
 while (${1:condition}) {
 	$0
 }
+endsnippet
+
+snippet console "console._(_)" b
+console.${1:log}($2);$0
 endsnippet
 
 # Classes
@@ -64,10 +68,6 @@ snippet constructor "constructor(_) { super(_) }" b
 constructor(${1:...args}) {
 	super(${2:$1});$0
 }
-endsnippet
-
-snippet console "console._(_)" b
-console.${1:log}($2);$0
 endsnippet
 
 # Node.js

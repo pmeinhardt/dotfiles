@@ -1,6 +1,5 @@
-snippet #! "#!/usr/bin/env python" b
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+snippet #! "#!/usr/bin/env python3" b
+#!/usr/bin/env python3
 $0
 endsnippet
 
@@ -18,4 +17,41 @@ endsnippet
 snippet def "def" b
 def ${1:f}(${2}):
 	${0:pass}
+endsnippet
+
+snippet if "if _: _" b
+if ${1:true}:
+	${0:pass}
+endsnippet
+
+snippet elif "elif _: _" b
+elif ${1:true}:
+	${0:pass}
+endsnippet
+
+snippet else "else _: _" b
+else:
+	${0:pass}
+endsnippet
+
+snippet for "for _ in _: _" b
+for ${1:x} in ${2:iterable}:
+	${0:pass}
+endsnippet
+
+snippet while "while _: _" b
+while ${1:true}:
+	${0:pass}
+endsnippet
+
+snippet import "import _" b
+import ${0:sys}
+endsnippet
+
+snippet from "from _ import _" b
+from ${1:sys} import $0
+endsnippet
+
+snippet sys-path "sys.path.append(_)" b
+sys.path.append(${1:os.path.dirname(__file__))$0
 endsnippet
