@@ -1,0 +1,93 @@
+" Configure IdeaVim (https://github.com/JetBrains/ideavim)
+
+" For an overview of settings supported by IdeaVim, please see:
+" https://github.com/JetBrains/ideavim/wiki/set-commands
+
+set ideajoin
+set idearefactormode=keep
+
+" Set leader to \.
+let mapleader='\'
+
+""" Navigation
+
+set scrolloff=3
+set sidescrolloff=3
+
+""" Searching and Replacing
+
+set incsearch
+set ignorecase
+
+""" Mappings
+
+" Quick tab switching
+nnoremap <tab> gt
+nnoremap <s-tab> gT
+
+" Yank from cursor to end of line with 'Y'
+map Y y$
+
+" Jump to the first non-blank character of the line when pressing '0' on the
+" first overall character of the line. Go back to the first one from any other
+" position (which matches the default behavior for '0').
+nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
+vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
+
+" Enter 'focus' mode
+nmap <leader><cr> <Action>(ToggleDistractionFreeMode)
+
+" Quick search
+nmap <leader>a <Action>(FindInPath)
+
+" Buffer search
+nmap <leader>b <Action>(GotoFile)
+
+" Dispatch (vim-projectionist)
+nmap <leader>d <Action>(ChooseRunConfiguration)
+
+" Fix auto-fixable code issues
+nmap <leader>f <Action>(ReformatCode)
+
+" Open fugitive status window
+nmap <leader>g <Action>(Vcs.QuickListPopupAction)
+
+" Quick help
+nmap <leader>h <Action>(HelpTopics)
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+xnoremap <leader>p "+p
+
+" Close window
+nnoremap <leader>q :q<cr>
+
+" Strip trailing whitespace
+nnoremap <leader>s :%s/\s\+$//gc<cr>
+
+" Sort lines
+xnoremap <leader>s :sort<cr>
+
+" Write the current file
+nnoremap <leader>w :w<cr>
+
+" Write the current file if it changed and quit
+nnoremap <leader>x :x<cr>
+
+" Copy to clipboard
+nnoremap <expr> <leader>y clipboard#yank('setup')
+nnoremap <leader>yy "+yy
+nnoremap <leader>Y "+y$
+xnoremap <leader>y "+y
+
+" Add vim-unimpaired mappings
+nmap [e <Action>(MoveLineUp)
+nmap ]e <Action>(MoveLineDown)
+nmap [n <Action>(GotoPreviousError)
+nmap ]n <Action>(GotoNextError)
+
+""" Plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
