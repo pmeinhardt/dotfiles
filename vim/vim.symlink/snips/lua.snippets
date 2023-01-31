@@ -1,3 +1,5 @@
+# Lua
+
 snippet local "local _ = _" b
 local ${1:x} = ${0:nil}
 endsnippet
@@ -58,4 +60,52 @@ endsnippet
 
 snippet open "io.open(_, _)" w
 io.open(${1:"path"}, ${2:"r"})$0
+endsnippet
+
+# Busted
+
+snippet context "context('_', function () _ end)" b
+context("$1", function ()
+	$0
+end)
+endsnippet
+
+snippet describe "describe('_', function () _ end)" b
+describe("$1", function ()
+	$0
+end)
+endsnippet
+
+snippet setup "setup(function () _ end)" b
+setup(function ()
+	$0
+end)
+endsnippet
+
+snippet teardown "teardown(function () _ end)" b
+teardown(function ()
+	$0
+end)
+endsnippet
+
+snippet before_each "before_each(function () _ end)" b
+before_each(function ()
+	$0
+end)
+endsnippet
+
+snippet after_each "after_each(function () _ end)" b
+after_each(function ()
+	$0
+end)
+endsnippet
+
+snippet it "it('_', function () _ end)" b
+it("$1", function ()
+	$0
+end)
+endsnippet
+
+snippet assert "assert._(_)" b
+assert.${1:are.equal}(${2:a, b})$0
 endsnippet
