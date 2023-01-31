@@ -1,7 +1,7 @@
 # JavaScript
 
 snippet import "import _ from '_'" b
-import $1 from '${2:$1}';
+import $1 from "${2:$1}";
 endsnippet
 
 snippet const "const _ = _" b
@@ -78,7 +78,7 @@ $0
 endsnippet
 
 snippet require "require(_)" w
-require('$1')$0
+require("$1")$0
 endsnippet
 
 snippet main "if (require.main === module)" b
@@ -88,13 +88,13 @@ endsnippet
 # Jest
 
 snippet describe "describe('_', () => { _ })" b
-describe('$1', () => {
+describe("$1", () => {
 	$0
 });
 endsnippet
 
 snippet it "it('_', () => { _ })" b
-it('$1', () => {
+it("$1", () => {
 	$0
 });
 endsnippet
