@@ -3,19 +3,19 @@
 set nocompatible
 
 
-""" Filetype Detection
+""" Filetype detection
 
 filetype on                         " enable filetype detection
 filetype indent on                  " enable filetype-specific indenting
 filetype plugin on                  " enable filetype-specific plugins
 
 
-""" Syntax Highlighting
+""" Syntax highlighting
 
 syntax enable
 
 
-""" General Configuration
+""" General configuration
 
 set encoding=utf-8                  " set utf-8 encoding
 set backspace=indent,eol,start      " allow backspacing over everything
@@ -40,7 +40,7 @@ set autoread
 " let mapleader = ','
 
 
-""" Configure Backup and Swap Files
+""" Configure backup and swap files
 
 set noswapfile                      " not using swap files
 set nobackup                        " no persistent backup
@@ -64,7 +64,7 @@ set formatoptions+=j                " remove comment chars when joining lines
 set nojoinspaces                    " only insert single space after '.', '?'
                                     " and '!' with join command
 
-""" Visual Cues
+""" Visual cues
 
 set showmatch                       " brackets/braces that is
 set matchtime=5                     " duration to show matching brace (1/10 sec)
@@ -73,7 +73,7 @@ set listchars+=precedes:<,extends:> " indicators for lines longer than window
 set nolist                          " print non-printable characters
 
 
-""" Searching and Replacing
+""" Searching and replacing
 
 set incsearch                       " perform incremental search
 set ignorecase                      " ignore case when searching
@@ -94,6 +94,13 @@ set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
 
 set splitbelow                      " put new window below the current one
 set splitright                      " put new window right of the current one
+
+
+""" Configure word files
+
+if filereadable('/usr/share/dict/words')
+  set dictionary+=/usr/share/dict/words
+endif
 
 
 """ Mappings
