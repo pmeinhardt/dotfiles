@@ -119,47 +119,47 @@ nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 " Mappings for code navigation and inspection
-nnoremap gd :ALEGoToDefinition<cr>
-nnoremap gr :ALEFindReferences -quickfix \| copen<cr>
-nnoremap [d :ALEPreviousWrap<cr>
-nnoremap ]d :ALENextWrap<cr>
-nnoremap [D :ALEFirst<cr>
-nnoremap ]D :ALELast<cr>
+nnoremap <silent> gd :ALEGoToDefinition<cr>
+nnoremap <silent> gr :ALEFindReferences -quickfix \| copen<cr>
+nnoremap <silent> [d :ALEPreviousWrap<cr>
+nnoremap <silent> ]d :ALENextWrap<cr>
+nnoremap <silent> [D :ALEFirst<cr>
+nnoremap <silent> ]D :ALELast<cr>
 
 " Enter 'focus' mode
-nnoremap <leader><cr> :Goyo<cr>
+nnoremap <silent> <leader><cr> :Goyo<cr>
 
 " Open scratch buffer
-nnoremap <leader><leader> :Scratch<cr>
+nnoremap <silent> <leader><leader> :Scratch<cr>
 
 " Clear search highlighting until next search
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <silent> <leader><space> :nohlsearch<cr>
 
 " Quick search
 nnoremap <leader>a :Ack!<space>
 xnoremap <leader>a ""y:Ack! <c-r>"
 
 " Buffer search
-nnoremap <leader>b :Buffers<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
 
 " Dispatch (vim-projectionist)
-nnoremap <leader>d :Dispatch<cr>
+nnoremap <silent> <leader>d :Dispatch<cr>
 
 " Re-edit the current file (in case it changed outside of vim)
-nnoremap <leader>e :edit<cr>
+nnoremap <silent> <leader>e :edit<cr>
 
 " Fix auto-fixable code issues
-nnoremap <leader>f :ALEFix<cr>
+nnoremap <silent> <leader>f :ALEFix<cr>
 
 " Open fugitive status window
-nnoremap <leader>g :Git<cr>
+nnoremap <silent> <leader>g :Git<cr>
 
 " Quick help
 nnoremap <leader>h :Helptags<cr>
 xnoremap <leader>h ""y:Helptags<cr><c-\><c-n>""pA
 
 " Toggle linting
-nnoremap <leader>l :ALEToggle<cr>
+nnoremap <silent> <leader>l :ALEToggle<cr>
 
 " Paste from clipboard
 nnoremap <leader>p "+p
@@ -167,19 +167,19 @@ nnoremap <leader>P "+P
 xnoremap <leader>p "+p
 
 " Close window
-nnoremap <leader>q :q<cr>
+nnoremap <silent> <leader>q :q<cr>
 
 " Strip trailing whitespace
-nnoremap <leader>s :%s/\s\+$//gc<cr>
+nnoremap <silent> <leader>s :%s/\s\+$//gc<cr>
 
 " Sort lines
-xnoremap <leader>s :sort<cr>
+xnoremap <silent> <leader>s :sort<cr>
 
 " Write the current file
-nnoremap <leader>w :w<cr>
+nnoremap <silent> <leader>w :w<cr>
 
 " Write the current file if it changed and quit
-nnoremap <leader>x :x<cr>
+nnoremap <silent> <leader>x :x<cr>
 
 " Copy to clipboard
 nnoremap <expr> <leader>y clipboard#yank('setup')
@@ -188,7 +188,7 @@ nnoremap <leader>Y "+y$
 xnoremap <leader>y "+y
 
 " Quick-jump to files
-nnoremap <c-p> :GFiles --cached --exclude-standard --others<cr>
+nnoremap <silent> <c-p> :GFiles --cached --exclude-standard --others<cr>
 
 
 """ Colors
