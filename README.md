@@ -4,7 +4,7 @@ Your [dotfiles](https://dotfiles.github.io/) are how you personalize your system
 
 ![screenshot](./screenshot.png)
 
-## About
+## About 🔭
 
 Everything’s built around topic areas. Each topic has its own directory.
 
@@ -18,7 +18,7 @@ There’s a few special files in the hierarchy.
 - **topic/install.sh**: Files named `install.sh` are executed when you run `script/install`. To avoid being loaded automatically, their extension is `.sh`, not `.zsh`.
 - **topic/\*.symlink**: Files named `*.symlink` get symlinked into your `$HOME`. This is so you can keep them versioned in your dotfiles repo while also making them available in your home directory.
 
-## Installation
+## Installation 🪛
 
 To get started, run:
 
@@ -40,11 +40,9 @@ Tweak and occasionally run `dot` to keep your environment fresh and up-to-date.
 
 If you would like to install [Homebrew](https://github.com/Homebrew/brew) to an alternative location, e.g. `~/Developer/Homebrew`, do so before running the bootstrap script.
 
-## Thanks
+## Thanks 🙇
 
-This project is adapted from [Zach Holman](https://github.com/holman)’s neat [dotfiles](https://github.com/holman/dotfiles).
-
-Trimming down on parts and pulling in pieces from:
+This project is adapted from [Zach Holman](https://github.com/holman)’s neat [dotfiles](https://github.com/holman/dotfiles), trimming down on parts and pulling in pieces from:
 
 - [Carlos Alexandro Becker](https://github.com/caarlos0/dotfiles)
 - [Gary Bernhardt](https://github.com/garybernhardt/dotfiles)
@@ -56,4 +54,5 @@ Trimming down on parts and pulling in pieces from:
 - and many more.
 
 Special thanks to [Tim Pope](https://github.com/tpope/) for his excellent Vim plugins.
+
 Thanks to [Chris Kempson](https://github.com/chriskempson) for his [base16 color scheme concept](https://github.com/chriskempson/base16).
