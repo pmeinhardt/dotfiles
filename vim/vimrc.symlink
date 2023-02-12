@@ -120,7 +120,7 @@ vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 " Mappings for code navigation and inspection
 nnoremap <silent> gd :ALEGoToDefinition<cr>
-nnoremap <silent> gr :ALEFindReferences -quickfix \| copen<cr>
+nnoremap <silent> gr :ALEFindReferences -relative<cr>
 nnoremap <silent> [d :ALEPreviousWrap<cr>
 nnoremap <silent> ]d :ALENextWrap<cr>
 nnoremap <silent> [D :ALEFirst<cr>
