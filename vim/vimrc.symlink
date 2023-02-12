@@ -118,6 +118,14 @@ map Y y$
 nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
+" Mappings for code navigation and inspection
+nnoremap gd :ALEGoToDefinition<cr>
+nnoremap gr :ALEFindReferences -quickfix \| copen<cr>
+nnoremap [d :ALEPreviousWrap<cr>
+nnoremap ]d :ALENextWrap<cr>
+nnoremap [D :ALEFirst<cr>
+nnoremap ]D :ALELast<cr>
+
 " Enter 'focus' mode
 nnoremap <leader><cr> :Goyo<cr>
 
