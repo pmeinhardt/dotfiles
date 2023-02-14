@@ -16,6 +16,9 @@
     "altThirdCycle" : {
       "int" : 0
     },
+    "alwaysAccountForStage" : {
+      "int" : 0
+    },
     "applyGapsToMaximize" : {
       "int" : 0
     },
@@ -46,8 +49,17 @@
     "disabledApps" : {
 
     },
+    "dragFromStage" : {
+      "int" : 0
+    },
+    "enhancedUI" : {
+      "int" : 1
+    },
     "footprintAlpha" : {
       "float" : 0.30000001192092896
+    },
+    "footprintAnimationDurationMultiplier" : {
+      "float" : 0
     },
     "footprintBorderWidth" : {
       "float" : 2
@@ -70,6 +82,9 @@
     "ignoredSnapAreas" : {
       "int" : 0
     },
+    "landscapeSnapAreas" : {
+
+    },
     "launchOnLogin" : {
       "bool" : true
     },
@@ -78,6 +93,15 @@
     },
     "minimumWindowWidth" : {
       "float" : 0
+    },
+    "missionControlDragging" : {
+      "int" : 0
+    },
+    "missionControlDraggingAllowedOffscreenDistance" : {
+      "float" : 25
+    },
+    "missionControlDraggingDisallowedDuration" : {
+      "int" : 250
     },
     "moveCursor" : {
       "int" : 0
@@ -90,6 +114,9 @@
     },
     "obtainWindowOnClick" : {
       "int" : 0
+    },
+    "portraitSnapAreas" : {
+
     },
     "relaunchOpensMenu" : {
       "bool" : false
@@ -181,6 +208,14 @@
       "keyCode" : 125,
       "modifierFlags" : 1835008
     },
+    "bottomLeft" : {
+      "keyCode" : 123,
+      "modifierFlags" : 1441792
+    },
+    "bottomRight" : {
+      "keyCode" : 124,
+      "modifierFlags" : 1441792
+    },
     "center" : {
       "keyCode" : 8,
       "modifierFlags" : 1572864
@@ -224,7 +259,15 @@
     "topHalf" : {
       "keyCode" : 126,
       "modifierFlags" : 1835008
+    },
+    "topLeft" : {
+      "keyCode" : 123,
+      "modifierFlags" : 1310720
+    },
+    "topRight" : {
+      "keyCode" : 124,
+      "modifierFlags" : 1310720
     }
   },
-  "version" : "63"
+  "version" : "71"
 }
