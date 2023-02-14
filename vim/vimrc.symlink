@@ -241,7 +241,6 @@ else
 endif
 
 Plug 'junegunn/goyo.vim'            " distraction-free writing
-Plug 'mattn/vim-woke'               " detect non-inclusive language
 Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
 
 call plug#end()
