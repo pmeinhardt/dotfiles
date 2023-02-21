@@ -81,11 +81,13 @@ nnoremap <leader>yy "+yy
 nnoremap <leader>Y "+y$
 xnoremap <leader>y "+y
 
+" Add diagnostics mappings
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+
 " Add vim-unimpaired mappings
 nmap [e <Action>(MoveLineUp)
 nmap ]e <Action>(MoveLineDown)
-nmap [n <Action>(GotoPreviousError)
-nmap ]n <Action>(GotoNextError)
 
 """ Plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 
