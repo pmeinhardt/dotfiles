@@ -243,4 +243,7 @@ endif
 Plug 'junegunn/goyo.vim'            " distraction-free writing
 Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
 
+Plug 'pmeinhardt/ql', {'do': ':QuickLookCompile'}
+Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
+
 call plug#end()
