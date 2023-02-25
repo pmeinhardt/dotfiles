@@ -118,13 +118,20 @@ map Y y$
 nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
-" Mappings for code navigation and inspection
-nnoremap <silent> gd :ALEGoToDefinition<cr>
-nnoremap <silent> gr :ALEFindReferences -relative<cr>
-nnoremap <silent> [d :ALEPreviousWrap<cr>
-nnoremap <silent> ]d :ALENextWrap<cr>
-nnoremap <silent> [D :ALEFirst<cr>
-nnoremap <silent> ]D :ALELast<cr>
+" Conditional mappings for LSP code navigation and inspection
+function ALELSPMappings()
+  nnoremap <buffer> <silent> gd :ALEGoToDefinition<cr>
+  nnoremap <buffer> <silent> gr :ALEFindReferences -relative<cr>
+  nnoremap <buffer> <silent> [d :ALEPreviousWrap<cr>
+  nnoremap <buffer> <silent> ]d :ALENextWrap<cr>
+  nnoremap <buffer> <silent> [D :ALEFirst<cr>
+  nnoremap <buffer> <silent> ]D :ALELast<cr>
+endfunction
+
+augroup ALEMappings
+  autocmd!
+  autocmd User ALELSPStarted call ALELSPMappings()
+augroup END
 
 " Enter 'focus' mode
 nnoremap <silent> <leader><cr> :Goyo<cr>
