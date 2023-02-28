@@ -1,13 +1,13 @@
 # live_config_reload: false
 
 window:
+  decorations: full
+
+  opacity: 1.0
+
   padding:
     x: 2
     y: 2
-
-  dynamic_padding: false
-
-  opacity: 1.0
 
 font:
   normal:
