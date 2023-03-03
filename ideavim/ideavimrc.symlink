@@ -81,6 +81,16 @@ nnoremap <leader>yy "+yy
 nnoremap <leader>Y "+y$
 xnoremap <leader>y "+y
 
+" Go to...
+nmap gd <Action>(GotoDeclaration)
+nmap gr <Action>(FindUsages)
+
+" Make gx behave like netrw-gx for URLs in IdeaVim
+nmap gx <Action>(GotoDeclaration)
+
+" Select current file in project view (somewhat mimicking vim-vinegar)
+nmap - <Action>(SelectInProjectView)
+
 " Add diagnostics mappings
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
