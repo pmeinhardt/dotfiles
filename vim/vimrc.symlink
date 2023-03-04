@@ -236,6 +236,13 @@ Plug 'sheerun/vim-polyglot'         " language pack
 Plug 'sirver/ultisnips'             " expand snippets
 Plug 'dense-analysis/ale'           " linting, completion, LSP support
 
+Plug 'junegunn/goyo.vim'            " distraction-free writing
+Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
+
+" Quick Look and Markdown preview
+Plug 'pmeinhardt/ql', {'do': ':QuickLookCompile'}
+Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
+
 " Use tree-sitter for parsing supported languages, enabling improved syntax
 " highlighting and other features (see after/plugin/treesitter.vim).
 " To install language parsers, use `:TSInstall {language} ...`.
@@ -243,6 +250,7 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
+" Completion
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 else
@@ -250,11 +258,5 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-
-Plug 'junegunn/goyo.vim'            " distraction-free writing
-Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
-
-Plug 'pmeinhardt/ql', {'do': ':QuickLookCompile'}
-Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
 
 call plug#end()
