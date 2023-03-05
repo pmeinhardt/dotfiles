@@ -122,16 +122,17 @@ vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 function ALELSPMappings()
   nnoremap <buffer> <silent> gd :ALEGoToDefinition<cr>
   nnoremap <buffer> <silent> gr :ALEFindReferences -relative<cr>
-  nnoremap <buffer> <silent> [d :ALEPreviousWrap<cr>
-  nnoremap <buffer> <silent> ]d :ALENextWrap<cr>
-  nnoremap <buffer> <silent> [D :ALEFirst<cr>
-  nnoremap <buffer> <silent> ]D :ALELast<cr>
 endfunction
 
 augroup ALEMappings
   autocmd!
   autocmd User ALELSPStarted call ALELSPMappings()
 augroup END
+
+nnoremap <silent> [d :ALEPreviousWrap<cr>
+nnoremap <silent> ]d :ALENextWrap<cr>
+nnoremap <silent> [D :ALEFirst<cr>
+nnoremap <silent> ]D :ALELast<cr>
 
 " Enter 'focus' mode
 nnoremap <silent> <leader><cr> :Goyo<cr>
