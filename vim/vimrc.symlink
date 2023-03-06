@@ -238,6 +238,7 @@ Plug 'sirver/ultisnips'             " expand snippets
 Plug 'dense-analysis/ale'           " linting, completion, LSP support
 
 Plug 'junegunn/goyo.vim'            " distraction-free writing
+Plug 'junegunn/limelight.vim'       " dim all but the current paragraph
 Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
 
 " Quick Look and Markdown preview
