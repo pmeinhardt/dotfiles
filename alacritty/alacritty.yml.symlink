@@ -73,6 +73,8 @@ bell:
   duration: 0
 
 key_bindings:
-  - key: N
-    mods: Command
-    action: CreateNewWindow
+  - {key: N,     mods: Command, action: CreateNewWindow}
+  - {key: Left,  mods: Alt,     chars: "\x1bb"}
+  - {key: Right, mods: Alt,     chars: "\x1bf"}
+  - {key: Left,  mods: Command, chars: "\x1bOH"}
+  - {key: Right, mods: Command, chars: "\x1bOF"}
