@@ -83,6 +83,7 @@ xnoremap <leader>y "+y
 
 " Go to...
 nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
 nmap gr <Action>(FindUsages)
 
 " Make gx behave like netrw-gx for URLs in IdeaVim
