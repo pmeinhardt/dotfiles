@@ -239,6 +239,8 @@ Plug 'dense-analysis/ale'           " linting, completion, LSP support
 
 Plug 'junegunn/goyo.vim'            " distraction-free writing
 Plug 'junegunn/limelight.vim'       " dim all but the current paragraph
+
+Plug 'pmeinhardt/vim-spellsync'     " rebuild spell files
 Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
 
 " Quick Look and Markdown preview
