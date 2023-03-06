@@ -102,6 +102,11 @@ if filereadable('/usr/share/dict/words')
   set dictionary+=/usr/share/dict/words
 endif
 
+for name in ['en', 'acronyms', 'algorithms', 'brands']
+  let path = '~/.vim/spell/' . name . '.utf-8.add'
+  execute 'set spellfile+=' . fnameescape(path)
+endfor
+
 
 """ Mappings
 
