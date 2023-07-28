@@ -152,5 +152,25 @@
         "end"
       ]
     }
+  },
+
+  "build.gradle.kts": {
+    "*": {
+      "make": "./gradlew"
+    },
+    "src/main/kotlin/*.kt": {
+      "alternate": "src/test/kotlin/{}Test.kt",
+      "type": "source",
+      "template": [
+        "package {dirname|snakecase|dot}"
+      ]
+    },
+    "src/test/kotlin/*Test.kt": {
+      "alternate": "src/main/kotlin/{}.kt",
+      "type": "test",
+      "template": [
+        "package {dirname|snakecase|dot}"
+      ]
+    }
   }
 }
