@@ -186,6 +186,9 @@ xnoremap <leader>p "+p
 " Close window
 nnoremap <silent> <leader>q :q<cr>
 
+" Rename symbol
+nnoremap <silent> <leader>r :ALERename<cr>
+
 " Strip trailing whitespace
 nnoremap <silent> <leader>s :%s/\s\+$//gc<cr>
 
