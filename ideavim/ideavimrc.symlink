@@ -63,6 +63,10 @@ xnoremap <leader>p "+p
 " Close window
 nnoremap <leader>q :q<cr>
 
+" Refactor
+nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+xmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+
 " Strip trailing whitespace
 nnoremap <leader>s :%s/\s\+$//gc<cr>
 
