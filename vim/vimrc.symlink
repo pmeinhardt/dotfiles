@@ -171,6 +171,9 @@ nnoremap <silent> <leader>g :Git<cr>
 nnoremap <leader>h :Helptags<cr>
 xnoremap <leader>h ""y:Helptags<cr><c-\><c-n>""pA
 
+" Show code info
+nnoremap <leader>i :ALEDetail<cr>
+
 " Toggle linting
 nnoremap <silent> <leader>l :ALEToggle<cr>
 
