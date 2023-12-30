@@ -1,0 +1,93 @@
+[bell]
+duration = 0
+
+[colors.bright]
+black = "#505050"
+blue = "#678c96"
+cyan = "#4c6f79"
+green = "#c1db82"
+magenta = "#cf6f95"
+red = "#df645c"
+white = "#c8c9ca"
+yellow = "#f7e577"
+
+[colors.cursor]
+cursor = "#ac4142"
+
+[colors.normal]
+black = "#000000"
+blue = "#6babca"
+cyan = "#6e848c"
+green = "#b7bc54"
+magenta = "#b85776"
+red = "#bf5345"
+white = "#dddddd"
+yellow = "#febc58"
+
+[colors.primary]
+background = "#000000"
+foreground = "#f2f2f2"
+
+[colors.selection]
+background = "#404040"
+text = "CellForeground"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 1
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "Right"
+mods = "Command"
+
+[window]
+decorations = "full"
+opacity = 1.0
+
+[window.padding]
+x = 2
+y = 2
