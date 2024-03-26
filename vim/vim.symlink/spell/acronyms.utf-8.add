@@ -1,4 +1,4 @@
-# https://github.com/psliwka/vim-dirtytalk/blob/4046f35cb9/scripts/update-acronyms
+# https://github.com/psliwka/vim-dirtytalk/blob/5cfc62c/scripts/update-acronyms
 
 100BVG
 10B2
@@ -24,6 +24,7 @@
 6NF
 802.11
 8B10BLF
+A11Y
 AAA
 AABB
 AAC
@@ -312,6 +313,7 @@ DNS
 DOA
 DOCSIS
 DOM
+DORA
 DOS
 DP
 DPC
@@ -474,6 +476,7 @@ GPT
 GPU
 GRUB
 GSM
+GTK
 GUI
 GUID
 GWT
@@ -581,9 +584,9 @@ IT
 ITIL
 ITL
 ITU
-IVRS
 IaC
 IaaS
+IdP
 IoT
 IrDA
 J2EE
@@ -619,6 +622,7 @@ JSON
 JSP
 JTAG
 JVM
+K8s
 KB
 KDE
 KRL
@@ -811,6 +815,7 @@ O
 OASIS
 OAT
 OBSAI
+OCR
 ODBC
 OEM
 OES
@@ -895,6 +900,7 @@ PPPoA
 PPPoE
 PPTP
 PR
+PROM
 PS
 PSA
 PSM
@@ -978,6 +984,7 @@ RTP
 RTS
 RTSP
 RTTI
+RTU
 RWD
 S
 SAM
@@ -1079,7 +1086,6 @@ SSSP
 SSTP
 SUS
 SUSE
-SVC
 SVD
 SVG
 SVGA
@@ -1095,6 +1101,7 @@ TB
 TCP
 TCU
 TDMA
+TDP
 TFT
 TFTP
 TI
@@ -1112,7 +1119,6 @@ TRSDOS
 TSO
 TSP
 TSR
-TTA
 TTF
 TTL
 TTS
@@ -1190,7 +1196,6 @@ VPU
 VR
 VRAM
 VRML
-VSAM
 VSAT
 VT
 VTAM
@@ -1263,6 +1268,7 @@ XTF
 XUL
 XVGA
 Y2K
+Y2K38
 YACC
 YAGNI
 YAML
