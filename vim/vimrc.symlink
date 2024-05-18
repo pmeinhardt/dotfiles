@@ -136,6 +136,7 @@ function ALELSPMappings()
   nnoremap <buffer> <silent> gd :ALEGoToDefinition<cr>
   nnoremap <buffer> <silent> gD :ALEGoToTypeDefinition<cr>
   nnoremap <buffer> <silent> gI :ALEGoToImplementation<cr>
+  nnoremap <buffer> <silent> gK :ALEDetail<cr>
   nnoremap <buffer> <silent> gr :ALEFindReferences -relative<cr>
   nnoremap <buffer> <silent> K :ALEHover<cr>
 endfunction
