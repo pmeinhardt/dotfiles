@@ -114,6 +114,12 @@ endfor
 nnoremap <tab> gt
 nnoremap <s-tab> gT
 
+" Move between windows
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
 " Yank from cursor to end of line with 'Y'
 map Y y$
 
