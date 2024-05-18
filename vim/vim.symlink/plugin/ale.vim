@@ -5,6 +5,11 @@
 let g:ale_sign_error = '┃'
 let g:ale_sign_warning = '┃'
 
+" Workaround for signs not being set up properly. Possibly related:
+" https://github.com/dense-analysis/ale/issues/4777
+sign define DiagnosticSignError text=┃ texthl=DiagnosticSignError
+sign define DiagnosticSignWarn text=┃ texthl=DiagnosticSignWarn
+
 " Configure highlighting for code issue signs.
 if has('nvim')
   highlight! link ALEError DiagnosticUnderlineError
