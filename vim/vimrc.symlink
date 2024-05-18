@@ -125,8 +125,13 @@ vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 " Conditional mappings for LSP code navigation and inspection
 function ALELSPMappings()
+  nnoremap <buffer> <silent> gA :ALECodeAction<cr>
+  vnoremap <buffer> <silent> gA :ALECodeAction<cr>
   nnoremap <buffer> <silent> gd :ALEGoToDefinition<cr>
+  nnoremap <buffer> <silent> gD :ALEGoToTypeDefinition<cr>
+  nnoremap <buffer> <silent> gI :ALEGoToImplementation<cr>
   nnoremap <buffer> <silent> gr :ALEFindReferences -relative<cr>
+  nnoremap <buffer> <silent> K :ALEHover<cr>
 endfunction
 
 augroup ALEMappings
