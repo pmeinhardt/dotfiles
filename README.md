@@ -54,5 +54,3 @@ This project is adapted from [Zach Holman](https://github.com/holman)’s neat [
 - and many more.
 
 Special thanks to [Tim Pope](https://github.com/tpope/) for his excellent Vim plugins.
-
-Thanks to [Chris Kempson](https://github.com/chriskempson) for his [base16 color scheme concept](https://github.com/chriskempson/base16).

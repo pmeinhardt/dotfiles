@@ -228,7 +228,11 @@ nnoremap <silent> <c-p> :GFiles --cached --exclude-standard --others<cr>
 
 """ Colors
 
-colorscheme base
+colorscheme base2
+
+if !has('nvim')
+  " set notermguicolors
+endif
 
 
 """ Use vim-plug to manage vim bundles:

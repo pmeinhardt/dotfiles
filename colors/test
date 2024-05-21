@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+pastel color \
+  c8c9ca \
+  000000 \
+  4b627c \
+  61909d \
+  b7bc54 \
+  f2b963 \
+  bf5345 \
+  bc637f \
+  dcddde \
+  292929 \
+  5d7a9b \
+  7aa2ae \
+  c2c76e \
+  f4c47c \
+  c96f63 \
+  c67b93
