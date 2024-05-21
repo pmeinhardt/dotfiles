@@ -1,16 +1,54 @@
 # Font settings
+
 font-family = "Source Code Pro"
 font-feature = -calt
 
-# Window settings
-window-padding-balance = true
 
-# Theming
-theme = UltraDark
-cursor-color = f07178
+# Colors
+#
+# 00 = black    08 = bright black
+# 01 = red      09 = bright red
+# 02 = green    10 = bright green
+# 03 = yellow   11 = bright yellow
+# 04 = blue     12 = bright blue
+# 05 = purple   13 = bright purple
+# 06 = cyan     14 = bright cyan
+# 07 = white    15 = bright white
+
+palette = 0=#2e2929
+palette = 1=#e87060
+palette = 2=#d5db69
+palette = 3=#fdc673
+palette = 4=#5083be
+palette = 5=#e383b5
+palette = 6=#71b5c9
+palette = 7=#dbd9d9
+
+palette = 8=#7e7272
+palette = 9=#f1a89f
+palette = 10=#e6eaa6
+palette = 11=#fedcab
+palette = 12=#96b5d8
+palette = 13=#eeb4d2
+palette = 14=#abd3df
+palette = 15=#e9e7e7
+
+background = 000000
+foreground = ffffff
+
+selection-background = 424242
+selection-foreground = fdfdfd
+
+cursor-color = e86554
+
 
 # Icon settings
 
 macos-icon = custom-style
 macos-icon-ghost-color = cac9c8
 macos-icon-screen-color = 101010
+
+
+# Window settings
+
+window-padding-balance = true

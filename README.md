@@ -8,7 +8,7 @@ Your [dotfiles](https://dotfiles.github.io/) are how you personalize your system
 
 Everything’s built around topic areas. Each topic has its own directory.
 
-There’s a few special files in the hierarchy.
+There are a few special files in the hierarchy.
 
 - **Brewfile**: Contains a list of tools for [Homebrew](https://github.com/Homebrew/brew) to install. You might want to edit this file before running any initial setup.
 - **bin/**: Anything in here will get added to your `$PATH`.
@@ -54,5 +54,3 @@ This project is adapted from [Zach Holman](https://github.com/holman)’s neat [
 - and many more.
 
 Special thanks to [Tim Pope](https://github.com/tpope/) for his excellent Vim plugins.
-
-Thanks to [Chris Kempson](https://github.com/chriskempson) for his [base16 color scheme concept](https://github.com/chriskempson/base16).
