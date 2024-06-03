@@ -108,6 +108,12 @@ for name in ['en', 'acronyms', 'algorithms', 'brands']
 endfor
 
 
+""" Commands
+
+" Reverse selected lines
+command! -bar -range=% Reverse <line1>,<line2>g/^/m<line1>-1|nohl
+
+
 """ Mappings
 
 " Quick tab switching
