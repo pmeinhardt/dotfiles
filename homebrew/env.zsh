@@ -1,8 +1,5 @@
 # https://docs.brew.sh/Manpage#environment
 
-# Automatically remove unused formula dependencies.
-export HOMEBREW_AUTOREMOVE=1
-
 # Disable sending of analytics data.
 export HOMEBREW_NO_ANALYTICS=1
 
