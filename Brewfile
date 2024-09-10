@@ -45,7 +45,6 @@ brew 'tig'
 brew 'tmux'
 brew 'watchexec'
 brew 'wget'
-brew 'yamllint'
 
 cask 'deckset'
 cask 'firefox'
