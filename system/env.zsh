@@ -1,6 +1,7 @@
 if (( $+commands[nvim] ))
 then
   export EDITOR='nvim'
-else
+elif (( $+commands[vim] ))
+then
   export EDITOR='vim'
 fi
