@@ -1,0 +1,10 @@
+# Font settings
+font-family = "Source Code Pro"
+font-feature = -calt
+
+# Window settings
+window-padding-balance = true
+
+# Theming
+theme = UltraDark
+cursor-color = f07178
