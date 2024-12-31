@@ -8,3 +8,9 @@ window-padding-balance = true
 # Theming
 theme = UltraDark
 cursor-color = f07178
+
+# Icon settings
+
+macos-icon = custom-style
+macos-icon-ghost-color = cac9c8
+macos-icon-screen-color = 101010
