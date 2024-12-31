@@ -1,33 +1,80 @@
+# Enable colors, see `man ls`.
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+
+# Add `functions` directory to shell search path.
 fpath=($ZSH/functions $fpath)
 
+# Autoload functions.
 autoload -U $ZSH/functions/*(:t)
 
+
+# Configure shell history (more options are set below).
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt NO_BG_NICE # don't nice background tasks
-setopt NO_HUP
-setopt NO_LIST_BEEP
-setopt LOCAL_OPTIONS # allow functions to have local options
-setopt LOCAL_TRAPS # allow functions to have local traps
-setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
-setopt EXTENDED_HISTORY # add timestamps to history
-setopt PROMPT_SUBST
-setopt CORRECT
-setopt COMPLETE_IN_WORD
-setopt IGNORE_EOF
 
-setopt APPEND_HISTORY # adds history
-setopt INC_APPEND_HISTORY # adds history incrementally
-setopt HIST_IGNORE_ALL_DUPS # don't record dupes in history
+# Specify zsh options: https://zsh.sourceforge.io/Doc/Release/Options.html
+
+# If this is set, zsh sessions will append their history list to the history
+# file, rather than replace it.
+setopt APPEND_HISTORY
+
+# Do not run background jobs at a lower priority.
+setopt NO_BG_NICE
+
+# Prevent aliases on the command line from being internally substituted before
+# completion is attempted.
+setopt COMPLETE_ALIASES
+
+# Allow completions in the middle of a word.
+setopt COMPLETE_IN_WORD
+
+# Try to correct the spelling of commands.
+setopt CORRECT
+
+# Save each command’s beginning timestamp and duration to the history file.
+setopt EXTENDED_HISTORY
+
+# If a new command line being added to the history list duplicates an older
+# one, the older command is removed from the list.
+setopt HIST_IGNORE_ALL_DUPS
+
+# Remove superfluous blanks from each command being added to the history list.
 setopt HIST_REDUCE_BLANKS
 
-setopt complete_aliases # don't expand aliases _before_ completion has finished, like: git comm-[tab]
+# Whenever the user enters a line with history expansion, do not execute the
+# line directly. Instead, perform history expansion and reload the line into
+# the editing buffer.
+setopt HIST_VERIFY
+
+# Do not send the HUP signal to running jobs when the shell exits.
+setopt NO_HUP
+
+# Do not exit on end-of-file.
+setopt IGNORE_EOF
+
+# Allow functions to have local options.
+setopt LOCAL_OPTIONS
+
+# Allow functions to have local traps
+setopt LOCAL_TRAPS
+
+# Do not beep on an ambiguous completion.
+setopt NO_LIST_BEEP
+
+# If set, parameter expansion, command substitution and arithmetic expansion
+# are performed in prompts.
+setopt PROMPT_SUBST
+
+# Import new commands from the history file, and append typed commands to it.
+setopt SHARE_HISTORY
+
+
+# Define key bindings for cursor movement.
+# See `man zshzle`.
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
@@ -36,11 +83,14 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 
-# Better history
-# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+
+# Better history: Start typing + arrow up/down key to find in history.
+# See `man zshzle` and `man zshcontrib`.
+
 autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+
+autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^[[B" down-line-or-beginning-search
