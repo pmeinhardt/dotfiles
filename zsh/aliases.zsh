@@ -1,1 +1,1 @@
-alias reload!='. ~/.zshrc'
+alias reload!='exec zsh'
