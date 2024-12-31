@@ -1,4 +1,4 @@
-# Enable colors, see `man ls`.
+# Enable colors. See `man ls`.
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
@@ -16,7 +16,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 
-# Specify zsh options: https://zsh.sourceforge.io/Doc/Release/Options.html
+# Specify zsh options. See `man zshoptions`.
 
 # If this is set, zsh sessions will append their history list to the history
 # file, rather than replace it.
@@ -73,8 +73,7 @@ setopt PROMPT_SUBST
 setopt SHARE_HISTORY
 
 
-# Define key bindings for cursor movement.
-# See `man zshzle`.
+# Define key bindings for cursor movement. See `man zshzle`.
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
