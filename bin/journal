@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Use this to keep a simple journal, e.g., to jot down ideas and thoughts or
+# to keep notes about your ongoing work for tomorrow’s standup etc.
+#
+# Set the `JOURNAL` environment variable to specify where you want your journal
+# to be kept. By default, it will be stored in `$HOME/Desktop/journal.md`.
+#
+# Expects `EDITOR` to be set.
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+"$EDITOR" "${JOURNAL:-$HOME/Desktop/journal.md}"
