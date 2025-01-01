@@ -204,14 +204,15 @@ call s:gui('DiffAdd', s:darkgreen, 'none', 'none')
 call s:gui('DiffChange', s:darkyellow, 'none', 'none')
 call s:gui('DiffDelete', s:darkred, 'none', 'none')
 call s:gui('DiffText', s:darkyellow, s:darkgray, 'none')
-call s:link('DiffLine', 'PreProc')
+call s:gui('DiffLine', s:darkcyan, 'none', 'none')
+call s:gui('diffSubname', s:gray, 'none', 'none')
 
 call s:link('DiffAdded', 'DiffAdd')
 call s:link('DiffRemoved', 'DiffDelete')
 
-call s:gui('Added', s:darkgreen, 'none', 'none')
-call s:gui('Changed', s:darkyellow, 'none', 'none')
-call s:gui('Removed', s:darkred, 'none', 'none')
+call s:link('Added', 'DiffAdd')
+call s:link('Changed', 'DiffChange')
+call s:link('Removed', 'DiffDelete')
 
 " HTML
 call s:link('htmlBold', 'Bold')
@@ -224,14 +225,18 @@ call s:link('cssProp', 'Type')
 
 " Fugitive
 call s:gui('fugitiveHeader', s:darkblue, 'none', 'none')
+call s:gui('fugitiveHunk', s:darkgray, 'none', 'none')
 call s:gui('fugitiveSymbolicRef', s:darkyellow, 'none', 'none')
 call s:gui('fugitiveHelpTag', s:darkcyan, 'none', 'none')
+call s:gui('fugitiveUntrackedSection', s:white, 'none', 'none')
+call s:gui('fugitiveUntrackedHeading', s:darkmagenta, 'none', 'none')
+call s:gui('fugitiveUntrackedModifier', s:magenta, 'none', 'none')
 call s:gui('fugitiveUnstagedSection', s:white, 'none', 'none')
 call s:gui('fugitiveUnstagedHeading', s:darkred, 'none', 'none')
 call s:gui('fugitiveUnstagedModifier', s:red, 'none', 'none')
 call s:gui('fugitiveStagedSection', s:white, 'none', 'none')
-call s:gui('fugitiveStagedHeading', s:blue, 'none', 'none')
-call s:gui('fugitiveStagedModifier', s:darkyellow, 'none', 'none')
+call s:gui('fugitiveStagedHeading', s:darkyellow, 'none', 'none')
+call s:gui('fugitiveStagedModifier', s:yellow, 'none', 'none')
 call s:gui('fugitiveCount', s:red, 'none', 'none')
 
 
