@@ -1,4 +1,3 @@
-if (( $+commands[gh] ))
-then
+if (( $+commands[gh] )); then
   eval "$(gh completion --shell zsh)"
 fi

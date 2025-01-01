@@ -1,5 +1,4 @@
-if (( $+commands[kubectl] ))
-then
+if (( $+commands[kubectl] )); then
   eval "$(kubectl completion zsh)"
   compdef k='kubectl'
 fi

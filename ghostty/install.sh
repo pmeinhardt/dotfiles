@@ -2,10 +2,7 @@
 
 config=~/.config/ghostty/config
 
-if ! test -f "$config"
-then
+if [ ! -f "$config" ]; then
   mkdir -p "$(dirname "$config")"
-  cat > "$config" <<-EOF
-config-file = $(realpath $(dirname "$0"))/config
-EOF
+  echo "config-file = $(realpath "$(dirname "$0")")/config" > "$config"
 fi
