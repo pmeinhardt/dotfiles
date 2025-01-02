@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
-#
+
 # Run all dotfiles installers.
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
-cd "$(dirname $0)"/..
+cd "$(dirname "$0")/.."
 
-# Run Homebrew through the Brewfile
+# Install Homebrew formulae from Brewfile
 echo "› brew bundle"
 brew bundle
 
-# find the installers and run them iteratively
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+# Find install scripts and run them iteratively
+find . -name install.sh | while read -r installer; do
+  echo "› ${installer#./}"
+  sh -c "${installer}"
+done
