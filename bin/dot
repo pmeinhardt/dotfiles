@@ -1,11 +1,11 @@
-#!/bin/bash
-#
-# dot
-#
-# `dot` handles installation, updates, things like that. Run it periodically
-# to make sure you're on the latest and greatest.
+#!/usr/bin/env bash
 
-set -e
+# `dot` handles installation, updates, things like that.
+# Run it periodically to make sure you're on the latest and greatest.
+
+set -o errexit
+set -o nounset
+set -o pipefail
 
 parentDirectory="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 dotfilesDirectory="$(cd "$(dirname "$parentDirectory" )" && pwd -P)"
@@ -16,6 +16,7 @@ displayUsageAndExit() {
 	echo "Usage: dot [options]"
 	echo ""
 	echo "Options:"
+	echo ""
 	echo "  -e, --edit    Open dotfiles directory for editing"
 	echo "  -h, --help    Show this help message and exit"
 	exit
@@ -42,13 +43,13 @@ export ZSH=$HOME/.dotfiles
 
 # Update dotfiles themselves
 echo "› git pull"
-git -C $ZSH pull
+git -C "$ZSH" pull
 
 # Set macOS defaults
-$ZSH/macos/set-defaults.sh
+"$ZSH/macos/set-defaults.sh"
 
 # Install homebrew
-$ZSH/homebrew/install.sh 2>&1
+"$ZSH/homebrew/install.sh" 2>&1
 
 # Upgrade homebrew
 echo "› brew update"
@@ -59,4 +60,4 @@ brew upgrade
 
 # Install software
 echo "› script/install"
-$ZSH/script/install
+"$ZSH/script/install"
