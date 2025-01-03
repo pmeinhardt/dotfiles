@@ -1,0 +1,50 @@
+# Uncomment the next as well as the last line to profile shell initialization
+# zmodload zsh/zprof
+
+# Shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
+# Your project folder that we can `c [tab]` to
+export PROJECTS=~/Code
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# Load the path files
+if [[ -d ~/.path.d ]]
+then
+  for file in ~/.path.d/*/*.zsh
+  do
+    source "$file"
+  done
+fi
+
+# Load any other initialization files
+if [[ -d ~/.init.d ]]
+then
+  for file in ~/.init.d/*/*.zsh
+  do
+    source "$file"
+  done
+fi
+
+# Initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# Load every completion after autocomplete loads
+if [[ -d ~/.completion.d ]]
+then
+  for file in ~/.completion.d/*/*.zsh
+  do
+    source "$file"
+  done
+fi
+
+# Print profiling information
+# zprof
