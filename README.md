@@ -1,6 +1,8 @@
-# dotfiles ···
+# dotfiles
 
-Your [dotfiles](https://dotfiles.github.io/) are how you personalize your system. Here’s how I set up mine.
+Your [dotfiles](https://dotfiles.github.io/) are how you personalize your system.
+
+Here’s how I set up mine.
 
 ![screenshot](./screenshot.png)
 
