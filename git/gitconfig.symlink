@@ -19,6 +19,8 @@
         branch  = auto
 [apply]
         whitespace = nowarn
+[merge]
+        conflictStyle = zdiff3
 [pull]
         ff = only
 [push]
