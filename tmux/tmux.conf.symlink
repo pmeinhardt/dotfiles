@@ -1,6 +1,9 @@
 # Improve color handling
 set-option -g default-terminal 'screen-256color'
 
+# Set terminal title
+set-option -g set-titles on
+
 # Increase scrollback lines
 set-option -g history-limit 10000
 
@@ -76,23 +79,23 @@ set-option -w -g pane-base-index 1
 set-option -g renumber-windows on
 
 # Customize status bar format for window information
-set-option -g window-status-format '#{window_index}:#{window_name}'
-set-option -g window-status-current-format '#{window_index}\#{window_name}'
+set-option -g window-status-format ' #[fg=red]#{window_index}#[fg=default] #{window_name} #[fg=yellow]#{window_flags}#[default] '
+set-option -g window-status-current-format '#[reverse]#{window_index} #{window_name} #{window_flags}#[noreverse]'
+set-option -g window-status-separator ''
 
-# Show session name in left status bar
-set-option -g status-left '#{session_name} '
-set-option -g status-left-length 32
+# Show prefix activation and copy mode in left status bar
+set-option -g status-left '#{?client_prefix,#[fg=yellow],#{?pane_in_mode,#[fg=yellow],#[fg=default]}}#[fg=default] '
 
-# Show prefix activation and copy mode in right status bar
-set-option -g status-right '#{?client_prefix,#[bg=#cccccc] ^a #[default],#{?pane_in_mode,#[bg=yellow] copy #[default],}}'
+# Show session name in right status bar
+set-option -g status-right '#{session_name}'
 
 # Customize status bar colors
-set-option -g status-style 'bg=#222222,fg=#666666'
-set-option -g window-status-current-style 'fg=#aaaaaa'
+set-option -g status-style 'bg=#000000,fg=#5d5959'
+set-option -g window-status-current-style 'fg=#a4a0a0'
 
 # Customize border colors
-set-option -g pane-border-style 'fg=#222222'
-set-option -g pane-active-border-style 'fg=#aaaaaa'
+set-option -g pane-border-style 'fg=#231f1f'
+set-option -g pane-active-border-style 'fg=#5d5959'
 
 # Conditionally load local config
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
