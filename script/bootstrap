@@ -29,7 +29,7 @@ fail () {
 
 setup_gitconfig () {
   local template="git/gitconfig.local.symlink.example"
-  local path="git/itconfig.local.symlink"
+  local path="git/gitconfig.local.symlink"
 
   local credentials
   local name
