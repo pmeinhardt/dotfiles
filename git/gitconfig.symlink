@@ -8,16 +8,15 @@
 [core]
         excludesFile = ~/.gitignore
 [alias]
-        s       = status
         b       = branch
         co      = checkout
-        flame   = blame
-        promote = !$ZSH/bin/git-promote
         count   = !git shortlog -sn
+        promote = !$ZSH/bin/git-promote
+        s       = status
 [color]
-        diff = auto
-        status = auto
-        branch = auto
+        diff    = auto
+        status  = auto
+        branch  = auto
 [apply]
         whitespace = nowarn
 [pull]
