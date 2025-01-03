@@ -1,0 +1,2 @@
+# Specify desired highlighting theme. Run `bat --list-themes` for a list of all available themes
+--theme="base16"
