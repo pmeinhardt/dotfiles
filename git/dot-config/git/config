@@ -1,12 +1,12 @@
 # Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
+        path = ~/.config/git/config.local
+[core]
+        excludesFile = ~/.config/git/ignore
 [user]
         useConfigOnly = true
 [init]
         defaultBranch = main
-[core]
-        excludesFile = ~/.gitignore
 [alias]
         b       = branch
         co      = checkout

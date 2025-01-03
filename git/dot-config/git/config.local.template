@@ -1,0 +1,19 @@
+# Configure local/private settings:
+
+[user]
+        name = AUTHORNAME
+        email = AUTHOREMAIL
+
+[credential]
+        helper = GIT_CREDENTIAL_HELPER
+
+# You can provide configuration overrides for specific directories:
+
+# [includeIf "gitdir:~/Code/…/"]
+#         path = ~/.config/git/config.work
+
+# [includeIf "gitdir:~/Code/pmeinhardt/"]
+#         path = ~/.config/git/config.personal
+
+# [includeIf "gitdir:~/.dotfiles/"]
+#         path = ~/.config/git/config.personal

@@ -17,3 +17,13 @@ find . -name install.sh | while read -r installer; do
   echo "› ${installer#./}"
   sh -c "${installer}"
 done
+
+# find . -type d -name dot-dot | while read -r directory; do
+#   if [ -x "$directory/configure" ]; then
+#     sh -c "$directory/configure"
+#   fi
+#
+#   if [ -x "$directory/install" ]; then
+#     sh -c "$directory/install"
+#   fi
+# done

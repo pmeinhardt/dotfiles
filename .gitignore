@@ -1,5 +1,5 @@
-git/gitconfig.local.symlink
+git/dot-config/git/config.local
 
-vim/vim.symlink/autoload/plug.vim.old
-vim/vim.symlink/plugged
-vim/vim.symlink/shada
+vim/dot-vim/autoload/plug.vim.old
+vim/dot-vim/plugged
+vim/dot-vim/shada

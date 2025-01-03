@@ -1,0 +1,4 @@
+--dotfiles
+--ignore='\.DS_Store'
+--ignore='dot-dot'
+--no-folding

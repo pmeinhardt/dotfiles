@@ -138,6 +138,8 @@ install_dotfiles () {
   done
 
   okay "Set up dotfiles"
+
+  # stow --dotfiles --no-folding --verbose --dir="$DOTFILES" --target=~
 }
 
 install_software () {
@@ -155,5 +157,10 @@ install_software () {
 setup_gitconfig
 install_dotfiles
 install_software
+
+# ./homebrew/install.sh
+#
+# brew install gum
+# brew install stow
 
 printf "\n\e[1mDone.\e[0m\n"
