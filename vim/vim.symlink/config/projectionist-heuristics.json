@@ -29,13 +29,9 @@
       "alternate": "{}.test.jsx",
       "type": "source",
       "template": [
-        "function {basename|camelcase|capitalize}() {open}",
+        "export function {basename|camelcase|capitalize}() {open}",
         "  return null;",
-        "{close}",
-        "",
-        "{basename|camelcase|capitalize}.propTypes = {open}{close};",
-        "",
-        "export default {basename|camelcase|capitalize};"
+        "{close}"
       ]
     },
     "*.ts": {
@@ -46,26 +42,24 @@
       "alternate": "{}.test.tsx",
       "type": "source",
       "template": [
-        "export type Props = {open}{close};",
+        "export type {basename|camelcase|capitalize}Props = {open}{close};",
         "",
-        "function {basename|camelcase|capitalize}(_: Props) {open}",
+        "export function {basename|camelcase|capitalize}(_: {basename|camelcase|capitalize}Props) {open}",
         "  return null;",
-        "{close}",
-        "",
-        "export default {basename|camelcase|capitalize};"
+        "{close}"
       ]
     },
     "*.test.js": {
       "alternate": "{}.js",
       "type": "test",
       "template": [
-        "import {basename|camelcase} from \"./{basename}\";",
+        "import {open} {basename|camelcase} {close} from \"./{basename}\";",
         "",
-        "describe(\"{basename|camelcase}\", () => {",
+        "describe(\"{basename|camelcase}\", () => {open}",
         "  // function subject(...args) {open}",
         "  //   return {basename}(...args);",
         "  // {close}",
-        "});"
+        "{close});"
       ]
     },
     "*.test.jsx": {
@@ -74,7 +68,7 @@
       "template": [
         "import {open} render {close} from \"@testing-library/react\";",
         "",
-        "import {basename|camelcase|capitalize} from \"./{basename}\";",
+        "import {open} {basename|camelcase|capitalize} {close} from \"./{basename}\";",
         "",
         "describe(\"{basename|camelcase|capitalize}\", () => {",
         "  function subject(overrides) {open}",
@@ -89,13 +83,13 @@
       "alternate": "{}.ts",
       "type": "test",
       "template": [
-        "import {basename|camelcase} from \"./{basename}\";",
+        "import {open} {basename|camelcase} {close} from \"./{basename}\";",
         "",
-        "describe(\"{basename|camelcase}\", () => {",
+        "describe(\"{basename|camelcase}\", () => {open}",
         "  // function subject(...args) {open}",
         "  //   return {basename}(...args);",
         "  // {close}",
-        "});"
+        "{close});"
       ]
     },
     "*.test.tsx": {
@@ -105,11 +99,11 @@
         "import {open} render {close} from \"@testing-library/react\";",
         "",
         "import type {open} Props {close} from \"./{basename}\";",
-        "import {basename|camelcase|capitalize} from \"./{basename}\";",
+        "import {open} {basename|camelcase|capitalize} {close} from \"./{basename}\";",
         "",
         "describe(\"{basename|camelcase|capitalize}\", () => {",
-        "  function subject(overrides: Partial<Props>) {open}",
-        "    const defaults: Props = {open} /* provide defaults */ {close};",
+        "  function subject(overrides: Partial<{basename|camelcase|capitalize}Props>) {open}",
+        "    const defaults: {basename|camelcase|capitalize}Props = {open} /* provide defaults */ {close};",
         "    const props = {open} ...defaults, ...overrides {close};",
         "    return render(<{basename|camelcase|capitalize} {open}...props{close} />);",
         "  {close}",
