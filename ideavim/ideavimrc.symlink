@@ -104,6 +104,9 @@ nmap ]d <Action>(GotoNextError)
 nmap [e <Action>(MoveLineUp)
 nmap ]e <Action>(MoveLineDown)
 
+" Mimick ctrl-p and jump to files
+nmap <c-p> <Action>(GotoFile)
+
 """ Plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 
 Plug 'tpope/vim-commentary'
