@@ -98,7 +98,7 @@
       "template": [
         "import {open} render {close} from \"@testing-library/react\";",
         "",
-        "import type {open} Props {close} from \"./{basename}\";",
+        "import type {open} {basename|camelcase|capitalize}Props {close} from \"./{basename}\";",
         "import {open} {basename|camelcase|capitalize} {close} from \"./{basename}\";",
         "",
         "describe(\"{basename|camelcase|capitalize}\", () => {",
