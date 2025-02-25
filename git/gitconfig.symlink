@@ -1,27 +1,49 @@
-# Local/private config goes in the include
 [include]
+        # Read local/private options from ~/.gitconfig.local.
         path = ~/.gitconfig.local
+
 [user]
+        # Never guess user email and name.
         useConfigOnly = true
+
 [init]
+        # Set default branch name.
         defaultBranch = main
+
 [core]
+        # Set default excludes/ignore file.
         excludesFile = ~/.gitignore
+
 [alias]
         b       = branch
         co      = checkout
         count   = !git shortlog -sn
         promote = !$ZSH/bin/git-promote
         s       = status
-[color]
-        diff    = auto
-        status  = auto
-        branch  = auto
-[apply]
-        whitespace = nowarn
+
+[branch]
+        # Sort branches by the date of their last commit (most recent first).
+        sort = -committerdate
+
+[diff]
+        # Set diff algorithm.
+        algorithm  = histogram
+
+        # Color moved lines differently.
+        colorMoved = dimmed-zebra
+
 [merge]
+        # Show both sides and the original text in case of merge conflicts.
         conflictStyle = zdiff3
+
 [pull]
+        # Only allow fast-forward merges when pulling.
         ff = only
+
 [push]
+        # Push the current branch with the same name on the remote.
         default = simple
+
+[tag]
+        # Sort tags by version name (as opposed to lexicographic ordering).
+        sort = version:refname
