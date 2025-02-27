@@ -19,6 +19,8 @@
         co      = checkout
         count   = !git shortlog -sn
         promote = !$ZSH/bin/git-promote
+        rb      = rebase
+        rs      = reset
         s       = status
 
 [branch]
