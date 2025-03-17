@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "whois is being sunset, use rdap instead" >&2
+exit 1
