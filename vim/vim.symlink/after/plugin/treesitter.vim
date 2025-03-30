@@ -1,6 +1,22 @@
-" Enable nvim-treesitter modules. For a list of available modules see:
-" https://github.com/nvim-treesitter/nvim-treesitter#available-modules
-if exists(':TSEnable')
-  TSEnable highlight
-  TSEnable indent
+" Configure nvim-treesitter: https://github.com/nvim-treesitter/nvim-treesitter
+if has('nvim')
+  lua << EOF
+    require('nvim-treesitter.configs').setup({
+      highlight = {
+        enable = true,
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<cr>",
+          node_incremental = "<cr>",
+          node_decremental = "<bs>",
+          scope_incremental = "<s-cr>",
+        },
+      },
+      indent = {
+        enable = true,
+      },
+    })
+EOF
 endif
