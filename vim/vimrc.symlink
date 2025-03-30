@@ -262,7 +262,6 @@ Plug 'mileszs/ack.vim'              " search in project files
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'mattn/emmet-vim'              " mappings for web development
-Plug 'sheerun/vim-polyglot'         " language pack
 Plug 'sirver/ultisnips'             " expand snippets
 Plug 'dense-analysis/ale'           " linting, completion, LSP support
 
