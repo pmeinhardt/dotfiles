@@ -280,6 +280,7 @@ Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
 " To install language parsers, use `:TSInstall {language} ...`.
 if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 endif
 
 " Completion

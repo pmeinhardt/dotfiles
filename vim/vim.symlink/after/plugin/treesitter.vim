@@ -22,6 +22,40 @@ if has('nvim')
       indent = {
         enable = true,
       },
+
+      -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+      textobjects = {
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_next_start = {
+            ["]s"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
+          },
+          goto_previous_start = {
+            ["[s"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
+          },
+        },
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["ac"] = { query = "@class.outer", desc = "Select class" },
+            ["ic"] = { query = "@class.inner", desc = "Select class body" },
+            ["af"] = { query = "@function.outer", desc = "Select function" },
+            ["if"] = { query = "@function.inner", desc = "Select function body" },
+            ["as"] = { query = "@local.scope", query_group = "locals", desc = "Select language scope" },
+          },
+        },
+        swap = {
+          enable = true,
+          swap_next = {
+            ["]$"] = { query = "@parameter.inner", desc = "Move parameter right" },
+          },
+          swap_previous = {
+            ["[$"] = { query = "@parameter.inner", desc = "Move parameter left" },
+          },
+        },
+      },
     })
 EOF
 endif
