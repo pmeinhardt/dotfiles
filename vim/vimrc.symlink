@@ -216,8 +216,9 @@ nnoremap <silent> <leader>s :%s/\s\+$//gc<cr>
 " Sort lines
 xnoremap <silent> <leader>s :sort<cr>
 
-" Write the current file
+" Write the current file or all files
 nnoremap <silent> <leader>w :w<cr>
+nnoremap <silent> <leader>W :wa<cr>
 
 " Write the current file if it changed and quit
 nnoremap <silent> <leader>x :x<cr>
