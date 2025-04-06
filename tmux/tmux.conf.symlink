@@ -10,6 +10,9 @@ set-option -g history-limit 10000
 # No delay when hitting escape
 set-option -s escape-time 0
 
+# Pass shift-enter and other such inputs to terminal apps like Vim/Neovim.
+set-option -s extended-keys on
+
 # Longer display time for tmux messages
 set-option -g display-time 3000
 
