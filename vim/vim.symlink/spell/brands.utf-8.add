@@ -152,8 +152,10 @@ Ansys
 Ant
 Anta
 Antena
+Anthropic
 AnyDesk
 Anycubic
+Anytype
 Apache
 Aparat
 Apifox
@@ -254,6 +256,7 @@ Bahn
 Baidu
 Bakaláři
 Balance
+Balancing
 Bamboo
 BandLab
 Bandcamp
@@ -272,6 +275,7 @@ Bata
 Battle.net
 Bazel
 BeReal
+BeatStars
 Beatport
 Beats
 Bedrock
@@ -464,6 +468,7 @@ Chedraui
 Cheerio
 Chef
 Chemex
+Chess.com
 Chevrolet
 Chia
 China
@@ -556,6 +561,7 @@ Codio
 Coffee
 CoffeeScript
 Coggle
+Cognito
 Cognizant
 Coil
 CoinMarketCap
@@ -599,10 +605,12 @@ Conversation
 Convertio
 Cookiecutter
 Cooler
+Copa
 Copilot
 Coppel
 Cora
 Cordova
+CorelDRAW
 Corona
 Corporation
 Corsair
@@ -629,6 +637,7 @@ Crowdin
 Crowdsource
 Crunchbase
 Crunchyroll
+CryptPad
 Crystal
 Cucumber
 Cultura
@@ -683,10 +692,12 @@ Dataproc
 Dataverse
 DatoCMS
 Datto
+Dazhong
 De'Longhi
 Dear
 Debian
 Decap
+Decentraland
 Deck
 DeepCool
 DeepL
@@ -716,6 +727,7 @@ DeviantArt
 Devpost
 Dgraph
 Dialogflow
+Dianping
 Diaspora
 Digg
 Digi-Key
@@ -810,6 +822,7 @@ Effects
 Egnyte
 Eight
 El
+ElastiCache
 Elastic
 Elasticsearch
 Elavon
@@ -854,6 +867,7 @@ Erste
 Esoteric
 Espressif
 Ethereum
+Ethers
 Ethiopian
 Etihad
 Etsy
@@ -1016,6 +1030,7 @@ Fx
 G
 G2
 G2A
+G2G
 GDAL
 GIMP
 GIPHY
@@ -1264,6 +1279,7 @@ Indeed
 Index
 IndiGo
 India
+Indian
 Indie
 Industries
 Inertia
@@ -1278,6 +1294,7 @@ Initiative
 Ink
 Inkdrop
 Inkscape
+Inoreader
 Insights
 Insomnia
 Insta360
@@ -1314,6 +1331,7 @@ JBL
 JCB
 JET
 JFrog
+JHipster
 JMeter
 JOUAV
 JPEG
@@ -1396,6 +1414,7 @@ Kentico
 Keras
 KeyCDN
 Keybase
+Keycloak
 Keystone
 Khan
 Khronos
@@ -1434,6 +1453,7 @@ Kotlin
 Koyeb
 Kred
 Krita
+Ktor
 KuCoin
 Kuaishou
 Kubernetes
@@ -1525,6 +1545,7 @@ LiveChat
 LiveJournal
 Livestream
 Livewire
+Load
 Local
 Lodash
 LogMeIn
@@ -1592,6 +1613,7 @@ Major
 Make
 MakerBot
 Malt
+Malwarebytes
 Mamba
 ManageIQ
 Management
@@ -1645,6 +1667,7 @@ Meet
 Meetup
 Meilisearch
 Meituan
+Meizu
 Mendeley
 Mentor
 MentorCruise
@@ -1672,6 +1695,7 @@ MicroStrategy
 Microgenetics
 Microsoft
 Microstation
+Migadu
 Mighty
 Mikrotik
 Milanote
@@ -1839,6 +1863,7 @@ Nuke
 NumPy
 Numba
 Nunjucks
+Nushell
 Nutanix
 Nuxt.js
 Nx
@@ -1962,6 +1987,7 @@ Paramount+
 Paris
 Parity
 Parquet
+Parrot
 Parse.ly
 Passport
 Pastebin
@@ -2028,6 +2054,7 @@ Piwigo
 Pix
 Pixabay
 Pixelfed
+Pixlr
 PlanGrid
 Planet
 PlanetScale
@@ -2179,6 +2206,7 @@ QuickTime
 Quip
 Quora
 Qwant
+Qwik
 Qwiklabs
 Qzone
 R
@@ -2232,6 +2260,7 @@ Realm
 Reason
 Recoil
 Red
+Redash
 Redbubble
 Reddit
 Redis
@@ -2402,6 +2431,7 @@ Seagate
 SearXNG
 Search
 SeatGeek
+Secrets
 Security
 SecurityScorecard
 Sefaria
@@ -2583,6 +2613,7 @@ Steem
 Steemit
 Steinberg
 Stellar
+Stencil
 Stencyl
 Stimulus
 Stitcher
@@ -2636,6 +2667,7 @@ Symantec
 Symbolab
 Symfony
 Symphony
+Syncthing
 Synology
 System76
 Systems
@@ -2653,6 +2685,7 @@ TOTVS
 TP-Link
 TUI
 TV
+TV4
 TYPO3
 Tabelog
 Table
@@ -2666,6 +2699,7 @@ Tailwind
 Take-Two
 Talend
 Talenthouse
+Talos
 Tamiya
 Tampermonkey
 Taobao
@@ -2906,6 +2940,7 @@ Visio
 Visual
 Vita
 Vite
+VitePress
 Vitess
 Vitest
 Viva
@@ -3097,12 +3132,14 @@ Zsh
 Zulip
 Zyte
 a
+abuse.ch
 arXiv
 asciinema
 at
 avajs
 avianca
 awesomeWM
+bat
 bigbasket
 boAt
 boulanger
@@ -3135,6 +3172,7 @@ elementary
 esbuild
 etcd
 figshare
+fish
 foobar2000
 foodpanda
 for
@@ -3154,6 +3192,7 @@ iCloud
 iFixit
 iFood
 iHeartRadio
+iMessage
 iOS
 iRobot
 iTerm2
@@ -3209,6 +3248,7 @@ scikit-learn
 semantic-release
 shadcn,ui
 sharp
+shell
 smart
 smash.gg
 social
@@ -3222,7 +3262,9 @@ tRPC
 tado°
 teratail
 the
+thirdweb
 tie
+tldraw
 tmux
 to
 tqdm
