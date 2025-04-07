@@ -276,6 +276,9 @@ Plug 'pmeinhardt/hmm'               " stand-up notes and joblogs
 Plug 'pmeinhardt/ql', {'do': ':QuickLookCompile'}
 Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
 
+" GitHub Copilot
+Plug 'github/copilot.vim'
+
 " Use tree-sitter for parsing supported languages, enabling improved syntax
 " highlighting and other features (see after/plugin/treesitter.vim).
 " To install language parsers, use `:TSInstall {language} ...`.
