@@ -287,11 +287,6 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 endif
 
-" Use mini.pairs to manage character pairs.
-if has('nvim')
-  Plug 'echasnovski/mini.pairs'
-endif
-
 " Completion
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
