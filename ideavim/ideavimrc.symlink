@@ -34,6 +34,12 @@ map Y y$
 nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 vnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
+" Incremental selection, extend or shrink selection
+nmap <cr> <Action>(EditorSelectWord)
+vmap <cr> <Action>(EditorSelectWord)
+nmap <s-cr> <Action>(EditorUnSelectWord)
+vmap <s-cr> <Action>(EditorUnSelectWord)
+
 " Enter 'focus' mode
 nmap <leader><cr> <Action>(ToggleDistractionFreeMode)
 
