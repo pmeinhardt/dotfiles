@@ -33,20 +33,20 @@ palette = 13=#eeb4d2
 palette = 14=#abd3df
 palette = 15=#e9e7e7
 
-background = 000000
-foreground = ffffff
+background = #000000
+foreground = #ffffff
 
-selection-background = 424242
-selection-foreground = fdfdfd
+selection-background = #424242
+selection-foreground = #fdfdfd
 
-cursor-color = e86554
+cursor-color = #e86554
 
 
 # Icon settings
 
 macos-icon = custom-style
-macos-icon-ghost-color = cac9c8
-macos-icon-screen-color = 101010
+macos-icon-ghost-color = #cac9c8
+macos-icon-screen-color = #101010
 
 
 # Window settings
