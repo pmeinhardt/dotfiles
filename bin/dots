@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# `dot` handles installation, updates, things like that.
+# `dots` handles installation, updates, things like that.
 # Run it periodically to make sure you're on the latest and greatest.
 
 set -o errexit
@@ -11,9 +11,9 @@ parentDirectory="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 dotfilesDirectory="$(cd "$(dirname "$parentDirectory" )" && pwd -P)"
 
 displayUsageAndExit() {
-	echo "dot -- dotfiles management"
+	echo "dots -- dotfiles management"
 	echo ""
-	echo "Usage: dot [options]"
+	echo "Usage: dots [options]"
 	echo ""
 	echo "Options:"
 	echo ""
