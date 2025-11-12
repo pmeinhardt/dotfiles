@@ -42,6 +42,12 @@ selection-foreground = #fdfdfd
 cursor-color = #e86554
 
 
+# Background settings
+
+background-opacity = 0.96
+background-blur = true
+
+
 # Icon settings
 
 macos-icon = custom-style
