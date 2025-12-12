@@ -6,6 +6,8 @@ snippet #! "#!/usr/bin/env -S deno run" b
 #!/usr/bin/env -S deno run
 endsnippet
 
-snippet main "if (import.meta.main)" b
-if (import.meta.main) $0
+snippet main "if (import.meta.main) { _ }" b
+if (import.meta.main) {
+	${VISUAL}$0
+}
 endsnippet
