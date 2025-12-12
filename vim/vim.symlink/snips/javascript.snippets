@@ -5,55 +5,57 @@ import $1 from "${2:$1}";
 endsnippet
 
 snippet const "const _ = _" b
-const ${1:x} = $0;
+const ${1:x} = ${2:${VISUAL}};
 endsnippet
 
 snippet let "let _ = _" b
-let ${1:x} = ${0:null};
+let ${1:x} = ${2:${VISUAL}};
 endsnippet
 
 snippet function "function _(_) { _ }" w
 function $1($2) {
-	$0
+	${VISUAL}$0
 }
 endsnippet
 
 snippet async "async function _(_) { _ }" w
 async function $1($2) {
-	$0
+	${VISUAL}$0
 }
 endsnippet
 
-snippet if "if (_) _" b
-if (${1:true}) $0
+snippet if "if (_) { _ }" b
+if (${1:true}) {
+  ${VISUAL}$0
+}
 endsnippet
 
 snippet for "for (_; _; _) { _ }" b
 for (${1}; ${2}; ${3}) {
-	$0
+	${VISUAL}$0
 }
 endsnippet
 
 snippet for-of "for (const _ of _) { _ }" b
 for (const ${1:element} of ${2:iterable}) {
-	$0
+	${VISUAL}$0
 }
 endsnippet
 
 snippet for-await "for await (const _ of _) { _ }" b
 for await (const ${1:element} of ${2:iterable}) {
-	$0
+	${VISUAL}$0
 }
 endsnippet
 
 snippet while "while (_) { _ }" b
 while (${1:condition}) {
-	$0
+	${VISUAL}$0
 }
 endsnippet
 
 snippet console "console._(_)" b
-console.${1:log}($2);
+console.${1:log}(${2:${VISUAL}});
 endsnippet
 
 # Classes
@@ -81,20 +83,22 @@ require("$1")
 endsnippet
 
 snippet main "if (require.main === module)" b
-if (require.main === module) $0
+if (require.main === module) {
+	${VISUAL}$0
+}
 endsnippet
 
 # Jest
 
 snippet describe "describe('_', () => { _ })" b
 describe("$1", () => {
-	$0
+	${VISUAL}$0
 });
 endsnippet
 
 snippet it "it('_', () => { _ })" b
 it("$1", () => {
-	$0
+	${VISUAL}$0
 });
 endsnippet
 
@@ -104,25 +108,25 @@ endsnippet
 
 snippet beforeEach "beforeEach(() => { _ })" b
 beforeEach(() => {
-	$0
+	${VISUAL}$0
 });
 endsnippet
 
 snippet beforeAll "beforeAll(() => { _ })" b
 beforeAll(() => {
-	$0
+	${VISUAL}$0
 });
 endsnippet
 
 snippet afterEach "afterEach(() => { _ })" b
 afterEach(() => {
-	$0
+	${VISUAL}$0
 });
 endsnippet
 
 snippet afterAll "afterAll(() => { _ })" b
 afterAll(() => {
-	$0
+	${VISUAL}$0
 });
 endsnippet
 
