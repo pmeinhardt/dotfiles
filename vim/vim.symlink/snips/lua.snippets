@@ -5,7 +5,7 @@ snippet #! "#!/usr/bin/env lua" b
 endsnippet
 
 snippet local "local _ = _" b
-local ${1:x} = ${0:nil}
+local ${1:x} = ${0:${VISUAL}}
 endsnippet
 
 snippet local-decl "local _" b
@@ -14,48 +14,48 @@ endsnippet
 
 snippet function "function _ (_) _ end" w
 function ${1:f} (${2:arg})
-	$0
+	${VISUAL}$0
 end
 endsnippet
 
 snippet if "if _ then _ end" b
 if ${1:true} then
-	$0
+	${VISUAL}$0
 end
 endsnippet
 
 snippet for "for _=_,_,_ do _ end" b
 for ${1:i}=${2:init},${3:limit}${4:,step} do
-	$0
+	${VISUAL}$0
 end
 endsnippet
 
 snippet for-in "for _ in _ do _ end" b
 for ${1:x} in ${2:iterable} do
-	$0
+	${VISUAL}$0
 end
 endsnippet
 
 snippet for-pairs "for _, _ in pairs(_) do _ end" b
 for ${1:k}, ${2:v} in pairs(${3:table}) do
-	$0
+	${VISUAL}$0
 end
 endsnippet
 
 snippet while "while _ do _ end" b
 while ${1:true} do
-	$0
+	${VISUAL}$0
 end
 endsnippet
 
 snippet repeat "repeat _ until _" b
 repeat
-	$0
+	${VISUAL}$0
 until ${1:true}
 endsnippet
 
 snippet print "print(_)" w
-print($0)
+print(${1:${VISUAL}})
 endsnippet
 
 snippet stdin "io.stdin:lines()" w
@@ -70,43 +70,43 @@ endsnippet
 
 snippet context "context('_', function () _ end)" b
 context("$1", function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
 snippet describe "describe('_', function () _ end)" b
 describe("$1", function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
 snippet setup "setup(function () _ end)" b
 setup(function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
 snippet teardown "teardown(function () _ end)" b
 teardown(function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
 snippet before_each "before_each(function () _ end)" b
 before_each(function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
 snippet after_each "after_each(function () _ end)" b
 after_each(function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
 snippet it "it('_', function () _ end)" b
 it("$1", function ()
-	$0
+	${VISUAL}$0
 end)
 endsnippet
 
