@@ -4,7 +4,7 @@ endsnippet
 
 snippet main "if __name__ == '__main__'" b
 if __name__ == '__main__':
-	${0:pass}
+	${VISUAL}$0
 endsnippet
 
 snippet class "class + init" b
@@ -15,16 +15,16 @@ endsnippet
 
 snippet def "def" b
 def ${1:f}(${2}):
-	${0:pass}
+	${VISUAL}$0
 endsnippet
 
 snippet if "if _: _" b
-if ${1:true}:
-	${0:pass}
+if ${1:True}:
+	${VISUAL}$0
 endsnippet
 
 snippet elif "elif _: _" b
-elif ${1:true}:
+elif ${1:True}:
 	${0:pass}
 endsnippet
 
@@ -35,12 +35,12 @@ endsnippet
 
 snippet for "for _ in _: _" b
 for ${1:x} in ${2:iterable}:
-	${0:pass}
+	${VISUAL}$0
 endsnippet
 
 snippet while "while _: _" b
-while ${1:true}:
-	${0:pass}
+while ${1:True}:
+	${VISUAL}$0
 endsnippet
 
 snippet import "import _" b
