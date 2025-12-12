@@ -53,7 +53,7 @@ while (${1:condition}) {
 endsnippet
 
 snippet console "console._(_)" b
-console.${1:log}($2);$0
+console.${1:log}($2);
 endsnippet
 
 # Classes
@@ -74,11 +74,10 @@ endsnippet
 
 snippet #! "#!/usr/bin/env node" b
 #!/usr/bin/env node
-$0
 endsnippet
 
 snippet require "require(_)" w
-require("$1")$0
+require("$1")
 endsnippet
 
 snippet main "if (require.main === module)" b
@@ -100,7 +99,7 @@ it("$1", () => {
 endsnippet
 
 snippet expect "expect(_).to_(_)" b
-expect(${1:expression}).to${2:Be}($3);$0
+expect(${1:expression}).to${2:Be}($3);
 endsnippet
 
 snippet beforeEach "beforeEach(() => { _ })" b

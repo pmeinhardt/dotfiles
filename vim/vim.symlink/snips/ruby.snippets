@@ -2,7 +2,6 @@
 
 snippet #! "#!/usr/bin/env ruby" b
 #!/usr/bin/env ruby
-$0
 endsnippet
 
 snippet main "if __FILE__ == $0" b
@@ -74,5 +73,5 @@ let(:${1:name}) { $0 }
 endsnippet
 
 snippet expect "expect(_).to _(_)" b
-expect(${1:actual}).${2:to} ${3:be}(${4:expected})$0
+expect(${1:actual}).${2:to} ${3:be}(${4:expected})
 endsnippet

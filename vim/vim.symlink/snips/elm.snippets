@@ -1,9 +1,9 @@
 snippet module "module _ exposing _" b
-module ${1:`!p snip.rv = snip.basename`} exposing (${2:..})$0
+module ${1:`!p snip.rv = snip.basename`} exposing (${2:..})
 endsnippet
 
 snippet import "import _ exposing (_)" b
-import $1 exposing (${2:..})$0
+import $1 exposing (${2:..})
 endsnippet
 
 snippet case "case _ of _ -> _" b
@@ -82,5 +82,5 @@ main =
 		, init = init
 		, update = update
 		, subscriptions = subscriptions
-		}$0
+		}
 endsnippet

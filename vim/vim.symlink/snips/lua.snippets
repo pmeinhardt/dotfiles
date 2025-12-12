@@ -2,7 +2,6 @@
 
 snippet #! "#!/usr/bin/env lua" b
 #!/usr/bin/env lua
-$0
 endsnippet
 
 snippet local "local _ = _" b
@@ -64,7 +63,7 @@ io.stdin${0::lines()}
 endsnippet
 
 snippet open "io.open(_, _)" w
-io.open(${1:"path"}, ${2:"r"})$0
+io.open(${1:"path"}, ${2:"r"})
 endsnippet
 
 # Busted
@@ -112,5 +111,5 @@ end)
 endsnippet
 
 snippet assert "assert._(_)" b
-assert.${1:are.equal}(${2:a, b})$0
+assert.${1:are.equal}(${2:a, b})
 endsnippet

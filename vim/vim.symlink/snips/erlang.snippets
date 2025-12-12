@@ -1,21 +1,21 @@
 snippet -module "-module" b
--module(${1:name}).$0
+-module(${1:name}).
 endsnippet
 
 snippet -include "-include" b
--include("${1}.hrl").$0
+-include("${1}.hrl").
 endsnippet
 
 snippet -export "-export" b
--export([${1}]).$0
+-export([${1}]).
 endsnippet
 
 snippet -define "-define" b
--define(${1:macro}, ${2:replacement}).$0
+-define(${1:macro}, ${2:replacement}).
 endsnippet
 
 snippet -record "-record" b
--record(${1:name}, {${2}}).$0
+-record(${1:name}, {${2}}).
 endsnippet
 
 snippet case "case" b
@@ -24,12 +24,12 @@ case ${1:Expr} of
 		${3:ok};
 	Error ->
 		${4:Error}
-end$0
+end
 endsnippet
 
 snippet receive "receive" b
 receive
 	${1:_} ->
 		${2:ok}
-end$0
+end
 endsnippet

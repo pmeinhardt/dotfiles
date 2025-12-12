@@ -1,6 +1,5 @@
 snippet #! "#!/usr/bin/env sh" b
 #!/usr/bin/env ${1:sh}
-$0
 endsnippet
 
 snippet set "set shell options" b
@@ -15,7 +14,7 @@ fi
 endsnippet
 
 snippet cd "cd _" b
-cd ${1:"$(dirname "\$0")/.."}$0
+cd ${1:"$(dirname "\$0")/.."}
 endsnippet
 
 snippet if "if _ then _" b
