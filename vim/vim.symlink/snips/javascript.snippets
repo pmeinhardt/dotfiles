@@ -106,8 +106,8 @@ snippet require "require(_)" w
 require("$1")
 endsnippet
 
-snippet main "if (require.main === module)" b
-if (require.main === module) {
+snippet main "if (import.meta.main) { _ }" b
+if (import.meta.main) {
 	${VISUAL}$0
 }
 endsnippet
