@@ -2,6 +2,14 @@ extends javascript
 
 priority 1
 
+# TypeScript
+
+snippet type "type _ = _" b
+type ${1:Name} = ${2:${VISUAL}};
+endsnippet
+
+# Deno
+
 snippet #! "#!/usr/bin/env -S deno run" b
 #!/usr/bin/env -S deno run
 endsnippet

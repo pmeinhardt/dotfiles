@@ -24,14 +24,36 @@ async function $1($2) {
 }
 endsnippet
 
-snippet if "if (_) { _ }" b
-if (${1:true}) {
-  ${VISUAL}$0
+snippet async-arrow "async (_) => _" b
+async ($1) => {
+	${VISUAL}$0
 }
 endsnippet
 
+snippet if "if (_) { _ }" b
+if (${1:true}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet if-else "if (_) { _ } else { _ }" b
+if (${1:true}) {
+	${VISUAL}$2
+} else {
+	$0
+}
+endsnippet
+
+# Loops
+
 snippet for "for (_; _; _) { _ }" b
 for (${1}; ${2}; ${3}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet for-in "for (const _ in _) { _ }" b
+for (const ${1:key} in ${2:object}) {
 	${VISUAL}$0
 }
 endsnippet
@@ -49,10 +71,12 @@ for await (const ${1:element} of ${2:iterable}) {
 endsnippet
 
 snippet while "while (_) { _ }" b
-while (${1:condition}) {
+while (${1:true}) {
 	${VISUAL}$0
 }
 endsnippet
+
+# Logging
 
 snippet console "console._(_)" b
 console.${1:log}(${2:${VISUAL}});
@@ -67,7 +91,7 @@ class ${1:A} {
 endsnippet
 
 snippet constructor "constructor(_) { super(_) }" b
-constructor(${1:...args}) {
+constructor($1) {
 	super(${2:$1});$0
 }
 endsnippet
