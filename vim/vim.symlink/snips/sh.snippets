@@ -19,26 +19,26 @@ endsnippet
 
 snippet if "if _ then _" b
 if $1; then
-	$0
+	${2:${VISUAL}}
 fi
 endsnippet
 
 snippet for "for _ in _ do _" b
 for ${1:x} in ${2:words}; do
-	$0
+	${3:${VISUAL}}
 done
 endsnippet
 
 snippet while "while _ do _" b
 while ${1:cond}; do
-	$0
+	${2:${VISUAL}}
 done
 endsnippet
 
 snippet case "case _ in _"
 case ${1:word} in
 	${2:pattern})
-		$0
+		${0:${VISUAL}}
 		;;
 	*)
 		;;

@@ -14,44 +14,44 @@ endsnippet
 
 snippet function "function _ (_) _ end" w
 function ${1:f} (${2:arg})
-	${VISUAL}$0
+	${3:${VISUAL}}
 end
 endsnippet
 
 snippet if "if _ then _ end" b
 if ${1:true} then
-	${VISUAL}$0
+	${2:${VISUAL}}
 end
 endsnippet
 
 snippet for "for _=_,_,_ do _ end" b
 for ${1:i}=${2:init},${3:limit}${4:,step} do
-	${VISUAL}$0
+	${5:${VISUAL}}
 end
 endsnippet
 
 snippet for-in "for _ in _ do _ end" b
 for ${1:x} in ${2:iterable} do
-	${VISUAL}$0
+	${3:${VISUAL}}
 end
 endsnippet
 
 snippet for-pairs "for _, _ in pairs(_) do _ end" b
 for ${1:k}, ${2:v} in pairs(${3:table}) do
-	${VISUAL}$0
+	${4:${VISUAL}}
 end
 endsnippet
 
 snippet while "while _ do _ end" b
 while ${1:true} do
-	${VISUAL}$0
+	${2:${VISUAL}}
 end
 endsnippet
 
 snippet repeat "repeat _ until _" b
 repeat
-	${VISUAL}$0
-until ${1:true}
+	${1:${VISUAL}}
+until ${0:true}
 endsnippet
 
 snippet print "print(_)" w
@@ -70,43 +70,43 @@ endsnippet
 
 snippet context "context('_', function () _ end)" b
 context("$1", function ()
-	${VISUAL}$0
+	${2:${VISUAL}}
 end)
 endsnippet
 
 snippet describe "describe('_', function () _ end)" b
 describe("$1", function ()
-	${VISUAL}$0
+	${2:${VISUAL}}
 end)
 endsnippet
 
 snippet setup "setup(function () _ end)" b
 setup(function ()
-	${VISUAL}$0
+	${1:${VISUAL}}
 end)
 endsnippet
 
 snippet teardown "teardown(function () _ end)" b
 teardown(function ()
-	${VISUAL}$0
+	${1:${VISUAL}}
 end)
 endsnippet
 
 snippet before_each "before_each(function () _ end)" b
 before_each(function ()
-	${VISUAL}$0
+	${1:${VISUAL}}
 end)
 endsnippet
 
 snippet after_each "after_each(function () _ end)" b
 after_each(function ()
-	${VISUAL}$0
+	${1:${VISUAL}}
 end)
 endsnippet
 
 snippet it "it('_', function () _ end)" b
 it("$1", function ()
-	${VISUAL}$0
+	${2:${VISUAL}}
 end)
 endsnippet
 

@@ -6,19 +6,19 @@ endsnippet
 
 snippet defmodule "defmodule" b
 defmodule ${1:A} do
-	$0
+	${0:${VISUAL}}
 end
 endsnippet
 
 snippet def "def" b
 def ${1:f} do
-	$0
+	${2:${VISUAL}}
 end
 endsnippet
 
 snippet defp "defp" b
 defp ${1:f} do
-	$0
+	${2:${VISUAL}}
 end
 endsnippet
 
@@ -28,7 +28,7 @@ endsnippet
 
 snippet do "do" w
 do
-	$0
+	${1:${VISUAL}}
 end
 endsnippet
 
@@ -38,13 +38,13 @@ case ${1:value} do
 		${3:nil}
 
 	${4:other} ->
-		${0:$4}
+		${5:$4}
 end
 endsnippet
 
 snippet with "with" w
 with ${1::ok} <- ${2:expression} do
-	$0
+	${3:${VISUAL}}
 end
 endsnippet
 
@@ -52,12 +52,12 @@ endsnippet
 
 snippet describe "describe" b
 describe "$1" do
-	$0
+	${2:${VISUAL}}
 end
 endsnippet
 
 snippet test "test" b
 test "$1" do
-	$0
+	${2:${VISUAL}}
 end
 endsnippet

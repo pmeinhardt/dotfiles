@@ -2,14 +2,14 @@
 
 snippet useCallback "useCallback((_) => { _ }, [_])" b
 const ${1:callback} = useCallback(($2) => {
-	${VISUAL}$0
+	${3:${VISUAL}}
 }, [$1]);
 endsnippet
 
 snippet useEffect "useEffect(() => { _ }, [_])" b
 useEffect(() => {
-	${VISUAL}$0
-}, [$1]);
+	${1:${VISUAL}}
+}, [$2]);
 endsnippet
 
 snippet useId "const _ = useId()" b
@@ -17,17 +17,17 @@ const ${1:id} = useId();
 endsnippet
 
 snippet useMemo "const _ = useMemo(() => _, [_])" b
-const ${1:value} = useMemo(() => ${0:${VISUAL}}, [$2]);
+const ${1:value} = useMemo(() => ${2:${VISUAL}}, [$3]);
 endsnippet
 
 snippet useReducer "const [_, _] = useReducer(_, _)" b
-const [${1:state}, ${2:dispatch}] = useReducer(${3:reducer}, ${0:initialState});
+const [${1:state}, ${2:dispatch}] = useReducer(${3:reducer}, ${4:initial});
 endsnippet
 
 snippet useRef "const _ = useRef(_)" b
-const ${1:ref} = useRef(${0:${VISUAL}});
+const ${1:ref} = useRef(${2:${VISUAL}});
 endsnippet
 
 snippet useState "const [_, _] = useState(_)" b
-const [${1:state}, ${2:${1/\w+/set\u$0/g}}] = useState(${0:${VISUAL}});
+const [${1:state}, ${2:${1/\w+/set\u$0/g}}] = useState(${3:${VISUAL}});
 endsnippet

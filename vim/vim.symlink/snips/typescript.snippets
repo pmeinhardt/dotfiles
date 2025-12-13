@@ -4,6 +4,12 @@ priority 1
 
 # TypeScript
 
+snippet constructor "constructor(_) { super(_) }" b
+constructor($1) {
+	super(${2:${1/(?:\s*:\s*[^,]*)?(,|$)/$1/g}});$0
+}
+endsnippet
+
 snippet type "type _ = _" b
 type ${1:Name} = ${2:${VISUAL}};
 endsnippet

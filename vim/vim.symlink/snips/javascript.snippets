@@ -14,33 +14,39 @@ endsnippet
 
 snippet function "function _(_) { _ }" w
 function $1($2) {
-	${VISUAL}$0
+	${3:${VISUAL}}
 }
 endsnippet
 
 snippet async "async function _(_) { _ }" w
 async function $1($2) {
-	${VISUAL}$0
+	${3:${VISUAL}}
 }
 endsnippet
 
 snippet async-arrow "async (_) => _" b
 async ($1) => {
-	${VISUAL}$0
+	${2:${VISUAL}}
 }
 endsnippet
 
 snippet if "if (_) { _ }" b
 if (${1:true}) {
-	${VISUAL}$0
+	${2:${VISUAL}}
+}
+endsnippet
+
+snippet else "else { _ }" w
+else {
+	${1:${VISUAL}}
 }
 endsnippet
 
 snippet if-else "if (_) { _ } else { _ }" b
 if (${1:true}) {
-	${VISUAL}$2
+	${2:${VISUAL}}
 } else {
-	$0
+	$3
 }
 endsnippet
 
@@ -48,31 +54,31 @@ endsnippet
 
 snippet for "for (_; _; _) { _ }" b
 for (${1}; ${2}; ${3}) {
-	${VISUAL}$0
+	${4:${VISUAL}}
 }
 endsnippet
 
 snippet for-in "for (const _ in _) { _ }" b
 for (const ${1:key} in ${2:object}) {
-	${VISUAL}$0
+	${3:${VISUAL}}
 }
 endsnippet
 
 snippet for-of "for (const _ of _) { _ }" b
 for (const ${1:element} of ${2:iterable}) {
-	${VISUAL}$0
+	${3:${VISUAL}}
 }
 endsnippet
 
 snippet for-await "for await (const _ of _) { _ }" b
 for await (const ${1:element} of ${2:iterable}) {
-	${VISUAL}$0
+	${3:${VISUAL}}
 }
 endsnippet
 
 snippet while "while (_) { _ }" b
 while (${1:true}) {
-	${VISUAL}$0
+	${2:${VISUAL}}
 }
 endsnippet
 
@@ -108,7 +114,7 @@ endsnippet
 
 snippet main "if (import.meta.main) { _ }" b
 if (import.meta.main) {
-	${VISUAL}$0
+	${0:${VISUAL}}
 }
 endsnippet
 
@@ -116,13 +122,13 @@ endsnippet
 
 snippet describe "describe('_', () => { _ })" b
 describe("$1", () => {
-	${VISUAL}$0
+	${2:${VISUAL}}
 });
 endsnippet
 
 snippet it "it('_', () => { _ })" b
 it("$1", () => {
-	${VISUAL}$0
+	${2:${VISUAL}}
 });
 endsnippet
 
@@ -132,25 +138,25 @@ endsnippet
 
 snippet beforeEach "beforeEach(() => { _ })" b
 beforeEach(() => {
-	${VISUAL}$0
+	${1:${VISUAL}}
 });
 endsnippet
 
 snippet beforeAll "beforeAll(() => { _ })" b
 beforeAll(() => {
-	${VISUAL}$0
+	${1:${VISUAL}}
 });
 endsnippet
 
 snippet afterEach "afterEach(() => { _ })" b
 afterEach(() => {
-	${VISUAL}$0
+	${1:${VISUAL}}
 });
 endsnippet
 
 snippet afterAll "afterAll(() => { _ })" b
 afterAll(() => {
-	${VISUAL}$0
+	${1:${VISUAL}}
 });
 endsnippet
 
