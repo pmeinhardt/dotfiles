@@ -144,7 +144,7 @@ install_software () {
   # If we're on a Mac, let's install Homebrew and other .
   if [ "$OS" == "Darwin" ]; then
     info "Installing dependencies"
-    if source bin/dot | while read -r data; do info "$data"; done; then
+    if source bin/dots | while read -r data; do info "$data"; done; then
       okay "Dependencies installed"
     else
       fail "Error installing dependencies"

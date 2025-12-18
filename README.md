@@ -37,8 +37,8 @@ cd ~/.dotfiles
 
 This will symlink the appropriate files to your home directory.
 
-The `bin/dot` tool is a simple helper which installs dependencies, sets sane OS defaults, and so on.
-Tweak and occasionally run `dot` to keep your environment fresh and up-to-date.
+The `bin/dots` tool is a simple helper which installs dependencies, sets sane OS defaults, and so on.
+Tweak and occasionally run `dots` to keep your environment fresh and up-to-date.
 
 If you would like to install [Homebrew](https://github.com/Homebrew/brew) to an alternative location, e.g. `~/Developer/Homebrew`, do so before running the bootstrap script.
 
