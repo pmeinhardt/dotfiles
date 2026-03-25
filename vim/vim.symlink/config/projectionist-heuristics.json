@@ -121,6 +121,21 @@
     }
   },
 
+  "Gemfile.lock": {
+    "*": {
+      "console": "irb",
+      "dispatch": "ruby {file}"
+    },
+    "*.rb": {
+      "alternate": "spec/{}_spec.rb",
+      "type": "source"
+    },
+    "spec/*_spec.rb": {
+      "alternate": "{}.rb",
+      "type": "test"
+    }
+  },
+
   "mix.exs": {
     "*": {
       "console": "iex -S mix",
