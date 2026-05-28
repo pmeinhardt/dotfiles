@@ -1,3 +1,5 @@
-if [ -f "$HOME/.cargo/env" ]; then
-  source "$HOME/.cargo/env"
+RUSTBIN="$(brew --prefix rustup)/bin"
+
+if [ -d "$RUSTBIN" ]; then
+  PATH="$RUSTBIN:$PATH"
 fi
