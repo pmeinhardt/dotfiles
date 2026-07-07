@@ -1,61 +1,34 @@
-" Configure nvim-treesitter (https://github.com/nvim-treesitter/nvim-treesitter).
-if has('nvim')
-  lua << EOF
-    require('nvim-treesitter.configs').setup({
-      -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/README.md#highlight
-      highlight = {
-        enable = true,
-      },
+" Tree-sitter highlighting + incremental selection (Neovim 0.12+).
+"
+" The nvim-treesitter *main* branch is only a parser installer + query provider;
+" it does not enable features itself. So here we (1) turn on tree-sitter
+" highlighting per code buffer and (2) map <CR>/<S-CR> to grow/shrink the
+" selection on top of Neovim's native `an`/`in` node maps.
+"
+" Parsers are not installed automatically -- install them per language as you
+" need them with :TSInstall <lang> (and :TSUpdate / :TSUninstall to manage).
+" Highlighting and the selection maps only activate once a parser is installed.
+" Requires the tree-sitter CLI (brew install tree-sitter).
 
-      -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/README.md#incremental-selection
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<cr>",
-          node_incremental = "<cr>",
-          node_decremental = "<s-cr>",
-          scope_incremental = false,
-        },
-      },
+if !has('nvim-0.12.0') | finish | endif
 
-      -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/README.md#indentation
-      indent = {
-        enable = true,
-      },
+lua << EOF
+-- Parser names that differ from the Neovim filetype must be registered.
+vim.treesitter.language.register('tsx', 'typescriptreact')
 
-      -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-      textobjects = {
-        move = {
-          enable = true,
-          set_jumps = true,
-          goto_next_start = {
-            ["]s"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
-          },
-          goto_previous_start = {
-            ["[s"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
-          },
-        },
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ["ac"] = { query = "@class.outer", desc = "Select class" },
-            ["ic"] = { query = "@class.inner", desc = "Select class body" },
-            ["af"] = { query = "@function.outer", desc = "Select function" },
-            ["if"] = { query = "@function.inner", desc = "Select function body" },
-            ["as"] = { query = "@local.scope", query_group = "locals", desc = "Select language scope" },
-          },
-        },
-        swap = {
-          enable = true,
-          swap_next = {
-            ["]$"] = { query = "@parameter.inner", desc = "Move parameter right" },
-          },
-          swap_previous = {
-            ["[$"] = { query = "@parameter.inner", desc = "Move parameter left" },
-          },
-        },
-      },
-    })
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Tree-sitter highlighting + incremental selection',
+  callback = function(ev)
+    -- Only attach where a parser exists; quickfix/help/terminal have none,
+    -- so start() fails and we bail.
+    if not pcall(vim.treesitter.start, ev.buf) then return end
+
+    -- Set up custom keybindings for incremental selection.
+    -- remap = true: van/an/in ride on Neovim's built-in node-selection maps.
+    local o = { buffer = ev.buf, remap = true, silent = true }
+    vim.keymap.set('n', '<cr>',   'van', o)  -- start + grow selection
+    vim.keymap.set('x', '<cr>',   'an',  o)  -- grow selection
+    vim.keymap.set('x', '<s-cr>', 'in',  o)  -- shrink selection
+  end,
+})
 EOF
-endif

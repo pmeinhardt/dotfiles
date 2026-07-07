@@ -279,12 +279,12 @@ Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
 " GitHub Copilot
 " Plug 'github/copilot.vim'
 
-" Use tree-sitter for parsing supported languages, enabling improved syntax
-" highlighting and other features (see after/plugin/treesitter.vim).
-" To install language parsers, use `:TSInstall {language} ...`.
-if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Tree-sitter (main branch) — a parser installer + query provider only; it does
+" not enable features itself. Highlighting and incremental selection are wired
+" up in after/plugin/treesitter.vim. Needs the tree-sitter CLI (see Brewfile)
+" and Neovim 0.12+. Manage parsers with :TSInstall / :TSUpdate / :TSUninstall.
+if has('nvim-0.12.0')
+  Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
 endif
 
 " Completion
