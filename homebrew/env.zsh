@@ -11,3 +11,6 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1
 
 # Disable lock-file generation (these are for debugging).
 export HOMEBREW_BUNDLE_NO_LOCK=1
+
+# Require tapped repositories to be trusted before they can be used.
+export HOMEBREW_REQUIRE_TAP_TRUST=1
