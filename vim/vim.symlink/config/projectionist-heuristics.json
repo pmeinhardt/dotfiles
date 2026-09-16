@@ -8,15 +8,6 @@
     }
   },
 
-  "yarn.lock": {
-    "*": {
-      "make": "TERM=dumb yarn"
-    },
-    "**.test.*": {
-      "dispatch": "TERM=dumb yarn test {file}"
-    }
-  },
-
   "package.json": {
     "*": {
       "console": "node"
