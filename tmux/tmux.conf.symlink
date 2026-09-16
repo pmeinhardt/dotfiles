@@ -74,6 +74,16 @@ bind-key -r C-l select-window -t :+
 bind-key -r < swap-window -t -1
 bind-key -r > swap-window -t +1
 
+# Move the built-in session and window trees out of the way
+bind-key S choose-tree -Zs
+bind-key W choose-tree -Zw
+
+# Fuzzy-match session names and switch to the selected one
+bind-key s display-popup -E -T ' sessions ' 'tmux list-sessions -F "#{session_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | xargs -I {} tmux switch-client -t {}'
+
+# Fuzzy-match window names and switch to the selected one
+bind-key w display-popup -E -T ' windows ' 'tmux list-windows -a -F "#{session_name}:#{window_index} #{window_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {1}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | cut -d " " -f 1 | xargs -I {} tmux switch-client -t {}'
+
 # Start window numbers at 1 to match keyboard order with tmux window order
 set-option -g base-index 1
 set-option -w -g pane-base-index 1
