@@ -1,17 +1,70 @@
 {
-  "package-lock.json": {
+  "build.gradle.kts": {
     "*": {
-      "make": "TERM=dumb npm"
+      "make": "./gradlew"
     },
-    "**.test.*": {
-      "dispatch": "TERM=dumb npm test {file}"
+    "build.gradle.kts": {
+      "type": "manifest"
+    },
+    "src/main/kotlin/*.kt": {
+      "alternate": "src/test/kotlin/{}Test.kt",
+      "type": "source",
+      "template": [
+        "package {dirname|snakecase|dot}"
+      ]
+    },
+    "src/test/kotlin/*Test.kt": {
+      "alternate": "src/main/kotlin/{}.kt",
+      "type": "test",
+      "template": [
+        "package {dirname|snakecase|dot}"
+      ]
     }
   },
 
-  "package.json": {
+  "Cargo.toml": {
     "*": {
-      "console": "node"
+      "make": "cargo"
     },
+    "Cargo.toml": {
+      "alternate": "Cargo.lock",
+      "type": "manifest"
+    },
+    "Cargo.lock": {
+      "alternate": "Cargo.toml",
+      "type": "lockfile"
+    }
+  },
+
+  "deno.json": {
+    "*": {
+      "make": "deno"
+    },
+    "deno.json": {
+      "alternate": "deno.lock",
+      "type": "manifest"
+    },
+    "deno.lock": {
+      "alternate": "deno.json",
+      "type": "lockfile"
+    }
+  },
+
+  "deno.jsonc": {
+    "*": {
+      "make": "deno"
+    },
+    "deno.jsonc": {
+      "alternate": "deno.lock",
+      "type": "manifest"
+    },
+    "deno.lock": {
+      "alternate": "deno.jsonc",
+      "type": "lockfile"
+    }
+  },
+
+  "deno.json|deno.jsonc|package.json": {
     "*.js": {
       "alternate": "{}.test.js",
       "type": "source"
@@ -103,10 +156,18 @@
     }
   },
 
-  "Gemfile.lock": {
+  "Gemfile": {
     "*": {
       "console": "irb",
       "dispatch": "ruby {file}"
+    },
+    "Gemfile": {
+      "alternate": "Gemfile.lock",
+      "type": "dependencies"
+    },
+    "Gemfile.lock": {
+      "alternate": "Gemfile",
+      "type": "lockfile"
     },
     "*.rb": {
       "alternate": "spec/{}_spec.rb",
@@ -118,10 +179,32 @@
     }
   },
 
+  "go.mod": {
+    "*": {
+      "make": "go"
+    },
+    "go.mod": {
+      "alternate": "go.sum",
+      "type": "manifest"
+    },
+    "go.sum": {
+      "alternate": "go.mod",
+      "type": "lockfile"
+    }
+  },
+
   "mix.exs": {
     "*": {
       "console": "iex -S mix",
       "make": "mix"
+    },
+    "mix.exs": {
+      "alternate": "mix.lock",
+      "type": "manifest"
+    },
+    "mix.lock": {
+      "alternate": "mix.exs",
+      "type": "lockfile"
     },
     "lib/*.ex": {
       "alternate": "test/{}_test.exs",
@@ -145,23 +228,32 @@
     }
   },
 
-  "build.gradle.kts": {
+  "package-lock.json": {
     "*": {
-      "make": "./gradlew"
+      "make": "TERM=dumb npm"
     },
-    "src/main/kotlin/*.kt": {
-      "alternate": "src/test/kotlin/{}Test.kt",
-      "type": "source",
-      "template": [
-        "package {dirname|snakecase|dot}"
-      ]
+    "package-lock.json": {
+      "alternate": "package.json",
+      "type": "lockfile"
     },
-    "src/test/kotlin/*Test.kt": {
-      "alternate": "src/main/kotlin/{}.kt",
-      "type": "test",
-      "template": [
-        "package {dirname|snakecase|dot}"
-      ]
+    "package.json": {
+      "alternate": "package-lock.json",
+      "type": "manifest"
+    },
+    "**.test.*": {
+      "dispatch": "TERM=dumb npm test {file}"
+    }
+  },
+
+  "package.json": {
+    "*": {
+      "console": "node"
+    }
+  },
+
+  "Rakefile": {
+    "*": {
+      "make": "rake"
     }
   }
 }
