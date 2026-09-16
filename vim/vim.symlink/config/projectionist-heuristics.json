@@ -103,15 +103,6 @@
     }
   },
 
-  "elm.json": {
-    "src/*.elm": {
-      "type": "source",
-      "template": [
-        "module {dot} exposing (..)"
-      ]
-    }
-  },
-
   "Gemfile.lock": {
     "*": {
       "console": "irb",
