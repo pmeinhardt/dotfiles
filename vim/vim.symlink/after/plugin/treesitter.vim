@@ -19,9 +19,13 @@ vim.treesitter.language.register('tsx', 'typescriptreact')
 vim.api.nvim_create_autocmd('FileType', {
   desc = 'Tree-sitter highlighting + incremental selection',
   callback = function(ev)
-    -- Only attach where a parser exists; quickfix/help/terminal have none,
-    -- so start() fails and we bail.
+    -- Only attach where a parser exists; otherwise start() fails and we bail.
     if not pcall(vim.treesitter.start, ev.buf) then return end
+
+    -- Enable Treesitter-based folding.
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.wo.foldmethod = 'expr'
+    vim.wo.foldlevel = 99
 
     -- Set up custom keybindings for incremental selection.
     -- remap = true: van/an/in ride on Neovim's built-in node-selection maps.
