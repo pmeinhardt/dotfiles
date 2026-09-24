@@ -92,23 +92,26 @@ set-option -w -g pane-base-index 1
 set-option -g renumber-windows on
 
 # Customize status bar format for window information
-set-option -g window-status-format ' #[fg=red]#{window_index}#[fg=default] #{window_name} #[fg=yellow]#{window_flags}#[default] '
-set-option -g window-status-current-format '#[reverse]#{window_index} #{window_name} #{window_flags}#[noreverse]'
-set-option -g window-status-separator ''
+set-option -g window-status-format ' #[fg=#7e7272]#{window_index} #[fg=#dbd9d9]#{window_name}#{?window_flags, #[fg=#fdc673]#{window_flags},} '
+set-option -g window-status-current-format '#[fg=#000000,bg=#96b5d8,bold] #{window_index} #{window_name}#{?window_flags, #{window_flags},} #[default]'
+set-option -g window-status-separator ' '
 
 # Show prefix activation and copy mode in left status bar
-set-option -g status-left '#{?client_prefix,#[fg=yellow],#{?pane_in_mode,#[fg=yellow],#[fg=default]}}#[fg=default] '
+set-option -g status-left '#{?client_prefix,#[fg=#000000,bg=#fdc673,bold] PREFIX #[default],#{?pane_in_mode,#[fg=#000000,bg=#96b5d8,bold] COPY #[default],}}'
 
-# Show session name in right status bar
-set-option -g status-right '#{session_name}'
+# Show date and session name in right status bar
+set-option -g status-right '#[fg=#7e7272]%Y-%m-%d %H:%M #[fg=#e9e7e7,bold]#{session_name} '
 
 # Customize status bar colors
-set-option -g status-style 'bg=#000000,fg=#5d5959'
-set-option -g window-status-current-style 'fg=#a4a0a0'
+set-option -g status-style 'bg=#2e2929,fg=#dbd9d9'
+set-option -g window-status-current-style 'fg=#000000,bg=#96b5d8,bold'
+set-option -g message-style 'fg=#000000,bg=#fedcab'
+set-option -g message-command-style 'fg=#000000,bg=#96b5d8'
+set-option -g mode-style 'fg=#000000,bg=#abd3df'
 
 # Customize border colors
 set-option -g pane-border-style 'fg=#231f1f'
-set-option -g pane-active-border-style 'fg=#5d5959'
+set-option -g pane-active-border-style 'fg=#7e7272'
 
 # Conditionally load local config
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'

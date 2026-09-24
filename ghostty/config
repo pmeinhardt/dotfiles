@@ -34,12 +34,12 @@ palette = 14=#abd3df
 palette = 15=#e9e7e7
 
 background = #000000
-foreground = #ffffff
+foreground = #e9e7e7
 
-selection-background = #424242
-selection-foreground = #fdfdfd
+selection-background = #2e2929
+selection-foreground = #e9e7e7
 
-cursor-color = #e86554
+cursor-color = #e87060
 
 
 # Background settings

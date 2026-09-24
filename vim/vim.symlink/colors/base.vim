@@ -190,6 +190,14 @@ call s:hi('DiagnosticInfo', s:blue, s:none, s:none)
 call s:hi('DiagnosticHint', s:cyan, s:none, s:none)
 call s:hi('DiagnosticOk', s:green, s:none, s:none)
 
+call s:ln('DiagnosticSignError', 'DiagnosticError')
+call s:ln('DiagnosticSignWarn', 'DiagnosticWarn')
+call s:ln('DiagnosticSignInfo', 'DiagnosticInfo')
+call s:ln('DiagnosticSignHint', 'DiagnosticHint')
+call s:ln('DiagnosticSignOk', 'DiagnosticOk')
+call s:ln('DiagnosticSignDeprecated', 'DiagnosticWarn')
+call s:ln('DiagnosticSignUnnecessary', 'DiagnosticHint')
+
 exec 'highlight DiagnosticUnderlineError guisp=' . s:red
 exec 'highlight DiagnosticUnderlineWarn guisp=' . s:yellow
 exec 'highlight DiagnosticUnderlineInfo guisp=' . s:blue
