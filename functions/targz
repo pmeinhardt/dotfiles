@@ -15,7 +15,11 @@ targz () {
   fi
 
   source_name="$(basename "${source_path%/}")"
-  source_dir="$(cd "$(dirname "$source_path")" && pwd)"
+  source_parent="$(dirname "$source_path")"
+  if ! source_dir="$(cd "$source_parent" && pwd)"; then
+    echo "Unable to read parent directory for '$source_path'" 1>&2
+    return 1
+  fi
   archive_name="${2:-$source_name}"
 
   case "$archive_name" in

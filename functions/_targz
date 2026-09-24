@@ -1,4 +1,6 @@
 #compdef targz
 
 emulate -L zsh
-_files
+_arguments \
+  '1:source path:_files' \
+  '2:archive name:'
