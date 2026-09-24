@@ -1,5 +1,3 @@
-#!/bin/sh
-#
 # Usage: targz <path> [archive-name]
 # Description: create a gzipped tar archive
 #

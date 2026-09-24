@@ -14,9 +14,10 @@ zstyle ':completion:*:descriptions' format '%F{yellow}%d%f'
 zstyle ':completion:*:warnings' format 'no matches found: %d'
 
 # cache expensive completions
-zstyle ':completion:*' use-cache on
-[[ -d "$HOME/.zcompcache" ]] || mkdir -p "$HOME/.zcompcache"
-zstyle ':completion:*' cache-path "$HOME/.zcompcache"
+if [[ -d "$HOME/.zcompcache" ]] || mkdir -p "$HOME/.zcompcache"; then
+  zstyle ':completion:*' use-cache on
+  zstyle ':completion:*' cache-path "$HOME/.zcompcache"
+fi
 
 compdef _targz targz
 compdef _mkcd mkcd

@@ -1,5 +1,3 @@
-#!/bin/sh
-#
 # Usage: mkcd <directory>
 # Description: create a directory (including parents) and enter it
 #
