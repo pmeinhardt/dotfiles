@@ -1,5 +1,7 @@
 #compdef ta
 
+emulate -L zsh
+
 local -a sessions
 sessions=("${(@f)$(tmux list-sessions -F '#S' 2>/dev/null)}")
 

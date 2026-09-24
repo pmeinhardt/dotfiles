@@ -26,7 +26,7 @@ targz () {
   esac
 
   case "$archive_path" in
-    *.tar.gz) ;;
+    *.tar.gz|*.tgz) ;;
     *) archive_path="${archive_path}.tar.gz" ;;
   esac
 

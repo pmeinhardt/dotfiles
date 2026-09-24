@@ -1,0 +1,4 @@
+#compdef mkcd
+
+emulate -L zsh
+_path_files -/

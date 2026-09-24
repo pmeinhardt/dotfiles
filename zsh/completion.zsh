@@ -15,8 +15,9 @@ zstyle ':completion:*:warnings' format 'no matches found: %d'
 
 # cache expensive completions
 zstyle ':completion:*' use-cache on
+[[ -d "$HOME/.zcompcache" ]] || mkdir -p "$HOME/.zcompcache"
 zstyle ':completion:*' cache-path "$HOME/.zcompcache"
 
-compdef _files mkcd
 compdef _files targz
+compdef _mkcd mkcd
 compdef _ta ta
