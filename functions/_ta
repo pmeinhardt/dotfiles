@@ -15,7 +15,3 @@ if [ ${#sessions[@]} -eq 0 ]; then
 else
   _describe "tmux session" sessions
 fi
-
-if [ -n "$PREFIX" ]; then
-  compadd -Q -- "$PREFIX"
-fi

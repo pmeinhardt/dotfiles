@@ -46,7 +46,18 @@ targz () {
 
   case "$archive_path" in
     /*) archive_path_abs="$archive_path" ;;
-    *) archive_path_abs="$PWD/$archive_path" ;;
+    */*)
+      archive_dir="$(dirname "$archive_path")"
+      archive_file="$(basename "$archive_path")"
+      if ! archive_dir_abs="$(cd "$PWD/$archive_dir" 2>/dev/null && pwd)"; then
+        echo "Unable to read output directory '$archive_dir'" 1>&2
+        return 1
+      fi
+      archive_path_abs="$archive_dir_abs/$archive_file"
+      ;;
+    *)
+      archive_path_abs="$PWD/$archive_path"
+      ;;
   esac
 
   if [ -d "$source_path" ]; then
