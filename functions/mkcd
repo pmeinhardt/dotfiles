@@ -10,5 +10,10 @@ mkcd () {
     return 1
   fi
 
-  mkdir -p -- "$1" && cd -- "$1"
+  directory_path="${1%/}"
+  if [ -z "$directory_path" ]; then
+    directory_path="/"
+  fi
+
+  mkdir -p -- "$directory_path" && cd -- "$directory_path"
 }

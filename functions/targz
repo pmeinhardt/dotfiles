@@ -16,14 +16,14 @@ targz () {
     return 1
   fi
 
-  if [ -n "$2" ]; then
-    archive_name="$2"
-  else
-    archive_name="$(basename "${source_path%/}")"
-  fi
-
   source_name="$(basename "${source_path%/}")"
   source_dir="$(cd "$(dirname "$source_path")" && pwd)"
+  archive_name="${2:-$source_name}"
 
-  tar -czvf "${archive_name}.tar.gz" -C "$source_dir" "$source_name"
+  case "$archive_name" in
+    */*) archive_path="${archive_name}.tar.gz" ;;
+    *) archive_path="${source_dir}/${archive_name}.tar.gz" ;;
+  esac
+
+  tar -czvf "$archive_path" -C "$source_dir" "$source_name"
 }

@@ -17,7 +17,7 @@ zstyle ':completion:*:warnings' format 'no matches found: %d'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$HOME/.zcompcache"
 
-compdef _directories mkcd
+compdef _files mkcd
 compdef _files extract
 compdef _files targz
 compdef _ta ta
