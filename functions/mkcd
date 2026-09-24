@@ -10,10 +10,14 @@ mkcd () {
     return 1
   fi
 
-  directory_path="${1%/}"
-  if [ -z "$directory_path" ]; then
-    directory_path="/"
-  fi
+  directory_path="$1"
+  while [ "$directory_path" != "/" ] && [ "${directory_path%/}" != "$directory_path" ]; do
+    directory_path="${directory_path%/}"
+  done
 
-  mkdir -p -- "$directory_path" && cd -- "$directory_path"
+  if [ -d "$directory_path" ]; then
+    cd -- "$directory_path"
+  else
+    mkdir -p -- "$directory_path" && cd -- "$directory_path"
+  fi
 }

@@ -21,8 +21,13 @@ targz () {
   archive_name="${2:-$source_name}"
 
   case "$archive_name" in
-    */*) archive_path="${archive_name}.tar.gz" ;;
-    *) archive_path="${source_dir}/${archive_name}.tar.gz" ;;
+    */*) archive_path="$archive_name" ;;
+    *) archive_path="$PWD/$archive_name" ;;
+  esac
+
+  case "$archive_path" in
+    *.tar.gz) ;;
+    *) archive_path="${archive_path}.tar.gz" ;;
   esac
 
   tar -czvf "$archive_path" -C "$source_dir" "$source_name"
