@@ -2,7 +2,7 @@
 
 emulate -L zsh
 
-local state
+local context state state_descr line
 _arguments \
   '1:source path:->source' \
   '2:archive name:'
