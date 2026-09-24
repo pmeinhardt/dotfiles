@@ -67,7 +67,8 @@ targz () {
     fi
     case "$archive_path_abs" in
       "$source_abs"/*|"$source_abs")
-        archive_path_abs="$(dirname "$source_abs")/${default_archive_name}.tar.gz"
+        echo "Archive output path must be outside '$source_abs'" 1>&2
+        return 1
         ;;
     esac
   fi
