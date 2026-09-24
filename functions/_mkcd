@@ -1,8 +1,18 @@
 #compdef mkcd
 
 emulate -L zsh
+local prefix_dir prefix_leaf
 
-if ! _files -/; then
+if [[ "$PREFIX" == */* ]]; then
+  prefix_dir="${PREFIX%/*}"
+  prefix_leaf="${PREFIX##*/}"
+
+  _path_files -W "${prefix_dir:-.}" -/
+  if [ -n "$prefix_leaf" ]; then
+    compadd -Q -- "$PREFIX"
+  fi
+else
+  _path_files -/
   if [ -n "$PREFIX" ]; then
     compadd -Q -- "$PREFIX"
   fi

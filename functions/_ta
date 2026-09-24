@@ -13,5 +13,5 @@ sessions=("${(@f)$(tmux list-sessions -F '#S' 2>/dev/null)}")
 if [ ${#sessions[@]} -eq 0 ]; then
   _message "tmux session"
 else
-  _describe "tmux session" sessions
+  compadd -Q -- "${sessions[@]}"
 fi
