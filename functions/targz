@@ -11,6 +11,10 @@ targz () {
   fi
 
   source_path="$1"
+  if [ ! -e "$source_path" ]; then
+    echo "'$source_path' does not exist" 1>&2
+    return 1
+  fi
 
   if [ -n "$2" ]; then
     archive_name="$2"
@@ -18,5 +22,8 @@ targz () {
     archive_name="$(basename "${source_path%/}")"
   fi
 
-  tar -czvf "${archive_name}.tar.gz" "$source_path"
+  source_name="$(basename "${source_path%/}")"
+  source_dir="$(cd "$(dirname "$source_path")" && pwd)"
+
+  tar -czvf "${archive_name}.tar.gz" -C "$source_dir" "$source_name"
 }

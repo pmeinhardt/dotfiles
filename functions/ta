@@ -16,6 +16,10 @@ ta () {
     tmux has-session -t "$session_name" 2>/dev/null || tmux new-session -d -s "$session_name"
     tmux switch-client -t "$session_name"
   else
-    tmux attach-session -t "$session_name" 2>/dev/null || tmux new-session -s "$session_name"
+    if tmux has-session -t "$session_name" 2>/dev/null; then
+      tmux attach-session -t "$session_name"
+    else
+      tmux new-session -s "$session_name"
+    fi
   fi
 }
