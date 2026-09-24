@@ -19,8 +19,8 @@ mkcd () {
   fi
 
   if [ -d "$directory_path" ]; then
-    cd "$directory_path"
+    builtin cd "$directory_path"
   else
-    mkdir -p "$directory_path" && cd "$directory_path"
+    mkdir -p "$directory_path" && builtin cd "$directory_path"
   fi
 }

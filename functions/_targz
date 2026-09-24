@@ -5,7 +5,7 @@ emulate -L zsh
 local context state state_descr line
 _arguments \
   '1:source path:->source' \
-  '2:archive name:'
+  '2:archive name:' && return 0
 
 case "$state" in
   source)
