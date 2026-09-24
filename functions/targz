@@ -26,7 +26,13 @@ targz () {
     echo "Unable to read parent directory for '$source_path'" 1>&2
     return 1
   fi
-  archive_name="${2:-$source_name}"
+
+  default_archive_name="$source_name"
+  if [ "$default_archive_name" = "." ] || [ "$default_archive_name" = ".." ]; then
+    default_archive_name="$(basename "$source_dir")"
+  fi
+
+  archive_name="${2:-$default_archive_name}"
 
   case "$archive_name" in
     */*) archive_path="$archive_name" ;;
@@ -38,5 +44,19 @@ targz () {
     *) archive_path="${archive_path}.tar.gz" ;;
   esac
 
-  tar -czvf "$archive_path" -C "$source_dir" "$source_name"
+  case "$archive_path" in
+    /*) archive_path_abs="$archive_path" ;;
+    *) archive_path_abs="$PWD/$archive_path" ;;
+  esac
+
+  if [ -d "$source_path" ]; then
+    source_abs="$(cd "$source_dir" && cd "$source_name" && pwd)"
+    case "$archive_path_abs" in
+      "$source_abs"/*|"$source_abs")
+        archive_path_abs="$(dirname "$source_abs")/${default_archive_name}.tar.gz"
+        ;;
+    esac
+  fi
+
+  tar -czvf "$archive_path_abs" -C "$source_dir" "$source_name"
 }
