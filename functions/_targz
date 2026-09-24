@@ -2,5 +2,5 @@
 
 emulate -L zsh
 _arguments \
-  '1:source path:_files' \
+  '1:source path:_path_files' \
   '2:archive name:'
