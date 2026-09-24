@@ -13,8 +13,9 @@ ta () {
   session_name="${1:-main}"
 
   if [ -n "$TMUX" ]; then
-    tmux has-session -t "$session_name" 2>/dev/null || tmux new-session -d -s "$session_name"
-    tmux switch-client -t "$session_name"
+    if tmux has-session -t "$session_name" 2>/dev/null || tmux new-session -d -s "$session_name"; then
+      tmux switch-client -t "$session_name"
+    fi
   else
     if tmux has-session -t "$session_name" 2>/dev/null; then
       tmux attach-session -t "$session_name"

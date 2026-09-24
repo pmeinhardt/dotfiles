@@ -20,3 +20,4 @@ zstyle ':completion:*' cache-path "$HOME/.zcompcache"
 compdef _directories mkcd
 compdef _files extract
 compdef _files targz
+compdef _ta ta
