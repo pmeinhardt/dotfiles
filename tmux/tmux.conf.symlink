@@ -45,6 +45,12 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
+# Seamless pane navigation between tmux and Vim/Neovim
+bind-key -n C-h if-shell '[ "#{pane_current_command}" = "nvim" ] || [ "#{pane_current_command}" = "vim" ]' 'send-keys C-h' 'select-pane -L'
+bind-key -n C-j if-shell '[ "#{pane_current_command}" = "nvim" ] || [ "#{pane_current_command}" = "vim" ]' 'send-keys C-j' 'select-pane -D'
+bind-key -n C-k if-shell '[ "#{pane_current_command}" = "nvim" ] || [ "#{pane_current_command}" = "vim" ]' 'send-keys C-k' 'select-pane -U'
+bind-key -n C-l if-shell '[ "#{pane_current_command}" = "nvim" ] || [ "#{pane_current_command}" = "vim" ]' 'send-keys C-l' 'select-pane -R'
+
 # Open selected URLs
 bind-key -T copy-mode-vi x send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux run-shell -b "cd #{pane_current_path}; open \"{}\" > /dev/null"'
 
@@ -66,9 +72,9 @@ bind-key -r L resize-pane -R 1
 # Preserve path for new windows
 bind-key c new-window -c '#{pane_current_path}'
 
-# Use C-h and C-l to cycle through panes
-bind-key -r C-h select-window -t :-
-bind-key -r C-l select-window -t :+
+# Use [ and ] to cycle through windows
+bind-key -r [ select-window -t :-
+bind-key -r ] select-window -t :+
 
 # Use < and > to move windows
 bind-key -r < swap-window -t -1
@@ -83,6 +89,13 @@ bind-key s display-popup -E -T ' sessions ' 'tmux list-sessions -F "#{session_na
 
 # Fuzzy-match window names and switch to the selected one
 bind-key w display-popup -E -T ' windows ' 'tmux list-windows -a -F "#{session_name}:#{window_index} #{window_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {1}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | cut -d " " -f 1 | xargs -I {} tmux switch-client -t {}'
+
+# Fuzzy-match project roots and open/switch coding sessions
+bind-key p display-popup -E -T ' projects ' 'find ~/Code ~/code ~/src ~/work -mindepth 1 -maxdepth 4 -type d -name .git 2>/dev/null | sed "s#/.git\$##" | sort -u | fzf --reverse --preview "ls -la {}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | xargs -I {} sh -c "project=\"{}\"; session=\$(basename \"\$project\" | tr \".:\" \"__\"); tmux has-session -t \"\$session\" 2>/dev/null || { tmux new-session -d -s \"\$session\" -c \"\$project\"; tmux send-keys -t \"\$session\":1.1 \"\$EDITOR .\" C-m; tmux split-window -t \"\$session\":1.1 -v -c \"\$project\"; tmux select-pane -t \"\$session\":1.1; tmux select-layout -t \"\$session\":1 even-vertical; }; tmux switch-client -t \"\$session\""'
+
+# Zoom and scratch-terminal workflow
+bind-key z resize-pane -Z
+bind-key T display-popup -E -d '#{pane_current_path}' -w 85% -h 85% '$SHELL'
 
 # Start window numbers at 1 to match keyboard order with tmux window order
 set-option -g base-index 1
