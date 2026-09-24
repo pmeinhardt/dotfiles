@@ -2,18 +2,9 @@
 
 emulate -L zsh
 
-local context state state_descr line
-_arguments \
-  '1:source path:->source' \
-  '2:archive name:'
-
-if [ $? -ne 300 ]; then
-  return 0
+if [ "$CURRENT" -eq 2 ]; then
+  _path_files
+  compadd -Q . ..
+elif [ "$CURRENT" -eq 3 ]; then
+  _message "archive name"
 fi
-
-case "$state" in
-  source)
-    _path_files
-    compadd -Q . ..
-    ;;
-esac
