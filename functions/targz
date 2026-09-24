@@ -22,9 +22,11 @@ targz () {
 
   if [ "$source_parent" = "$PWD" ]; then
     source_dir="$PWD"
-  elif ! source_dir="$(cd "$source_parent" && pwd)"; then
-    echo "Unable to read parent directory for '$source_path'" 1>&2
-    return 1
+  else
+    if ! source_dir="$(cd "$source_parent" && pwd)"; then
+      echo "Unable to read parent directory for '$source_path'" 1>&2
+      return 1
+    fi
   fi
 
   default_archive_name="$source_name"
@@ -49,7 +51,7 @@ targz () {
     */*)
       archive_dir="$(dirname "$archive_path")"
       archive_file="$(basename "$archive_path")"
-      if ! archive_dir_abs="$(cd "$PWD/$archive_dir" 2>/dev/null && pwd)"; then
+      if ! archive_dir_abs="$(cd "$archive_dir" 2>/dev/null && pwd)"; then
         echo "Unable to read output directory '$archive_dir'" 1>&2
         return 1
       fi
