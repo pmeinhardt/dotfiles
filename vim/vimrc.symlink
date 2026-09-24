@@ -63,6 +63,7 @@ set nosmarttab                      " fuck tabs
 set formatoptions+=j                " remove comment chars when joining lines
 set nojoinspaces                    " only insert single space after '.', '?'
                                     " and '!' with join command
+set completeopt=menu,menuone,noselect
 
 """ Visual cues
 
@@ -282,15 +283,12 @@ Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}
 
 " Tree-sitter (main branch) — a parser installer + query provider only; it does
 " not enable features itself. Highlighting and incremental selection are wired
-" up in after/plugin/treesitter.vim. Needs the tree-sitter CLI (see Brewfile)
-" and Neovim 0.12+. Manage parsers with :TSInstall / :TSUpdate / :TSUninstall.
+" up in after/plugin/treesitter.vim. Native LSP/completion is configured in
+" after/plugin/lsp.vim. Needs the tree-sitter CLI (see Brewfile) and Neovim
+" 0.12+. Manage parsers with :TSInstall / :TSUpdate / :TSUninstall.
 if has('nvim-0.12.0')
+  Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
-endif
-
-" Completion
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 endif
 
 call plug#end()
