@@ -1,4 +1,9 @@
 #compdef mkcd
 
 emulate -L zsh
-_arguments '1:directory path:_path_files'
+
+if ! _files -/; then
+  if [ -n "$PREFIX" ]; then
+    compadd -Q -- "$PREFIX"
+  fi
+fi

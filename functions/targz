@@ -61,7 +61,10 @@ targz () {
   esac
 
   if [ -d "$source_path" ]; then
-    source_abs="$(cd "$source_dir" && cd "$source_name" && pwd)"
+    if ! source_abs="$(cd "$source_path" && pwd)"; then
+      echo "Unable to read source directory '$source_path'" 1>&2
+      return 1
+    fi
     case "$archive_path_abs" in
       "$source_abs"/*|"$source_abs")
         archive_path_abs="$(dirname "$source_abs")/${default_archive_name}.tar.gz"

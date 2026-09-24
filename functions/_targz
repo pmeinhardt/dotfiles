@@ -1,6 +1,15 @@
 #compdef targz
 
 emulate -L zsh
+
+local state
 _arguments \
-  '1:source path:_path_files' \
+  '1:source path:->source' \
   '2:archive name:'
+
+case "$state" in
+  source)
+    _path_files
+    compadd -Q . ..
+    ;;
+esac
