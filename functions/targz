@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Usage: targz <path> [archive-name]
+# Description: create a gzipped tar archive
+#
+
+targz () {
+  if [ -z "$1" ]; then
+    echo "Usage: targz <path> [archive-name]" 1>&2
+    return 1
+  fi
+
+  source_path="$1"
+
+  if [ -n "$2" ]; then
+    archive_name="$2"
+  else
+    archive_name="$(basename "${source_path%/}")"
+  fi
+
+  tar -czvf "${archive_name}.tar.gz" "$source_path"
+}
