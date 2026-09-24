@@ -1,0 +1,4 @@
+#compdef targz
+
+emulate -L zsh
+_files

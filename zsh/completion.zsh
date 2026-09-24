@@ -18,6 +18,6 @@ zstyle ':completion:*' use-cache on
 [[ -d "$HOME/.zcompcache" ]] || mkdir -p "$HOME/.zcompcache"
 zstyle ':completion:*' cache-path "$HOME/.zcompcache"
 
-compdef _files targz
+compdef _targz targz
 compdef _mkcd mkcd
 compdef _ta ta

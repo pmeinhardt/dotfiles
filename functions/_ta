@@ -2,6 +2,11 @@
 
 emulate -L zsh
 
+if (( ! $+commands[tmux] )); then
+  _message "tmux session"
+  return 0
+fi
+
 local -a sessions
 sessions=("${(@f)$(tmux list-sessions -F '#S' 2>/dev/null)}")
 
