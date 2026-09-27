@@ -15,31 +15,31 @@ font-feature = -calt
 # 06 = cyan     14 = bright cyan
 # 07 = white    15 = bright white
 
-palette = 0=#2e2929
-palette = 1=#e87060
-palette = 2=#d5db69
-palette = 3=#fdc673
-palette = 4=#5083be
-palette = 5=#e383b5
-palette = 6=#71b5c9
-palette = 7=#dbd9d9
+palette = 0=#1a1521
+palette = 1=#ff9a8f
+palette = 2=#b9d9a1
+palette = 3=#f3c985
+palette = 4=#a6a3ff
+palette = 5=#e0a6ff
+palette = 6=#9ddce8
+palette = 7=#e3d7ef
 
-palette = 8=#7e7272
-palette = 9=#f1a89f
-palette = 10=#e6eaa6
-palette = 11=#fedcab
-palette = 12=#96b5d8
-palette = 13=#eeb4d2
-palette = 14=#abd3df
-palette = 15=#e9e7e7
+palette = 8=#645974
+palette = 9=#ffb6a9
+palette = 10=#cde6b8
+palette = 11=#ffdeaa
+palette = 12=#c2bcff
+palette = 13=#edc3ff
+palette = 14=#bbe9f2
+palette = 15=#fff2ff
 
-background = #000000
-foreground = #ffffff
+background = #050509
+foreground = #f3e9ff
 
-selection-background = #424242
-selection-foreground = #fdfdfd
+selection-background = #4a2f46
+selection-foreground = #fff7ff
 
-cursor-color = #e86554
+cursor-color = #ffc0b0
 
 
 # Background settings
@@ -52,7 +52,7 @@ background-blur = true
 
 macos-icon = custom-style
 macos-icon-ghost-color = #cac9c8
-macos-icon-screen-color = #101010
+macos-icon-screen-color = #050509
 
 
 # Window settings

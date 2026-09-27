@@ -64,24 +64,24 @@ let s:cterm = {
 
 " Set up color mapping for gui (see `:help gui-colors`).
 let s:gui = {
-      \ s:black       : '#000000',
-      \ s:white       : '#e9e7e7',
+      \ s:black       : '#050509',
+      \ s:white       : '#fff2ff',
       \
-      \ s:darkgray    : '#2e2929',
-      \ s:darkblue    : '#5083be',
-      \ s:darkcyan    : '#71b5c9',
-      \ s:darkgreen   : '#d5db69',
-      \ s:darkyellow  : '#fdc673',
-      \ s:darkred     : '#e87060',
-      \ s:darkmagenta : '#e383b5',
+      \ s:darkgray    : '#1a1521',
+      \ s:darkblue    : '#a6a3ff',
+      \ s:darkcyan    : '#9ddce8',
+      \ s:darkgreen   : '#b9d9a1',
+      \ s:darkyellow  : '#f3c985',
+      \ s:darkred     : '#ff9a8f',
+      \ s:darkmagenta : '#e0a6ff',
       \
-      \ s:gray        : '#7e7272',
-      \ s:blue        : '#96b5d8',
-      \ s:cyan        : '#abd3df',
-      \ s:green       : '#e6eaa6',
-      \ s:yellow      : '#fedcab',
-      \ s:red         : '#f1a89f',
-      \ s:magenta     : '#eeb4d2',
+      \ s:gray        : '#645974',
+      \ s:blue        : '#c2bcff',
+      \ s:cyan        : '#bbe9f2',
+      \ s:green       : '#cde6b8',
+      \ s:yellow      : '#ffdeaa',
+      \ s:red         : '#ffb6a9',
+      \ s:magenta     : '#edc3ff',
       \
       \ s:none        : s:none,
       \ }
