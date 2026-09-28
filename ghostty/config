@@ -15,31 +15,31 @@ font-feature = -calt
 # 06 = cyan     14 = bright cyan
 # 07 = white    15 = bright white
 
-palette = 0=#1c1324
-palette = 1=#ec6f60
-palette = 2=#56a14c
-palette = 3=#f3be4f
-palette = 4=#4d7ec9
-palette = 5=#8e67df
-palette = 6=#63acdb
-palette = 7=#e8ddf2
+palette = 0=#21192b
+palette = 1=#e98a85
+palette = 2=#8cc08a
+palette = 3=#e9bf78
+palette = 4=#7e9dd5
+palette = 5=#a98adf
+palette = 6=#83bfd9
+palette = 7=#eadff2
 
-palette = 8=#353436
-palette = 9=#ff8f7d
-palette = 10=#63cc55
-palette = 11=#fbc650
-palette = 12=#7fc4ff
-palette = 13=#c39aff
-palette = 14=#8bd8ff
-palette = 15=#fff3ec
+palette = 8=#3f3a47
+palette = 9=#f2a6a0
+palette = 10=#a7d3a4
+palette = 11=#f3d49c
+palette = 12=#9eb9e6
+palette = 13=#c2a8ec
+palette = 14=#a6d9eb
+palette = 15=#fff4ef
 
 background = #050509
-foreground = #f7e8e0
+foreground = #f4e7e6
 
-selection-background = #4a2a44
-selection-foreground = #fff5ee
+selection-background = #4a3556
+selection-foreground = #fff6f2
 
-cursor-color = #ffb78a
+cursor-color = #f5b7c8
 
 
 # Background settings

@@ -92,23 +92,23 @@ set-option -w -g pane-base-index 1
 set-option -g renumber-windows on
 
 # Customize status bar format for window information
-set-option -g window-status-format ' #[fg=#ec6f60]#{window_index}#[fg=#f7e8e0] #{window_name} #[fg=#f3be4f]#{window_flags}#[default] '
+set-option -g window-status-format ' #[fg=#e98a85]#{window_index}#[fg=#f4e7e6] #{window_name} #[fg=#e9bf78]#{window_flags}#[default] '
 set-option -g window-status-current-format '#[reverse]#{window_index} #{window_name} #{window_flags}#[noreverse]'
 set-option -g window-status-separator ''
 
 # Show prefix activation and copy mode in left status bar
-set-option -g status-left '#{?client_prefix,#[fg=#f3be4f],#{?pane_in_mode,#[fg=#f3be4f],#[fg=#f7e8e0]}}#[fg=#f7e8e0] '
+set-option -g status-left '#{?client_prefix,#[fg=#e9bf78],#{?pane_in_mode,#[fg=#e9bf78],#[fg=#f4e7e6]}}#[fg=#f4e7e6] '
 
 # Show session name in right status bar
 set-option -g status-right '#{session_name}'
 
 # Customize status bar colors
-set-option -g status-style 'bg=#050509,fg=#353436'
-set-option -g window-status-current-style 'fg=#f7e8e0'
+set-option -g status-style 'bg=#050509,fg=#3f3a47'
+set-option -g window-status-current-style 'fg=#f4e7e6'
 
 # Customize border colors
-set-option -g pane-border-style 'fg=#1c1324'
-set-option -g pane-active-border-style 'fg=#4d7ec9'
+set-option -g pane-border-style 'fg=#21192b'
+set-option -g pane-active-border-style 'fg=#7e9dd5'
 
 # Conditionally load local config
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
