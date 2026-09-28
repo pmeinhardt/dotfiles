@@ -1,37 +1,37 @@
 # Color palette
 
-- Normal: https://coolors.co/e3d7ef-1a1521-a6a3ff-9ddce8-b9d9a1-f3c985-ff9a8f-e0a6ff
-- Bright: https://coolors.co/fff2ff-645974-c2bcff-bbe9f2-cde6b8-ffdeaa-ffb6a9-edc3ff
-- Background: https://coolors.co/050509-1a1521-2e2837-433a4d-574c64-6c5f7b-807292-9585a9-fff2ff
+- Normal: https://coolors.co/e8ddf2-1c1324-4d7ec9-63acdb-56a14c-f3be4f-ec6f60-8e67df
+- Bright: https://coolors.co/fff3ec-353436-7fc4ff-8bd8ff-63cc55-fbc650-ff8f7d-c39aff
+- Background: https://coolors.co/050509-1c1324-241a33-2c2142-342851-3c2f60-44366f-4c3d7e-fff3ec
 
 ```shell
 # https://github.com/sharkdp/pastel
 pastel color \
-  e3d7ef \
-  1a1521 \
-  a6a3ff \
-  9ddce8 \
-  b9d9a1 \
-  f3c985 \
-  ff9a8f \
-  e0a6ff \
+  e8ddf2 \
+  1c1324 \
+  4d7ec9 \
+  63acdb \
+  56a14c \
+  f3be4f \
+  ec6f60 \
+  8e67df \
   \
-  fff2ff \
-  645974 \
-  c2bcff \
-  bbe9f2 \
-  cde6b8 \
-  ffdeaa \
-  ffb6a9 \
-  edc3ff \
+  fff3ec \
+  353436 \
+  7fc4ff \
+  8bd8ff \
+  63cc55 \
+  fbc650 \
+  ff8f7d \
+  c39aff \
   \
   050509 \
-  1a1521 \
-  2e2837 \
-  433a4d \
-  574c64 \
-  6c5f7b \
-  807292 \
-  9585a9 \
-  fff2ff
+  1c1324 \
+  241a33 \
+  2c2142 \
+  342851 \
+  3c2f60 \
+  44366f \
+  4c3d7e \
+  fff3ec
 ```
