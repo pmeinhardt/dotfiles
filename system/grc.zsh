@@ -1,4 +1,4 @@
 # GRC colorizes nifty unix tools all over the place
-if (( $+commands[grc] )) && (( $+commands[brew] )); then
-  source "$(brew --prefix)/etc/grc.zsh"
+if (( $+commands[grc] )) && [ -n "$HOMEBREW_PREFIX" ]; then
+  source "$HOMEBREW_PREFIX/etc/grc.zsh"
 fi

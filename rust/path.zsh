@@ -1,4 +1,4 @@
-RUSTBIN="$(brew --prefix rustup)/bin"
+RUSTBIN="$HOMEBREW_PREFIX/opt/rustup/bin"
 
 if [ -d "$RUSTBIN" ]; then
   PATH="$RUSTBIN:$PATH"

@@ -6,7 +6,7 @@ fi
 
 # Add Homebrew’s completions if they are not in the default ZSH fpath,
 # i.e. they are not in /usr/local/share/zsh/site-functions
-if (( $+commands[brew] )) && [ $(brew --prefix) != "/usr/local" ]
+if [ -n "$HOMEBREW_PREFIX" ] && [ "$HOMEBREW_PREFIX" != "/usr/local" ]
 then
-  fpath=($fpath $(brew --prefix)/share/zsh/site-functions)
+  fpath=($fpath $HOMEBREW_PREFIX/share/zsh/site-functions)
 fi
