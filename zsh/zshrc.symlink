@@ -15,13 +15,9 @@ then
   source ~/.localrc
 fi
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
-
-# exclude .zsh files in vim plugins -- these aren't shell config and some
-# contain runnable sample code that would run on every shell startup
-config_files=(${config_files:#*/vim.symlink/plugged/*})
+# all of our zsh files -- only one level deep, so we don't crawl vim plugins
+# and other large trees (slow, and some contain runnable sample .zsh code)
+config_files=($ZSH/*/*.zsh)
 
 # load the path files, with homebrew first so it is available to the others
 for file in $ZSH/homebrew/path.zsh ${${(M)config_files:#*/path.zsh}:#*/homebrew/path.zsh}
