@@ -5,7 +5,10 @@ set-option -g default-terminal "$TERM"
 set-option -g set-titles on
 
 # Increase scrollback lines
-set-option -g history-limit 10000
+set-option -g history-limit 50000
+
+# Scroll with the mouse wheel and select text by dragging
+set-option -g mouse on
 
 # No delay when hitting escape
 set-option -s escape-time 0
@@ -38,6 +41,9 @@ bind-key -T copy-mode-vi y send-keys -X copy-pipe 'pbcopy'
 # Update default binding of Enter to also use copy-pipe
 unbind-key -T copy-mode-vi Enter
 bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'pbcopy'
+
+# Copy mouse selections to the clipboard too
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'pbcopy'
 
 # Additional vim-like keybindings for pane-switching
 bind-key h select-pane -L
