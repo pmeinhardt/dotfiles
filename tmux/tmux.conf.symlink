@@ -97,28 +97,61 @@ set-option -w -g pane-base-index 1
 # Renumber windows sequentially after closing any of them
 set-option -g renumber-windows on
 
-# Customize status bar format for window information
-set-option -g window-status-format ' #[fg=red]#{window_index}#[fg=default] #{window_name} #[fg=yellow]#{window_flags}#[default] '
-set-option -g window-status-current-format '#[reverse]#{window_index} #{window_name} #{window_flags}#[noreverse]'
+# Warm Mocha palette (see colors/warm-mocha.html), matching Ghostty and Vim
+%hidden rosewater="#f4e1da"
+%hidden flamingo="#f2cec7"
+%hidden pink="#fdc0d7"
+%hidden mauve="#dda0e8"
+%hidden red="#f78c91"
+%hidden maroon="#eca19d"
+%hidden peach="#f9b485"
+%hidden yellow="#fee0b0"
+%hidden green="#c0dd8d"
+%hidden teal="#9de2c6"
+%hidden sky="#88dde3"
+%hidden sapphire="#71c8ea"
+%hidden blue="#92b1fb"
+%hidden lavender="#c0bafb"
+%hidden text="#dad7cf"
+%hidden subtext1="#c6c3bd"
+%hidden subtext0="#b1aeaa"
+%hidden overlay2="#9d9a97"
+%hidden overlay1="#878583"
+%hidden overlay0="#737171"
+%hidden surface2="#5e5c5e"
+%hidden surface1="#4a484b"
+%hidden surface0="#2c292b"
+%hidden base="#201e20"
+%hidden mantle="#161416"
+%hidden crust="#0b0b0b"
+
+# Customize status bar format for window information, the current one as a pill
+set-option -g window-status-format " #{window_index} #{window_name}#{?window_flags, #[fg=$peach]#{window_flags},} "
+set-option -g window-status-current-format "#[fg=$surface0]#[fg=$text,bg=$surface0]#{window_index} #{window_name}#{?window_flags, #[fg=$mauve]#{window_flags},}#[fg=$surface0,bg=default]"
 set-option -g window-status-separator ''
 
 # Show prefix activation and copy mode in left status bar
-set-option -g status-left '#{?client_prefix,#[fg=yellow],#{?pane_in_mode,#[fg=yellow],#[fg=default]}}#[fg=default] '
+set-option -g status-left "#{?client_prefix,#[fg=$peach],#{?pane_in_mode,#[fg=$peach],#[fg=$surface1]}}●#[fg=default] "
 
 # Show session name in right status bar
 set-option -g status-right '#{session_name}'
 
 # Customize status bar colors
-set-option -g status-style 'bg=#000000,fg=#5d5959'
-set-option -g window-status-current-style 'fg=#a4a0a0'
+set-option -g status-style "bg=default,fg=$overlay0"
 
-# Customize border colors
-set-option -g pane-border-style 'fg=#231f1f'
-set-option -g pane-active-border-style 'fg=#5d5959'
+# Separate panes with faint lines, slightly brighter around the active one
+set-option -g pane-border-lines single
+set-option -g pane-border-indicators off
+set-option -g pane-border-style "fg=$base"
+set-option -g pane-active-border-style "fg=$surface0"
+
+# Subtly dim text in inactive panes
+set-option -g window-style "fg=$subtext0"
+set-option -g window-active-style 'fg=default'
 
 # Customize popups (tmux 3.8 defaults to a dark grey theme background)
 set-option -w -g popup-style 'bg=default'
-set-option -w -g popup-border-style 'bg=default,fg=#5d5959'
+set-option -w -g popup-border-style "bg=default,fg=$overlay0"
 set-option -w -g popup-border-lines rounded
 
 # Conditionally load local config

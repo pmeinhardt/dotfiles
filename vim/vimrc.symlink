@@ -66,6 +66,7 @@ set nojoinspaces                    " only insert single space after '.', '?'
 
 """ Visual cues
 
+set fillchars=vert:│,eob:\          " thin split separators, no '~' lines
 set showmatch                       " brackets/braces that is
 set matchtime=5                     " duration to show matching brace (1/10 sec)
 set listchars=tab:▸\ ,trail:·,eol:¬ " chars for invisibles
@@ -86,6 +87,10 @@ endif
 """ Navigation
 
 set ruler
+
+" Minimal status line: path, modified marker, line:column
+let &statusline = ' %f%{&modified ? " ●" : ""}%=%l:%c '
+
 set scrolloff=3                     " keep at least 3 lines above/below
 set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
 
@@ -235,7 +240,8 @@ nnoremap <silent> <c-p> :GFiles --cached --exclude-standard --others<cr>
 
 """ Colors
 
-colorscheme base
+set termguicolors                   " use 24-bit colors (needed by base)
+colorscheme base                    " custom color scheme
 
 
 """ Use vim-plug to manage vim bundles:

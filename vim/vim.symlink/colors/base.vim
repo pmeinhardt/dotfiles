@@ -15,81 +15,48 @@ endif
 let g:colors_name = 'base'
 
 
-" Define color/value keys.
-let s:black       = 'black'
-let s:white       = 'white'
-
-let s:darkgray    = 'darkgray'
-let s:darkblue    = 'darkblue'
-let s:darkcyan    = 'darkcyan'
-let s:darkgreen   = 'darkgreen'
-let s:darkyellow  = 'darkyellow'
-let s:darkred     = 'darkred'
-let s:darkmagenta = 'darkmagenta'
-
-let s:gray        = 'gray'
-let s:blue        = 'blue'
-let s:cyan        = 'cyan'
-let s:green       = 'green'
-let s:yellow      = 'yellow'
-let s:red         = 'red'
-let s:magenta     = 'magenta'
-
-let s:none        = 'NONE'
-
-
-" Set up color mapping for terminal (see `:help cterm-colors`).
-let s:cterm = {
-      \ s:black       : 0,
-      \ s:white       : 15,
-      \
-      \ s:darkgray    : 8,
-      \ s:darkblue    : 4,
-      \ s:darkcyan    : 6,
-      \ s:darkgreen   : 2,
-      \ s:darkyellow  : 3,
-      \ s:darkred     : 1,
-      \ s:darkmagenta : 5,
-      \
-      \ s:gray        : 7,
-      \ s:blue        : 12,
-      \ s:cyan        : 14,
-      \ s:green       : 10,
-      \ s:yellow      : 11,
-      \ s:red         : 9,
-      \ s:magenta     : 13,
-      \
-      \ s:none        : s:none,
-      \ }
-
-" Set up color mapping for gui (see `:help gui-colors`).
-let s:gui = {
-      \ s:black       : '#000000',
-      \ s:white       : '#e9e7e7',
-      \
-      \ s:darkgray    : '#2e2929',
-      \ s:darkblue    : '#5083be',
-      \ s:darkcyan    : '#71b5c9',
-      \ s:darkgreen   : '#d5db69',
-      \ s:darkyellow  : '#fdc673',
-      \ s:darkred     : '#e87060',
-      \ s:darkmagenta : '#e383b5',
-      \
-      \ s:gray        : '#7e7272',
-      \ s:blue        : '#96b5d8',
-      \ s:cyan        : '#abd3df',
-      \ s:green       : '#e6eaa6',
-      \ s:yellow      : '#fedcab',
-      \ s:red         : '#f1a89f',
-      \ s:magenta     : '#eeb4d2',
-      \
-      \ s:none        : s:none,
+" Warm Mocha palette, a warmer, near-black Catppuccin Mocha.
+" Requires 'termguicolors'.
+let s:palette = {
+      \ 'rosewater' : '#f4e1da',
+      \ 'flamingo'  : '#f2cec7',
+      \ 'pink'      : '#fdc0d7',
+      \ 'mauve'     : '#dda0e8',
+      \ 'red'       : '#f78c91',
+      \ 'maroon'    : '#eca19d',
+      \ 'peach'     : '#f9b485',
+      \ 'yellow'    : '#fee0b0',
+      \ 'green'     : '#c0dd8d',
+      \ 'teal'      : '#9de2c6',
+      \ 'sky'       : '#88dde3',
+      \ 'sapphire'  : '#71c8ea',
+      \ 'blue'      : '#92b1fb',
+      \ 'lavender'  : '#c0bafb',
+      \ 'text'      : '#dad7cf',
+      \ 'subtext1'  : '#c6c3bd',
+      \ 'subtext0'  : '#b1aeaa',
+      \ 'overlay2'  : '#9d9a97',
+      \ 'overlay1'  : '#878583',
+      \ 'overlay0'  : '#737171',
+      \ 'surface2'  : '#5e5c5e',
+      \ 'surface1'  : '#4a484b',
+      \ 'surface0'  : '#2c292b',
+      \ 'base'      : '#201e20',
+      \ 'mantle'    : '#161416',
+      \ 'crust'     : '#0b0b0b',
       \ }
 
 
-" Define helper function
-function! s:hi(group, fg, bg, attr)
-  exec 'highlight ' . a:group . ' ctermfg=' . s:cterm[a:fg] . ' ctermbg=' . s:cterm[a:bg] . ' cterm=' . a:attr . ' guifg=' . s:gui[a:fg] . ' guibg=' . s:gui[a:bg] . ' gui=' . a:attr
+" Look up a palette color; an empty name means none
+function! s:color(name) abort
+  return empty(a:name) ? 'NONE' : s:palette[a:name]
+endfunction
+
+" Highlight a group with palette colors; empty arguments mean none
+function! s:hi(group, fg, bg = '', attr = '', sp = '') abort
+  let attr = empty(a:attr) ? 'NONE' : a:attr
+  exec printf('highlight %s guifg=%s guibg=%s guisp=%s gui=%s cterm=%s',
+        \ a:group, s:color(a:fg), s:color(a:bg), s:color(a:sp), attr, attr)
 endfunction
 
 function! s:ln(from, to)
@@ -98,142 +65,140 @@ endfunction
 
 
 " Set baseline
-call s:hi('Normal', s:white, s:none, s:none)
+call s:hi('Normal', 'text')
 call s:ln('NormalNC', 'Normal')
 
-call s:hi('Bold', s:none, s:none, 'bold')
-call s:hi('Italic', s:none, s:none, 'italic')
-call s:hi('Unterlined', s:none, s:none, 'underline')
+call s:hi('Bold', '', '', 'bold')
+call s:hi('Italic', '', '', 'italic')
+call s:hi('Underlined', '', '', 'underline')
 
 " Vim editor colors
-call s:hi('Debug', s:darkred, s:none, s:none)
-call s:hi('Directory', s:blue, s:none, s:none)
-call s:hi('Error', s:black, s:darkred, s:none)
-call s:hi('ErrorMsg', s:darkred, s:black, s:none)
-call s:hi('Exception', s:darkred, s:none, s:none)
-call s:hi('Search', s:black, s:darkyellow, s:none)
-call s:hi('IncSearch', s:yellow, s:darkred, s:none)
-call s:hi('Substitute', s:black, s:darkyellow, s:none)
-call s:hi('Macro', s:darkblue, s:none, s:none)
-call s:hi('MatchParen', s:black, s:yellow, s:none)
-call s:hi('ModeMsg', s:gray, s:none, s:none)
-call s:hi('MoreMsg', s:darkblue, s:none, s:none)
-call s:hi('Question', s:darkyellow, s:none, s:none)
-call s:hi('SpecialKey', s:gray, s:none, s:none)
-call s:hi('TooLong', s:darkblue, s:none, s:none)
-call s:hi('Visual', s:black, s:yellow, s:none)
-call s:hi('VisualNOS', s:darkblue, s:none, s:none)
-call s:hi('WarningMsg', s:darkyellow, s:none, s:none)
-call s:hi('WildMenu', s:black, s:white, 'bold')
-call s:hi('Title', s:darkblue, s:none, 'bold')
-call s:hi('Conceal', s:darkblue, s:none, s:none)
-call s:hi('Cursor', s:black, s:gray, s:none)
-call s:hi('NonText', s:darkgray, s:none, s:none)
-call s:hi('SignColumn', s:darkgray, s:none, s:none)
-call s:hi('StatusLine', s:black, s:gray, 'bold')
-call s:hi('StatusLineNC', s:black, s:darkgray, s:none)
-call s:hi('ColorColumn', s:none, s:darkgray, s:none)
-call s:hi('MsgSeparator', s:black, s:gray, s:none)
-call s:hi('CursorColumn', s:none, s:none, 'none')
-call s:hi('CursorLine', s:none, s:none, 'bold')
-call s:hi('QuickFixLine', s:none, s:none, 'standout')
-call s:hi('WinSeparator', s:darkgray, s:none, s:none)
-call s:hi('EndOfBuffer', s:darkgray, s:none, s:none)
-call s:hi('NonText', s:darkgray, s:none, s:none)
+call s:hi('Debug', 'red')
+call s:hi('Directory', 'lavender')
+call s:hi('Error', 'crust', 'red')
+call s:hi('ErrorMsg', 'red')
+call s:hi('Exception', 'red')
+call s:hi('Search', 'yellow', 'surface0')
+call s:hi('IncSearch', 'crust', 'peach')
+call s:hi('Substitute', 'yellow', 'surface0')
+call s:hi('Macro', 'blue')
+call s:hi('MatchParen', 'peach', 'surface0', 'bold')
+call s:hi('ModeMsg', 'overlay1')
+call s:hi('MoreMsg', 'blue')
+call s:hi('Question', 'yellow')
+call s:hi('SpecialKey', 'overlay1')
+call s:hi('TooLong', 'blue')
+call s:hi('Visual', '', 'surface0')
+call s:hi('VisualNOS', 'blue')
+call s:hi('WarningMsg', 'yellow')
+call s:hi('WildMenu', 'text', 'surface0', 'bold')
+call s:hi('Title', 'blue', '', 'bold')
+call s:hi('Conceal', 'blue')
+call s:hi('Cursor', 'crust', 'overlay1')
+call s:hi('NonText', 'surface1')
+call s:hi('SignColumn', 'surface1')
+call s:hi('StatusLine', 'subtext0', 'mantle')
+call s:hi('StatusLineNC', 'overlay0', 'mantle')
+call s:hi('ColorColumn', '', 'mantle')
+call s:hi('MsgSeparator', 'overlay0', 'mantle')
+call s:hi('CursorColumn', '', 'mantle')
+call s:hi('CursorLine', '', 'mantle')
+call s:hi('QuickFixLine', '', 'surface0')
+call s:hi('WinSeparator', 'surface0')
+call s:hi('EndOfBuffer', 'surface1')
+call s:hi('NormalFloat', 'text', 'mantle')
+call s:hi('FloatBorder', 'overlay0', 'mantle')
 
 call s:ln('MsgArea', 'Normal')
 call s:ln('VertSplit', 'WinSeparator')
 
 " Tabs
-call s:hi('TabLine', s:black, s:white, s:none)
-call s:hi('TabLineFill', s:black, s:white, s:none)
-call s:hi('TabLineSel', s:white, s:black, 'bold')
+call s:hi('TabLine', 'overlay0')
+call s:hi('TabLineFill', 'overlay0')
+call s:hi('TabLineSel', 'text', 'surface0')
+call s:hi('TabLineSelCap', 'surface0')
 
 " Line numbers
-call s:hi('LineNr', s:darkgray, s:none, s:none)
-call s:hi('CursorLineNr', s:gray, s:none, s:none)
+call s:hi('LineNr', 'surface1')
+call s:hi('CursorLineNr', 'subtext0')
 
 call s:ln('LineNrAbove', 'LineNr')
 call s:ln('LineNrBelow', 'LineNr')
 
 " Folds
-call s:hi('FoldColumn', s:darkblue, s:black, s:none)
-call s:hi('Folded', s:darkgray, s:black, s:none)
+call s:hi('FoldColumn', 'blue')
+call s:hi('Folded', 'overlay0', 'mantle')
 
 " Quickfix window
-call s:hi('qfSeparator', s:darkgray, s:none, s:none)
+call s:hi('qfSeparator', 'surface1')
 
 call s:ln('qfFileName', 'Directory')
 call s:ln('qfLineNr', 'LineNr')
 
 " Popup menu
-call s:hi('Pmenu', s:darkgray, s:white, s:none)
-call s:hi('PmenuExtra', s:gray, s:white, s:none)
-call s:hi('PmenuExtraSel', s:black, s:white, 'bold')
-call s:hi('PmenuKind', s:gray, s:white, s:none)
-call s:hi('PmenuKindSel', s:black, s:white, 'bold')
-call s:hi('PmenuSel', s:black, s:white, 'bold')
-call s:hi('PmenuSbar', s:black, s:darkgray, s:none)
-call s:hi('PmenuThumb', s:none, s:gray, s:none)
+call s:hi('Pmenu', 'subtext0', 'mantle')
+call s:hi('PmenuExtra', 'overlay0', 'mantle')
+call s:hi('PmenuExtraSel', 'subtext0', 'surface0', 'bold')
+call s:hi('PmenuKind', 'overlay0', 'mantle')
+call s:hi('PmenuKindSel', 'text', 'surface0', 'bold')
+call s:hi('PmenuSel', 'text', 'surface0', 'bold')
+call s:hi('PmenuSbar', '', 'base')
+call s:hi('PmenuThumb', '', 'overlay0')
 
-" Spell hiing
-call s:hi('SpellBad', s:none, s:none, 'undercurl')
-exec 'highlight SpellBad guisp=' . s:darkred
-" call s:hi('SpellCap')
-" call s:hi('SpellLocal')
-" call s:hi('SpellRare')
+" Spell checking
+call s:hi('SpellBad', '', '', 'undercurl', 'red')
 
 " Diagnostic
-call s:hi('DiagnosticError', s:darkred, s:none, s:none)
-call s:hi('DiagnosticWarn', s:yellow, s:none, s:none)
-call s:hi('DiagnosticInfo', s:blue, s:none, s:none)
-call s:hi('DiagnosticHint', s:cyan, s:none, s:none)
-call s:hi('DiagnosticOk', s:green, s:none, s:none)
+call s:hi('DiagnosticError', 'red')
+call s:hi('DiagnosticWarn', 'yellow')
+call s:hi('DiagnosticInfo', 'lavender')
+call s:hi('DiagnosticHint', 'teal')
+call s:hi('DiagnosticOk', 'green')
 
-exec 'highlight DiagnosticUnderlineError guisp=' . s:red
-exec 'highlight DiagnosticUnderlineWarn guisp=' . s:yellow
-exec 'highlight DiagnosticUnderlineInfo guisp=' . s:blue
-exec 'highlight DiagnosticUnderlineHint guisp=' . s:cyan
-exec 'highlight DiagnosticUnderlineOk guisp=' . s:green
+call s:hi('DiagnosticUnderlineError', '', '', 'underline', 'red')
+call s:hi('DiagnosticUnderlineWarn', '', '', 'underline', 'yellow')
+call s:hi('DiagnosticUnderlineInfo', '', '', 'underline', 'lavender')
+call s:hi('DiagnosticUnderlineHint', '', '', 'underline', 'teal')
+call s:hi('DiagnosticUnderlineOk', '', '', 'underline', 'green')
 
 " Standard syntax highlighting
-call s:hi('Boolean', s:red, s:none, s:none)
-call s:hi('Character', s:red, s:none, s:none)
-call s:hi('Comment', s:gray, s:none, s:none)
-call s:hi('Conditional', s:darkmagenta, s:none, s:none)
-call s:hi('Constant', s:red, s:none, s:none)
-call s:hi('Define', s:darkblue, s:none, s:none)
-call s:hi('Delimiter', s:darkcyan, s:none, s:none)
-call s:hi('Float', s:red, s:none, s:none)
-call s:hi('Function', s:darkblue, s:none, s:none)
-call s:hi('Identifier', s:darkred, s:none, s:none)
-call s:hi('Include', s:darkblue, s:none, s:none)
-call s:hi('Keyword', s:darkmagenta, s:none, s:none)
-call s:hi('Label', s:darkmagenta, s:none, s:none)
-call s:hi('Number', s:red, s:none, s:none)
-call s:hi('Operator', s:white, s:none, s:none)
-call s:hi('PreProc', s:darkblue, s:none, s:none)
-call s:hi('PreCondit', s:darkblue, s:none, s:none)
-call s:hi('Repeat', s:darkmagenta, s:none, s:none)
-call s:hi('Special', s:darkcyan, s:none, s:none)
-call s:hi('SpecialChar', s:darkcyan, s:none, s:none)
-call s:hi('SpecialComment', s:darkcyan, s:none, s:none)
-call s:hi('Statement', s:darkblue, s:none, s:none)
-call s:hi('StorageClass', s:darkcyan, s:none, s:none)
-call s:hi('String', s:darkgreen, s:none, s:none)
-call s:hi('Structure', s:darkmagenta, s:none, s:none)
-call s:hi('Tag', s:darkcyan, s:none, s:none)
-call s:hi('Todo', s:yellow, s:none, 'bold')
-call s:hi('Type', s:darkyellow, s:none, s:none)
-call s:hi('Typedef', s:darkred, s:none, s:none)
+call s:hi('Boolean', 'peach')
+call s:hi('Character', 'peach')
+call s:hi('Comment', 'overlay1')
+call s:hi('Conditional', 'mauve')
+call s:hi('Constant', 'peach')
+call s:hi('Define', 'blue')
+call s:hi('Delimiter', 'sky')
+call s:hi('Float', 'peach')
+call s:hi('Function', 'blue')
+call s:hi('Identifier', 'red')
+call s:hi('Include', 'blue')
+call s:hi('Keyword', 'mauve')
+call s:hi('Label', 'mauve')
+call s:hi('Number', 'peach')
+call s:hi('Operator', 'text')
+call s:hi('PreProc', 'blue')
+call s:hi('PreCondit', 'blue')
+call s:hi('Repeat', 'mauve')
+call s:hi('Special', 'sky')
+call s:hi('SpecialChar', 'sky')
+call s:hi('SpecialComment', 'sky')
+call s:hi('Statement', 'blue')
+call s:hi('StorageClass', 'sky')
+call s:hi('String', 'green')
+call s:hi('Structure', 'mauve')
+call s:hi('Tag', 'sky')
+call s:hi('Todo', 'rosewater', '', 'bold')
+call s:hi('Type', 'yellow')
+call s:hi('Typedef', 'red')
 
 " Diffs
-call s:hi('DiffAdd', s:darkgreen, s:none, s:none)
-call s:hi('DiffChange', s:darkyellow, s:none, s:none)
-call s:hi('DiffDelete', s:darkred, s:none, s:none)
-call s:hi('DiffText', s:darkyellow, s:darkgray, s:none)
-call s:hi('DiffLine', s:darkcyan, s:none, s:none)
-call s:hi('diffSubname', s:gray, s:none, s:none)
+call s:hi('DiffAdd', 'green')
+call s:hi('DiffChange', 'yellow')
+call s:hi('DiffDelete', 'red')
+call s:hi('DiffText', 'yellow', 'surface0')
+call s:hi('DiffLine', 'sky')
+call s:hi('diffSubname', 'overlay1')
 
 call s:ln('DiffAdded', 'DiffAdd')
 call s:ln('DiffRemoved', 'DiffDelete')
@@ -241,6 +206,22 @@ call s:ln('DiffRemoved', 'DiffDelete')
 call s:ln('Added', 'DiffAdd')
 call s:ln('Changed', 'DiffChange')
 call s:ln('Removed', 'DiffDelete')
+
+" Markdown
+call s:hi('markdownCode', 'sky')
+call s:hi('markdownLinkText', 'mauve')
+call s:hi('markdownUrl', 'mauve', '', 'underline')
+
+" Highlight the "[]()" around links like the link itself
+call s:ln('markdownLinkTextDelimiter', 'markdownLinkText')
+call s:ln('markdownLinkDelimiter', 'markdownLinkText')
+
+if has('nvim')
+  call s:ln('@markup.raw.markdown_inline', 'markdownCode')
+  call s:ln('@markup.link.markdown_inline', 'markdownLinkText')
+  call s:ln('@markup.link.label.markdown_inline', 'markdownLinkText')
+  call s:ln('@markup.link.url.markdown_inline', 'markdownUrl')
+endif
 
 " HTML
 call s:ln('htmlBold', 'Bold')
@@ -252,48 +233,23 @@ call s:ln('cssClassName', 'Structure')
 call s:ln('cssProp', 'Type')
 
 " Fugitive
-call s:hi('fugitiveHeader', s:darkblue, s:none, s:none)
-call s:hi('fugitiveHunk', s:darkgray, s:none, s:none)
-call s:hi('fugitiveSymbolicRef', s:darkyellow, s:none, s:none)
-call s:hi('fugitiveHelpTag', s:darkcyan, s:none, s:none)
-call s:hi('fugitiveUntrackedSection', s:white, s:none, s:none)
-call s:hi('fugitiveUntrackedHeading', s:darkmagenta, s:none, s:none)
-call s:hi('fugitiveUntrackedModifier', s:magenta, s:none, s:none)
-call s:hi('fugitiveUnstagedSection', s:white, s:none, s:none)
-call s:hi('fugitiveUnstagedHeading', s:darkred, s:none, s:none)
-call s:hi('fugitiveUnstagedModifier', s:red, s:none, s:none)
-call s:hi('fugitiveStagedSection', s:white, s:none, s:none)
-call s:hi('fugitiveStagedHeading', s:darkyellow, s:none, s:none)
-call s:hi('fugitiveStagedModifier', s:yellow, s:none, s:none)
-call s:hi('fugitiveCount', s:red, s:none, s:none)
+call s:hi('fugitiveHeader', 'blue')
+call s:hi('fugitiveHunk', 'surface1')
+call s:hi('fugitiveSymbolicRef', 'yellow')
+call s:hi('fugitiveHelpTag', 'sky')
+call s:hi('fugitiveUntrackedSection', 'text')
+call s:hi('fugitiveUntrackedHeading', 'mauve')
+call s:hi('fugitiveUntrackedModifier', 'pink')
+call s:hi('fugitiveUnstagedSection', 'text')
+call s:hi('fugitiveUnstagedHeading', 'red')
+call s:hi('fugitiveUnstagedModifier', 'peach')
+call s:hi('fugitiveStagedSection', 'text')
+call s:hi('fugitiveStagedHeading', 'yellow')
+call s:hi('fugitiveStagedModifier', 'rosewater')
+call s:hi('fugitiveCount', 'peach')
 
 
-" Remove functions.
+delfunction s:color
 delfunction s:hi
 delfunction s:ln
-
-
-" Remove variables.
-unlet s:black
-unlet s:white
-
-unlet s:darkgray
-unlet s:darkblue
-unlet s:darkcyan
-unlet s:darkgreen
-unlet s:darkyellow
-unlet s:darkred
-unlet s:darkmagenta
-
-unlet s:gray
-unlet s:blue
-unlet s:cyan
-unlet s:green
-unlet s:yellow
-unlet s:red
-unlet s:magenta
-
-unlet s:none
-
-unlet s:cterm
-unlet s:gui
+unlet s:palette
