@@ -3,6 +3,12 @@
 font-family = "Source Code Pro"
 font-feature = -calt
 
+# Draw text with heavier strokes so colors stay vivid
+font-thicken = true
+
+# Add some space between lines
+adjust-cell-height = 15%
+
 
 # Colors
 #
@@ -15,37 +21,41 @@ font-feature = -calt
 # 06 = cyan     14 = bright cyan
 # 07 = white    15 = bright white
 
-palette = 0=#2e2929
-palette = 1=#e87060
-palette = 2=#d5db69
-palette = 3=#fdc673
-palette = 4=#5083be
-palette = 5=#e383b5
-palette = 6=#71b5c9
-palette = 7=#dbd9d9
+# Warm Mocha, a warmer, near-black Catppuccin Mocha (see colors/warm-mocha.html)
 
-palette = 8=#7e7272
-palette = 9=#f1a89f
-palette = 10=#e6eaa6
-palette = 11=#fedcab
-palette = 12=#96b5d8
-palette = 13=#eeb4d2
-palette = 14=#abd3df
-palette = 15=#e9e7e7
+palette = 0=#4a484b
+palette = 1=#f78c91
+palette = 2=#c0dd8d
+palette = 3=#fee0b0
+palette = 4=#92b1fb
+palette = 5=#fdc0d7
+palette = 6=#9de2c6
+palette = 7=#b1aeaa
 
-background = #000000
-foreground = #ffffff
+palette = 8=#5e5c5e
+palette = 9=#f7787d
+palette = 10=#abd170
+palette = 11=#f3cf92
+palette = 12=#7fa5fd
+palette = 13=#fcacca
+palette = 14=#78d7b8
+palette = 15=#c6c3bd
 
-selection-background = #424242
-selection-foreground = #fdfdfd
+background = #0b0b0b
+foreground = #dad7cf
 
-cursor-color = #e86554
+selection-background = #4a484b
+selection-foreground = #dad7cf
+
+cursor-color = #f78c91
+cursor-text = #0b0b0b
+
+split-divider-color = #2c292b
 
 
 # Background settings
 
-background-opacity = 0.96
-background-blur = true
+background-opacity = 1
 
 
 # Icon settings
@@ -58,3 +68,5 @@ macos-icon-screen-color = #101010
 # Window settings
 
 window-padding-balance = true
+window-padding-x = 12
+window-padding-y = 10
