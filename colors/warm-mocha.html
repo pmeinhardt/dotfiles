@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warm Mocha</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --crust: #0b0b0b;
+      --mantle: #161416;
+      --base: #201e20;
+      --surface0: #2c292b;
+      --surface1: #4a484b;
+      --overlay0: #737171;
+      --overlay1: #878583;
+      --subtext0: #b1aeaa;
+      --text: #dad7cf;
+      --mauve: #dda0e8;
+      --peach: #f9b485;
+      --sky: #88dde3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font: 14px/1.55 "Source Code Pro", ui-monospace, Menlo, monospace;
+      margin: 0;
+      padding: 2rem 2rem 4rem;
+      background: var(--crust);
+      color: var(--text);
+    }
+
+    main { max-width: 75ch; margin: 0 auto; }
+
+    h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+    h2 { font-size: 1.05rem; margin: 2.5rem 0 .75rem; color: var(--mauve); }
+    h3 { font-size: .95rem; margin: 1.5rem 0 .5rem; }
+
+    p { margin: .5rem 0; }
+    a { color: var(--sky); }
+    pre { margin: 0; padding: .8rem 1rem; background: var(--mantle); border-radius: 8px; overflow-x: auto; font-size: 13px; }
+    code { color: var(--peach); }
+
+    button {
+      font: inherit;
+      color: var(--text);
+      background: var(--surface0);
+      border: 0;
+      border-radius: 1em;
+      padding: .2em .9em;
+      cursor: pointer;
+    }
+    button:hover {
+      background: var(--surface1);
+    }
+
+    table { border-collapse: collapse; width: 100%; }
+    th, td { text-align: left; padding: .3rem 1.25rem .3rem 0; white-space: nowrap; }
+    th { color: var(--overlay1); font-weight: normal; border-bottom: 1px solid var(--surface0); }
+
+    .lead { color: var(--subtext0); }
+
+    .previews { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1rem; }
+    .preview { margin: 0; }
+    .preview figcaption { color: var(--overlay1); margin-bottom: .4rem; }
+    .mock { border-radius: 8px; padding: 1rem 1.2rem .6rem; line-height: 1.45; overflow-x: auto; }
+    .mock div { white-space: pre; }
+    .mock .bar { display: flex; justify-content: space-between; padding: 0 .5em; margin-top: .6rem; }
+    .mock .pill { border-radius: 1em; padding: 0 .5em; }
+
+    .table-wrap { overflow-x: auto; }
+    .swatches { display: flex; flex-direction: column; }
+    .swatch { width: 6em; height: 1.55em; }
+    .swatch:first-child { border-radius: 6px 6px 0 0; }
+    .swatch:last-child { border-radius: 0 0 6px 6px; }
+    .muted { color: var(--overlay0); }
+    .num { text-align: right; }
+
+    .exports { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+    .export header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Warm Mocha</h1>
+    <p class="lead">
+      A warmer, near-black variant of <a href="https://catppuccin.com/palette">Catppuccin Mocha</a>, used across Ghostty, tmux and Vim.
+      It is derived from the original Mocha colors by three rules.
+      To tune them, change <code>PARAMS</code> in the script, reload, and copy the exports into the configs.
+    </p>
+
+    <h2>Preview</h2>
+    <div class="previews">
+      <figure class="preview"><figcaption>Catppuccin Mocha</figcaption><div id="preview-mocha"></div></figure>
+      <figure class="preview"><figcaption>Warm Mocha</figcaption><div id="preview-warm"></div></figure>
+    </div>
+
+    <h2>Palette</h2>
+    <div class="table-wrap"><table id="palette"></table></div>
+
+    <h2>Rules</h2>
+    <p>
+      All rules work in <a href="https://bottosson.github.io/posts/oklab/">OKLCH</a>: lightness <code>L</code> (0–1), chroma <code>C</code> (colorfulness) and hue <code>H</code> (degrees).
+      Because OKLCH is perceptually uniform, keeping <code>L</code> keeps contrast unchanged.
+    </p>
+
+    <h3>1. Darken the surfaces</h3>
+    <p>
+      <code>crust</code>, <code>mantle</code>, <code>base</code> and <code>surface0</code> are replaced by an evenly stepped ramp:
+      <code>L = <span data-v="surfaceL0"></span> + i · <span data-v="surfaceStep"></span></code> for <code>i = 0…3</code>,
+      with chroma <code>C = <span data-v="surfaceChroma"></span> · L</code> and Mocha's own surface hue (<code><span data-v="surfaceHue"></span>°</code>).
+      Each layer is a clearly visible step from its neighbor; chroma grows with lightness, as in Mocha, but is lower overall.
+    </p>
+
+    <h3>2. White-balance the neutrals</h3>
+    <p>
+      Mocha's grays are all tinted blue (<code>H ≈ 275°</code>).
+      White balance corrects this like lowering a photo's color temperature: it multiplies the linear green and blue channels by fixed gains, then restores each color's original <code>L</code>.
+      Because the gains are proportional, dark colors shift less than light ones.
+    </p>
+    <p>
+      The gains are <code>g = (R / G)^s</code> and <code>b = (R / B)^s</code>, where <code>R, G, B</code> are the linear channels of Mocha's <code>text</code> (<code>#cdd6f4</code>).
+      At <code>s = 1</code>, <code>text</code> becomes exactly neutral gray; larger values turn grays warm.
+      Currently <code>s = <span data-v="whiteBalance"></span></code>, so <code>g = <span data-v="gainG"></span></code> and <code>b = <span data-v="gainB"></span></code>.
+    </p>
+
+    <h3>3. Pull the accents toward warm</h3>
+    <p>
+      White balance would desaturate blues, so accents get a hue rotation instead, with <code>L</code> and <code>C</code> unchanged:
+      <code>H′ = H + <span data-v="warmPull"></span>° · sin(<span data-v="warmPole"></span>° − H)</code>.
+      Each hue moves toward the warm pole along the shorter way around the color wheel.
+      The pull is strongest for hues 90° from the pole and fades to zero at the pole itself and at its opposite.
+      The bright ANSI colors from <a href="https://github.com/catppuccin/ghostty">Catppuccin for Ghostty</a> get the same treatment.
+    </p>
+
+    <h2>Export</h2>
+    <div class="exports" id="exports"></div>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://catppuccin.com/palette">Catppuccin palette</a></li>
+      <li><a href="https://github.com/catppuccin/ghostty">Catppuccin for Ghostty</a>, for the bright ANSI colors</li>
+      <li><a href="https://bottosson.github.io/posts/oklab/">OKLab</a>, Björn Ottosson</li>
+    </ul>
+  </main>
+
+  <script type="module">
+    // Original colors ////////////////////////////////////////////////////////
+
+    // Catppuccin Mocha, https://catppuccin.com/palette
+    const MOCHA = {
+      rosewater: "#f5e0dc",
+      flamingo: "#f2cdcd",
+      pink: "#f5c2e7",
+      mauve: "#cba6f7",
+      red: "#f38ba8",
+      maroon: "#eba0ac",
+      peach: "#fab387",
+      yellow: "#f9e2af",
+      green: "#a6e3a1",
+      teal: "#94e2d5",
+      sky: "#89dceb",
+      sapphire: "#74c7ec",
+      blue: "#89b4fa",
+      lavender: "#b4befe",
+      text: "#cdd6f4",
+      subtext1: "#bac2de",
+      subtext0: "#a6adc8",
+      overlay2: "#9399b2",
+      overlay1: "#7f849c",
+      overlay0: "#6c7086",
+      surface2: "#585b70",
+      surface1: "#45475a",
+      surface0: "#313244",
+      base: "#1e1e2e",
+      mantle: "#181825",
+      crust: "#11111b",
+    };
+
+    // Bright ANSI colors from https://github.com/catppuccin/ghostty
+    const ANSI = {
+      "bright red": "#f37799",
+      "bright green": "#89d88b",
+      "bright yellow": "#ebd391",
+      "bright blue": "#74a8fc",
+      "bright magenta": "#f2aede",
+      "bright cyan": "#6bd7ca",
+    };
+
+    const ORIGINALS = { ...MOCHA, ...ANSI };
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    const SURFACES = ["crust", "mantle", "base", "surface0"];
+    const NEUTRALS = [...SURFACES, "surface1", "surface2", "overlay0", "overlay1", "overlay2", "subtext0", "subtext1", "text"];
+
+    // Derive warm variant ////////////////////////////////////////////////////
+
+    import { converter, formatHex, clampRgb } from "https://esm.sh/culori@4.0.2";
+
+    const toOklch = converter("oklch");
+    const toLrgb = converter("lrgb");
+    const hex = (color) => formatHex(clampRgb(color));
+
+    const PARAMS = {
+      surfaceL0: 0.15, surfaceStep: 0.045, surfaceChroma: 0.08,  // 1. surfaces
+      whiteBalance: 1.3,                                         // 2. neutrals
+      warmPole: 60, warmPull: 18,                                // 3. accents
+    };
+
+    function surface(i, p) {
+      const l = p.surfaceL0 + p.surfaceStep * i;
+      return hex({ mode: "oklch", l, c: p.surfaceChroma * l, h: toOklch(MOCHA.crust).h });
+    }
+
+    function gains(s) {
+      const t = toLrgb(MOCHA.text);
+      return { g: (t.r / t.g) ** s, b: (t.r / t.b) ** s };
+    }
+
+    function whiteBalance(color, s) {
+      const { g, b } = gains(s);
+      const x = toLrgb(color);
+      const { c, h } = toOklch(hex({ mode: "lrgb", r: x.r, g: x.g * g, b: x.b * b }));
+      return hex({ mode: "oklch", l: toOklch(color).l, c, h: h ?? 0 });
+    }
+
+    function warm(color, pole, pull) {
+      const { l, c, h } = toOklch(color);
+      return hex({ mode: "oklch", l, c, h: h + pull * Math.sin((pole - h) * Math.PI / 180) });
+    }
+
+    function derive(p = PARAMS) {
+      const colors = {};
+      for (const [name, color] of Object.entries(MOCHA)) {
+        if (SURFACES.includes(name)) colors[name] = whiteBalance(surface(SURFACES.indexOf(name), p), p.whiteBalance);
+        else if (NEUTRALS.includes(name)) colors[name] = whiteBalance(color, p.whiteBalance);
+        else colors[name] = warm(color, p.warmPole, p.warmPull);
+      }
+      for (const [name, color] of Object.entries(ANSI)) colors[name] = warm(color, p.warmPole, p.warmPull);
+      return colors;
+    }
+
+    const derived = derive();
+
+    // Fill the parameters into the rules
+    const { g, b } = gains(PARAMS.whiteBalance);
+    const values = { ...PARAMS, gainG: g.toFixed(3), gainB: b.toFixed(3), surfaceHue: Math.round(toOklch(MOCHA.crust).h) };
+    for (const el of document.querySelectorAll("[data-v]")) el.textContent = values[el.dataset.v];
+
+    // Style the page itself with the derived palette
+    for (const name of ["crust", "mantle", "base", "surface0", "surface1", "overlay0", "overlay1", "subtext0", "text", "mauve", "peach", "sky"]) {
+      document.documentElement.style.setProperty(`--${name}`, derived[name]);
+    }
+
+    // Render /////////////////////////////////////////////////////////////////
+
+    import { useState } from "https://esm.sh/preact@11.2.0/hooks";
+    import { h, render } from "https://esm.sh/preact@11.2.0";
+    import htm from "https://esm.sh/htm@3.1.1";
+
+    const html = htm.bind(h);
+
+    // Roles as they're used in Vim (colors/base.vim) and tmux
+    function Mock({ theme }) {
+      const hl = (color, s) => html`<span style="color:${color}">${s}</span>`;
+
+      return html`
+        <div class="mock" style="background:${theme.crust};color:${theme.text}">
+          <div style="color:${theme.blue};font-weight:bold">## Installation</div>
+          <div>Run ${hl(theme.sky, "`./script/bootstrap`")} to symlink files into ${hl(theme.sky, "`$HOME`")}.</div>
+          <div>Everything’s built around topic areas.</div>
+          <div>See ${hl(theme.mauve, "[Homebrew]")}<u style="color:${theme.mauve}">(https://brew.sh)</u>. <span style="background:${theme.surface0}">selected text</span></div>
+          <div> </div>
+          <div>${hl(theme.overlay1, "# Link files into the home directory")}</div>
+          <div>${hl(theme.mauve, "if")} ${hl(theme.red, "name")} == ${hl(theme.green, '"dots"')}; ${hl(theme.mauve, "then")}</div>
+          <div>  ${hl(theme.blue, "link")} ${hl(theme.red, "$file")} ${hl(theme.peach, "42")} ${hl(theme.yellow, "String")} ${hl(theme.pink, "\\n")}</div>
+          <div>${hl(theme.mauve, "fi")}</div>
+          <div class="bar" style="background:${theme.mantle};color:${theme.subtext0}"><span>README.md ●</span><span>12:4</span></div>
+          <div class="bar" style="color:${theme.overlay0}"><span>${hl(theme.surface1, "●")} 1 zsh <span class="pill" style="background:${theme.surface0};color:${theme.text}">2 claude</span></span><span>dotfiles</span></div>
+        </div>
+      `;
+    }
+
+    render(html`<${Mock} theme=${MOCHA} />`, document.querySelector("#preview-mocha"));
+    render(html`<${Mock} theme=${derived} />`, document.querySelector("#preview-warm"));
+
+    function Swatch({ color }) {
+      return html`<span class="swatch" style="background:${color}"></span>`;
+    }
+
+    function lch(color) {
+      const { l, c, h } = toOklch(color);
+      return { L: l.toFixed(2), C: c.toFixed(2), H: h === undefined ? "–" : `${Math.round(h)}°` };
+    }
+
+    // Original on top, warm below; dimmed if unchanged
+    function Stack({ from, to }) {
+      return html`<span class="muted">${from}</span><br /><span class=${from === to ? "muted" : ""}>${to}</span>`;
+    }
+
+    function Palette({ theme }) {
+      return html`
+        <tr>
+          <th>Name</th>
+          <th>Original<br />Warm</th>
+          <th>Hex</th>
+          <th class="num">L</th>
+          <th class="num">C</th>
+          <th class="num">H</th>
+        </tr>
+        ${Object.keys(theme).map((name) => {
+          const from = lch(ORIGINALS[name]), to = lch(theme[name]);
+          return html`
+            <tr key=${name}>
+              <td>${name}</td>
+              <td><div class="swatches"><${Swatch} color=${ORIGINALS[name]} /><${Swatch} color=${theme[name]} /></div></td>
+              <td><${Stack} from=${ORIGINALS[name]} to=${theme[name]} /></td>
+              ${["L", "C", "H"].map((k) => html`<td class="num"><${Stack} from=${from[k]} to=${to[k]} /></td>`)}
+            </tr>
+          `;
+        })}
+      `;
+    }
+
+    render(html`<${Palette} theme=${derived} />`, document.querySelector("#palette"));
+
+    const exports = document.querySelector("#exports");
+
+    function CopyButton({ value }) {
+      const [label, setLabel] = useState("Copy");
+
+      async function handle(event) {
+        event.preventDefault();
+
+        try {
+          await navigator.clipboard.writeText(value);
+          setLabel("Copied");
+        } catch {
+          setLabel("Select and copy");
+        }
+      }
+
+      return html`<button type="button" onClick=${handle}>${label}</button>`;
+    }
+
+    function Exports({ theme }) {
+      const names = Object.keys(MOCHA);
+
+      const ghostty = [
+        ...["surface1", "red", "green", "yellow", "blue", "pink", "teal", "subtext0", "surface2",
+            "bright red", "bright green", "bright yellow", "bright blue", "bright magenta", "bright cyan", "subtext1"]
+          .map((name, i) => `${i === 8 ? "\n" : ""}palette = ${i}=${theme[name]}`),
+        "",
+        `background = ${theme.crust}`, `foreground = ${theme.text}`, "",
+        `selection-background = ${theme.surface1}`, `selection-foreground = ${theme.text}`, "",
+        `cursor-color = ${theme.red}`, `cursor-text = ${theme.crust}`, "",
+        `split-divider-color = ${theme.surface0}`,
+      ].join("\n");
+
+      const tmux = names.map((name) => `%hidden ${name}="${theme[name]}"`).join("\n");
+
+      const vim = ["let s:palette = {",
+        ...names.map((name) => `      \\ ${`"${name}"`.padEnd(11)} : "${theme[name]}",`),
+        "      \\ }"].join("\n");
+
+      const sections = [["Ghostty", ghostty], ["tmux", tmux], ["Vim", vim]];
+
+      return html`
+        ${sections.map(([title, text]) => html`
+          <section class="export">
+            <header><span>${title}</span> <${CopyButton} value=${text} /></header>
+            <pre>${text}</pre>
+          </section>
+        `)}
+      `;
+    }
+
+    render(html`<${Exports} theme=${derived} />`, exports);
+  </script>
+</body>
+</html>
