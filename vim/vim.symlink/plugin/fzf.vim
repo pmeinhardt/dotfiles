@@ -24,9 +24,9 @@ let g:fzf_layout = {'down': '40%'}
 " Hide preview window by default, <c-space> to toggle
 let g:fzf_preview_window = ['right:50%:hidden', 'ctrl-space']
 
-" Hide statusline for a cleaner look
+" Hide statusline for a cleaner look, then restore the previous setting
 if has('nvim')
   autocmd! FileType fzf
-  autocmd  FileType fzf set laststatus=0 noruler
-    \ | autocmd BufLeave <buffer> set laststatus=2 ruler
+  autocmd  FileType fzf let s:laststatus = &laststatus | set laststatus=0 noruler
+    \ | autocmd BufLeave <buffer> let &laststatus = s:laststatus | set ruler
 endif
