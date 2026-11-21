@@ -12,27 +12,27 @@
 
 if !has('nvim-0.12.0') | finish | endif
 
-lua << EOF
--- Parser names that differ from the Neovim filetype must be registered.
-vim.treesitter.language.register('tsx', 'typescriptreact')
+lua << trim EOF
+  -- Parser names that differ from the Neovim filetype must be registered.
+  vim.treesitter.language.register('tsx', 'typescriptreact')
 
-vim.api.nvim_create_autocmd('FileType', {
-  desc = 'Tree-sitter highlighting + incremental selection',
-  callback = function(ev)
-    -- Only attach where a parser exists; otherwise start() fails and we bail.
-    if not pcall(vim.treesitter.start, ev.buf) then return end
+  vim.api.nvim_create_autocmd('FileType', {
+    desc = 'Tree-sitter highlighting + incremental selection',
+    callback = function(ev)
+      -- Only attach where a parser exists; otherwise start() fails and we bail.
+      if not pcall(vim.treesitter.start, ev.buf) then return end
 
-    -- Enable Treesitter-based folding.
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo.foldmethod = 'expr'
-    vim.wo.foldlevel = 99
+      -- Enable Treesitter-based folding.
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.wo.foldmethod = 'expr'
+      vim.wo.foldlevel = 99
 
-    -- Set up custom keybindings for incremental selection.
-    -- remap = true: van/an/in ride on Neovim's built-in node-selection maps.
-    local o = { buffer = ev.buf, remap = true, silent = true }
-    vim.keymap.set('n', '<cr>',   'van', o)  -- start + grow selection
-    vim.keymap.set('x', '<cr>',   'an',  o)  -- grow selection
-    vim.keymap.set('x', '<s-cr>', 'in',  o)  -- shrink selection
-  end,
-})
+      -- Set up custom keybindings for incremental selection.
+      -- remap = true: van/an/in ride on Neovim's built-in node-selection maps.
+      local o = { buffer = ev.buf, remap = true, silent = true }
+      vim.keymap.set('n', '<cr>',   'van', o)  -- start + grow selection
+      vim.keymap.set('x', '<cr>',   'an',  o)  -- grow selection
+      vim.keymap.set('x', '<s-cr>', 'in',  o)  -- shrink selection
+    end,
+  })
 EOF
