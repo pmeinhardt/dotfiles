@@ -34,13 +34,25 @@
     "autoMaximize" : {
       "int" : 0
     },
+    "blurAppearance" : {
+      "int" : 0
+    },
     "cascadeAllDeltaSize" : {
       "float" : 30
+    },
+    "centerAcrossDisplays" : {
+      "int" : 0
     },
     "centerHalfCycles" : {
       "int" : 0
     },
     "centeredDirectionalMove" : {
+      "int" : 0
+    },
+    "cooperativeCornerResize" : {
+      "bool" : false
+    },
+    "cornerCycleExpansionAxis" : {
       "int" : 0
     },
     "cornerSnapAreaSize" : {
@@ -51,6 +63,18 @@
     },
     "cycleSizesIsChanged" : {
       "bool" : false
+    },
+    "cyclingOverlapMaxCascade" : {
+      "int" : 1
+    },
+    "cyclingOverlapOffset" : {
+      "int" : 0
+    },
+    "cyclingOverlapOffsetSize" : {
+      "float" : 11
+    },
+    "directAnimationNativeResizeApps" : {
+
     },
     "disabledApps" : {
 
@@ -68,13 +92,19 @@
       "int" : 0
     },
     "enhancedUI" : {
-      "int" : 1
+      "int" : 4
+    },
+    "experimentalWindowAnimations" : {
+      "bool" : false
     },
     "footprintAlpha" : {
-      "float" : 0.3
+      "double" : 0.30000001192092896
     },
     "footprintAnimationDurationMultiplier" : {
       "float" : 0
+    },
+    "footprintBlur" : {
+      "bool" : false
     },
     "footprintBorderWidth" : {
       "float" : 2
@@ -91,29 +121,44 @@
     "gapSize" : {
       "float" : 8
     },
+    "greenButtonOverride" : {
+      "bool" : false
+    },
+    "halvesPreserveOtherAxisSize" : {
+      "bool" : false
+    },
     "hapticFeedbackOnSnap" : {
       "int" : 0
     },
     "hideMenubarIcon" : {
       "bool" : false
     },
+    "horizontalSplitRatio" : {
+      "float" : 50
+    },
     "ignoreDragSnapToo" : {
       "int" : 0
+    },
+    "ignoreMenuBar" : {
+      "int" : 0
+    },
+    "ignoreShortcutsInMissionControl" : {
+      "bool" : true
     },
     "ignoredSnapAreas" : {
       "int" : 0
     },
     "landscapeSnapAreas" : {
-
+      "string" : "[4,{\"compound\":-2},5,{\"compound\":-3},1,{\"action\":15},2,{\"action\":2},6,{\"action\":13},3,{\"action\":16},7,{\"compound\":-4},8,{\"action\":14}]"
     },
     "launchOnLogin" : {
       "bool" : true
     },
     "minimumWindowHeight" : {
-      "float" : 0
+      "double" : 0
     },
     "minimumWindowWidth" : {
-      "float" : 0
+      "double" : 0
     },
     "missionControlDragging" : {
       "int" : 0
@@ -124,11 +169,20 @@
     "missionControlDraggingDisallowedDuration" : {
       "int" : 250
     },
+    "mouseButtonShortcutsUseWindowUnderCursor" : {
+      "bool" : false
+    },
     "moveCursor" : {
       "int" : 0
     },
     "moveCursorAcrossDisplays" : {
       "int" : 0
+    },
+    "moveFixedSizeToEdge" : {
+      "int" : 1
+    },
+    "newWindowAction" : {
+
     },
     "notifiedOfProblemApps" : {
       "bool" : false
@@ -140,6 +194,9 @@
 
     },
     "relaunchOpensMenu" : {
+      "bool" : false
+    },
+    "repeatedMaximizeRestoresPrevious" : {
       "bool" : false
     },
     "resizeOnDirectionalMove" : {
@@ -158,16 +215,22 @@
       "float" : 0
     },
     "screenEdgeGapTopNotch" : {
-      "float" : 0
+      "double" : 0
     },
     "screenEdgeGapsOnMainScreenOnly" : {
       "bool" : false
+    },
+    "screensOrderedByX" : {
+      "int" : 3
     },
     "selectedCycleSizes" : {
       "int" : 0
     },
     "shortEdgeSnapAreaSize" : {
       "float" : 145
+    },
+    "showAdditionalSizesInMenu" : {
+      "int" : 0
     },
     "showAllActionsInMenu" : {
       "int" : 0
@@ -177,6 +240,15 @@
     },
     "sizeOffset" : {
       "float" : 0
+    },
+    "skipGapTopEdge" : {
+      "bool" : false
+    },
+    "smallerShrinksMaximizedHeight" : {
+      "bool" : false
+    },
+    "snapBeforeReachingEdges" : {
+      "double" : 0
     },
     "snapEdgeMarginBottom" : {
       "float" : 5
@@ -199,6 +271,12 @@
     "specifiedWidth" : {
       "float" : 1680
     },
+    "stackBadge" : {
+      "int" : 0
+    },
+    "stackSameSizeOnly" : {
+      "int" : 0
+    },
     "stageSize" : {
       "float" : 190
     },
@@ -210,6 +288,15 @@
     },
     "systemWideMouseDownApps" : {
 
+    },
+    "thirdsAndFourthsAcrossDisplays" : {
+      "int" : 0
+    },
+    "tileColumnsMaxWindows" : {
+      "int" : 3
+    },
+    "tileRowsMaxWindows" : {
+      "int" : 3
     },
     "todo" : {
       "int" : 0
@@ -226,11 +313,23 @@
     "todoSidebarWidth" : {
       "float" : 400
     },
+    "todoSidebarWidthUnit" : {
+      "int" : 1
+    },
     "traverseSingleScreen" : {
       "int" : 0
     },
     "unsnapRestore" : {
       "int" : 0
+    },
+    "verticalSixthsCycleTwelfths" : {
+      "int" : 0
+    },
+    "verticalSplitRatio" : {
+      "float" : 50
+    },
+    "widthStepSize" : {
+      "float" : 30
     },
     "windowSnapping" : {
       "int" : 2
@@ -310,5 +409,5 @@
       "modifierFlags" : 1310720
     }
   },
-  "version" : "91"
+  "version" : "112"
 }
