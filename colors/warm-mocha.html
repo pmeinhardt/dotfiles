@@ -247,12 +247,14 @@
 
     const derived = derive();
 
-    // Fill the parameters into the rules
+    // Fill the parameters into the rules /////////////////////////////////////
+
     const { g, b } = gains(PARAMS.whiteBalance);
     const values = { ...PARAMS, gainG: g.toFixed(3), gainB: b.toFixed(3), surfaceHue: Math.round(toOklch(MOCHA.crust).h) };
     for (const el of document.querySelectorAll("[data-v]")) el.textContent = values[el.dataset.v];
 
-    // Style the page itself with the derived palette
+    // Style the page itself with the derived palette /////////////////////////
+
     for (const name of ["crust", "mantle", "base", "surface0", "surface1", "overlay0", "overlay1", "subtext0", "text", "mauve", "peach", "sky"]) {
       document.documentElement.style.setProperty(`--${name}`, derived[name]);
     }
