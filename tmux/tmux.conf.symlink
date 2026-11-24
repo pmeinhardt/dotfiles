@@ -128,6 +128,7 @@ set-option -g renumber-windows on
 # Customize status bar format for window information, the current one as a pill
 set-option -g window-status-format " #{window_index} #{window_name}#{?window_flags, #[fg=$peach]#{window_flags},} "
 set-option -g window-status-current-format "#[fg=$surface0]#[fg=$text,bg=$surface0]#{window_index} #{window_name}#{?window_flags, #[fg=$mauve]#{window_flags},}#[fg=$surface0,bg=default]"
+set-option -g window-status-bell-style default
 set-option -g window-status-separator ''
 
 # Show prefix activation and copy mode in left status bar
