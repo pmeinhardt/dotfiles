@@ -112,7 +112,7 @@ bind-key w display-popup -E -T ' windows ' 'tmux list-windows -a -F "#{session_n
 ## Config
 
 # Reload tmux config
-bind-key R run-shell 'tmux source-file ~/.tmux.conf > /dev/null; tmux display-message "Sourced config"'
+bind-key R source-file ~/.tmux.conf \; display-message "Sourced config"
 
 ## Appearance
 
