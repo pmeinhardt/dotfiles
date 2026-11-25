@@ -168,6 +168,10 @@ set-option -g status-right '#{session_name}'
 # Customize status bar colors
 set-option -g status-style "bg=default,fg=$overlay0"
 
+# Customize copy-mode match highlighting
+set-option -g copy-mode-match-style "bg=$base,fg=$yellow"
+set-option -g copy-mode-current-match-style "bg=$yellow,fg=$base"
+
 # Highlight messages, the command prompt, and selections in a theme color
 set-option -g message-style "bg=$peach,fg=$base,fill=$peach"
 set-option -g message-command-style "bg=$peach,fg=$base,fill=$peach"
