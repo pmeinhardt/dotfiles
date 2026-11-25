@@ -1,3 +1,5 @@
+## Terminal and behavior
+
 # Improve color handling
 set-option -g default-terminal "$TERM"
 
@@ -16,8 +18,20 @@ set-option -s escape-time 0
 # Pass shift-enter and other such inputs to terminal apps like Vim/Neovim.
 set-option -s extended-keys on
 
+# Enable focus events
+set-option -g focus-events on
+
 # Longer display time for tmux messages
 set-option -g display-time 3000
+
+# Start window numbers at 1 to match keyboard order with tmux window order
+set-option -g base-index 1
+set-option -w -g pane-base-index 1
+
+# Renumber windows sequentially after closing any of them
+set-option -g renumber-windows on
+
+## Prefix and modes
 
 # Change prefix
 unbind-key C-b
@@ -30,8 +44,7 @@ set-option -g status-keys emacs
 # Use vim key bindings in copy mode
 set-option -w -g mode-keys vi
 
-# Enable focus events
-set-option -g focus-events on
+## Copy mode
 
 # Setup vim-like selection and yanking
 bind-key -T copy-mode-vi v send-keys -X begin-selection
@@ -45,17 +58,25 @@ bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'pbcopy'
 # Copy mouse selections to the clipboard too
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'pbcopy'
 
+# Open selected URLs
+bind-key -T copy-mode-vi x send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux run-shell -b "cd #{pane_current_path}; open \"{}\" > /dev/null"'
+
+# Open path in editor
+bind-key -T copy-mode-vi C-o send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux send-keys "$EDITOR \"{}\""'
+
+## Panes
+
 # Additional vim-like keybindings for pane-switching
 bind-key h select-pane -L
 bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
-# Open selected URLs
-bind-key -T copy-mode-vi x send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux run-shell -b "cd #{pane_current_path}; open \"{}\" > /dev/null"'
-
-# Open path in editor
-bind-key -T copy-mode-vi C-o send-keys -X copy-pipe-and-cancel 'xargs -I {} tmux send-keys "$EDITOR \"{}\""'
+# Resize panes
+bind-key -r H resize-pane -L 1
+bind-key -r J resize-pane -D 1
+bind-key -r K resize-pane -U 1
+bind-key -r L resize-pane -R 1
 
 # Alternate bindings for pane-splitting
 bind-key \\ split-window -h -c '#{pane_current_path}'
@@ -63,11 +84,7 @@ bind-key - split-window -v -c '#{pane_current_path}'
 bind-key | split-window -fh -c '#{pane_current_path}'
 bind-key _ split-window -fv -c '#{pane_current_path}'
 
-# Resize panes
-bind-key -r H resize-pane -L 1
-bind-key -r J resize-pane -D 1
-bind-key -r K resize-pane -U 1
-bind-key -r L resize-pane -R 1
+## Windows
 
 # Preserve path for new windows
 bind-key c new-window -c '#{pane_current_path}'
@@ -80,6 +97,8 @@ bind-key -r C-l select-window -t :+
 bind-key -r < swap-window -t -1
 bind-key -r > swap-window -t +1
 
+## Sessions and trees
+
 # Move the built-in session and window trees out of the way
 bind-key S choose-tree -Zs
 bind-key W choose-tree -Zw
@@ -90,12 +109,7 @@ bind-key s display-popup -E -T ' sessions ' 'tmux list-sessions -F "#{session_na
 # Fuzzy-match window names and switch to the selected one
 bind-key w display-popup -E -T ' windows ' 'tmux list-windows -a -F "#{session_name}:#{window_index} #{window_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {1}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | cut -d " " -f 1 | xargs -I {} tmux switch-client -t {}'
 
-# Start window numbers at 1 to match keyboard order with tmux window order
-set-option -g base-index 1
-set-option -w -g pane-base-index 1
-
-# Renumber windows sequentially after closing any of them
-set-option -g renumber-windows on
+## Appearance
 
 # Warm Mocha palette (see colors/warm-mocha.html), matching Ghostty and Vim
 %hidden rosewater="#f4e1da"
@@ -154,6 +168,8 @@ set-option -g window-active-style 'fg=default'
 set-option -w -g popup-style 'bg=default'
 set-option -w -g popup-border-style "bg=default,fg=$overlay0"
 set-option -w -g popup-border-lines rounded
+
+## Local overrides
 
 # Conditionally load local config
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
