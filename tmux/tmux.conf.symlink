@@ -26,7 +26,7 @@ set-option -g display-time 3000
 
 # Start window numbers at 1 to match keyboard order with tmux window order
 set-option -g base-index 1
-set-option -w -g pane-base-index 1
+set-option -g pane-base-index 1
 
 # Renumber windows sequentially after closing any of them
 set-option -g renumber-windows on
@@ -42,7 +42,7 @@ bind-key C-a send-prefix
 set-option -g status-keys emacs
 
 # Use vim key bindings in copy mode
-set-option -w -g mode-keys vi
+set-option -g mode-keys vi
 
 ## Copy mode
 
@@ -179,9 +179,9 @@ set-option -g window-style "fg=$subtext0"
 set-option -g window-active-style 'fg=default'
 
 # Customize popups (tmux 3.8 defaults to a dark grey theme background)
-set-option -w -g popup-style 'bg=default'
-set-option -w -g popup-border-style "bg=default,fg=$overlay0"
-set-option -w -g popup-border-lines rounded
+set-option -g popup-style 'bg=default'
+set-option -g popup-border-style "bg=default,fg=$overlay0"
+set-option -g popup-border-lines rounded
 
 ## Local overrides
 
