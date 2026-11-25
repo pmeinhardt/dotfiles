@@ -104,10 +104,19 @@ bind-key S choose-tree -Zs
 bind-key W choose-tree -Zw
 
 # Fuzzy-match session names and switch to the selected one
-bind-key s display-popup -E -T ' sessions ' 'tmux list-sessions -F "#{session_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | xargs -I {} tmux switch-client -t {}'
+bind-key s display-popup -E -T ' sessions ' '
+  tmux list-sessions -F "#{session_name}" |
+    fzf --reverse --preview "tmux capture-pane -ep -t {}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" |
+    xargs -I {} tmux switch-client -t {}
+'
 
 # Fuzzy-match window names and switch to the selected one
-bind-key w display-popup -E -T ' windows ' 'tmux list-windows -a -F "#{session_name}:#{window_index} #{window_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {1}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | cut -d " " -f 1 | xargs -I {} tmux switch-client -t {}'
+bind-key w display-popup -E -T ' windows ' '
+  tmux list-windows -a -F "#{session_name}:#{window_index} #{window_name}" |
+    fzf --reverse --preview "tmux capture-pane -ep -t {1}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" |
+    cut -d " " -f 1 |
+    xargs -I {} tmux switch-client -t {}
+'
 
 ## Config
 
