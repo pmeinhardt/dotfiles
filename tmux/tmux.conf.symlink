@@ -109,6 +109,11 @@ bind-key s display-popup -E -T ' sessions ' 'tmux list-sessions -F "#{session_na
 # Fuzzy-match window names and switch to the selected one
 bind-key w display-popup -E -T ' windows ' 'tmux list-windows -a -F "#{session_name}:#{window_index} #{window_name}" | fzf --reverse --preview "tmux capture-pane -ep -t {1}" --preview-window "right,60%,nowrap,<80(up,50%,nowrap)" | cut -d " " -f 1 | xargs -I {} tmux switch-client -t {}'
 
+## Config
+
+# Reload tmux config
+bind-key R run-shell 'tmux source-file ~/.tmux.conf > /dev/null; tmux display-message "Sourced config"'
+
 ## Appearance
 
 # Warm Mocha palette (see colors/warm-mocha.html), matching Ghostty and Vim
@@ -171,8 +176,5 @@ set-option -w -g popup-border-lines rounded
 
 ## Local overrides
 
-# Conditionally load local config
-if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
-
-# Reload tmux config
-bind-key R run-shell 'tmux source-file ~/.tmux.conf > /dev/null; tmux display-message "Sourced config"'
+# Load local config if present
+source-file -q ~/.tmux.conf.local
