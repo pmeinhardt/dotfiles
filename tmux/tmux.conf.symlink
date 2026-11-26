@@ -168,6 +168,9 @@ set-option -g status-right '#{session_name}'
 # Customize status bar colors
 set-option -g status-style "bg=default,fg=$overlay0"
 
+# Customize copy-mode position indicator
+set-option -g copy-mode-position-format "#[align=right]#[bg=$crust#,fg=$base]#[bg=$base]#{?#{e|>:#{top_line_time},0},#[fg=$yellow]#{t/p:top_line_time} ,}#[fg=$peach]#{copy_position}/#{copy_position_limit}#{?search_timed_out, #[fg=$red]timed out,#{?search_count, #[fg=$maroon]#{search_count}#{?search_count_partial,+,} results,}}#[bg=$crust,fg=$base]"
+
 # Customize copy-mode match highlighting
 set-option -g copy-mode-match-style "bg=$base,fg=$yellow"
 set-option -g copy-mode-current-match-style "bg=$yellow,fg=$base"
