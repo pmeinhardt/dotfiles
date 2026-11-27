@@ -149,7 +149,9 @@ function ALELSPMappings()
   nnoremap <buffer> <silent> gI :ALEGoToImplementation<cr>
   nnoremap <buffer> <silent> gK :ALEDetail<cr>
   nnoremap <buffer> <silent> gr :ALEFindReferences -relative<cr>
+  nnoremap <buffer> <silent> gR :ALEFindReferences -relative -fzf<cr>
   nnoremap <buffer> <silent> K :ALEHover<cr>
+  nnoremap <buffer> <leader>t :ALESymbolSearch<space>
 endfunction
 
 augroup ALEMappings
@@ -174,6 +176,10 @@ nnoremap <silent> <leader><space> :nohlsearch<cr>
 " Quick search
 nnoremap <leader>a :Ack!<space>
 xnoremap <leader>a ""y:Ack! <c-r>"
+
+" Fuzzy-search lines in the current buffer or project
+nnoremap <silent> <leader>/ :BLines<cr>
+nnoremap <leader>? :Rg<space>
 
 " Buffer search
 nnoremap <silent> <leader>b :Buffers<cr>
